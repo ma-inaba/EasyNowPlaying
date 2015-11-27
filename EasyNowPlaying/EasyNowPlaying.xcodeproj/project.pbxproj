@@ -13,6 +13,8 @@
 		A29F58D31C08A20100233ADA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A29F58CD1C08A20100233ADA /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		A29F58D81C08A2AA00233ADA /* PlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A29F58D71C08A2AA00233ADA /* PlaybackViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A29F58DA1C08A59800233ADA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A29F58D91C08A59800233ADA /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
+		A29F58DD1C08B6D500233ADA /* TwitterIconImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A29F58DC1C08B6D500233ADA /* TwitterIconImageView.m */; settings = {ASSET_TAGS = (); }; };
+		A29F58E11C08B89B00233ADA /* UIImage+Ex.m in Sources */ = {isa = PBXBuildFile; fileRef = A29F58E01C08B89B00233ADA /* UIImage+Ex.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		A29F58D61C08A2AA00233ADA /* PlaybackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaybackViewController.h; sourceTree = "<group>"; };
 		A29F58D71C08A2AA00233ADA /* PlaybackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaybackViewController.m; sourceTree = "<group>"; };
 		A29F58D91C08A59800233ADA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A29F58DB1C08B6D500233ADA /* TwitterIconImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterIconImageView.h; sourceTree = "<group>"; };
+		A29F58DC1C08B6D500233ADA /* TwitterIconImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterIconImageView.m; sourceTree = "<group>"; };
+		A29F58DF1C08B89B00233ADA /* UIImage+Ex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Ex.h"; sourceTree = "<group>"; };
+		A29F58E01C08B89B00233ADA /* UIImage+Ex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Ex.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 				A29F58CE1C08A20100233ADA /* Controller */,
 				A29F58CF1C08A20100233ADA /* Library */,
 				A29F58D11C08A20100233ADA /* Utility */,
+				A29F58DE1C08B7F100233ADA /* Category */,
 				A29F58D41C08A21B00233ADA /* Storyboard */,
 				A29F58D51C08A26600233ADA /* Resource */,
 				A29F58B41C08A18300233ADA /* Supporting Files */,
@@ -122,6 +129,8 @@
 		A29F58D21C08A20100233ADA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A29F58DB1C08B6D500233ADA /* TwitterIconImageView.h */,
+				A29F58DC1C08B6D500233ADA /* TwitterIconImageView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -141,6 +150,15 @@
 				A29F58D91C08A59800233ADA /* Assets.xcassets */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		A29F58DE1C08B7F100233ADA /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				A29F58DF1C08B89B00233ADA /* UIImage+Ex.h */,
+				A29F58E01C08B89B00233ADA /* UIImage+Ex.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,9 +231,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A29F58E11C08B89B00233ADA /* UIImage+Ex.m in Sources */,
 				A29F58D31C08A20100233ADA /* AppDelegate.m in Sources */,
 				A29F58B61C08A18300233ADA /* main.m in Sources */,
 				A29F58D81C08A2AA00233ADA /* PlaybackViewController.m in Sources */,
+				A29F58DD1C08B6D500233ADA /* TwitterIconImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

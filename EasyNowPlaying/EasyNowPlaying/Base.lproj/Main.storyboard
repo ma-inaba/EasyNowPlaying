@@ -149,14 +149,6 @@
                                                     <constraint firstAttribute="width" secondItem="lwd-cb-USd" secondAttribute="height" multiplier="5:1" id="z6Q-Jv-f8p"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="sam-eE-2SY">
-                                                <rect key="frame" x="20" y="380" width="120" height="120"/>
-                                                <animations/>
-                                                <color key="backgroundColor" red="0.35294117650000001" green="0.61960784310000006" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="sam-eE-2SY" secondAttribute="height" multiplier="1:1" id="ydH-s0-Qle"/>
-                                                </constraints>
-                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="らがりと - ragarito" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Goi-Dc-T5j">
                                                 <rect key="frame" x="162" y="479" width="330" height="21"/>
                                                 <animations/>
@@ -167,6 +159,13 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sam-eE-2SY" customClass="TwitterIconImageView">
+                                                <rect key="frame" x="20" y="380" width="120" height="120"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="sam-eE-2SY" secondAttribute="height" multiplier="1:1" id="ydH-s0-Qle"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -225,6 +224,5 @@
         <image name="Play" width="100" height="100"/>
         <image name="Rewind" width="100" height="100"/>
         <image name="SampleImage" width="600" height="600"/>
-        <image name="image" width="240" height="240"/>
     </resources>
 </document>
