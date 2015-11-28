@@ -39,57 +39,6 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W6C-Zx-PEc">
-                                                <rect key="frame" x="20" y="109" width="460" height="83"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvj-ox-h5X">
-                                                        <rect key="frame" x="200" y="12" width="60" height="60"/>
-                                                        <animations/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="60" id="7vM-6z-MTK"/>
-                                                            <constraint firstAttribute="width" constant="60" id="m3y-V1-m5C"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button" image="Play"/>
-                                                        <connections>
-                                                            <action selector="switchPlayStatus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vYb-Eg-wUD"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njt-mD-Unf">
-                                                        <rect key="frame" x="268" y="22" width="40" height="40"/>
-                                                        <animations/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="40" id="KRT-WA-sIO"/>
-                                                            <constraint firstAttribute="height" constant="40" id="ZdR-lq-fva"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button" image="Fast Forward"/>
-                                                        <connections>
-                                                            <action selector="skipToNextMusic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Psj-JO-TfS"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoT-KR-gq8">
-                                                        <rect key="frame" x="152" y="22" width="40" height="40"/>
-                                                        <animations/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="40" id="5Yf-LY-EsU"/>
-                                                            <constraint firstAttribute="height" constant="40" id="NFx-30-t9T"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button" image="Rewind"/>
-                                                        <connections>
-                                                            <action selector="skipToPreviousMusic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eMd-Pf-AcO"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <animations/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstItem="jvj-ox-h5X" firstAttribute="leading" secondItem="eoT-KR-gq8" secondAttribute="trailing" constant="8" id="39k-sz-N1e"/>
-                                                    <constraint firstItem="jvj-ox-h5X" firstAttribute="centerY" secondItem="W6C-Zx-PEc" secondAttribute="centerY" id="EJt-g0-4TB"/>
-                                                    <constraint firstItem="eoT-KR-gq8" firstAttribute="centerY" secondItem="W6C-Zx-PEc" secondAttribute="centerY" id="KZo-F7-NXw"/>
-                                                    <constraint firstItem="njt-mD-Unf" firstAttribute="leading" secondItem="jvj-ox-h5X" secondAttribute="trailing" constant="8" id="Wih-5v-21d"/>
-                                                    <constraint firstItem="njt-mD-Unf" firstAttribute="centerY" secondItem="W6C-Zx-PEc" secondAttribute="centerY" id="d59-tj-fbT"/>
-                                                    <constraint firstItem="jvj-ox-h5X" firstAttribute="centerX" secondItem="W6C-Zx-PEc" secondAttribute="centerX" id="hP5-UK-KpX"/>
-                                                </constraints>
-                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5:24" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peK-Oi-lQR">
                                                 <rect key="frame" x="438" y="70" width="42" height="21"/>
                                                 <animations/>
@@ -115,24 +64,97 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W6C-Zx-PEc">
+                                                <rect key="frame" x="0.0" y="140" width="500" height="60"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvj-ox-h5X">
+                                                        <rect key="frame" x="220" y="0.0" width="60" height="60"/>
+                                                        <animations/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="XT2-nW-sz5"/>
+                                                            <constraint firstAttribute="width" constant="60" id="tSF-fE-jTb"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="Play"/>
+                                                        <connections>
+                                                            <action selector="switchPlayStatus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vYb-Eg-wUD"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoT-KR-gq8">
+                                                        <rect key="frame" x="152" y="0.0" width="60" height="60"/>
+                                                        <animations/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="60" id="f3h-vF-tFL"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="Rewind"/>
+                                                        <connections>
+                                                            <action selector="skipToPreviousMusic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eMd-Pf-AcO"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GwD-91-dvY">
+                                                        <rect key="frame" x="440" y="0.0" width="60" height="60"/>
+                                                        <animations/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="60" id="syI-bL-5MA"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aS1-ch-b87">
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                        <animations/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="60" id="LcF-rV-rM8"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njt-mD-Unf">
+                                                        <rect key="frame" x="288" y="0.0" width="60" height="60"/>
+                                                        <animations/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="60" id="e1p-XE-RUw"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="Fast Forward"/>
+                                                        <connections>
+                                                            <action selector="skipToNextMusic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Psj-JO-TfS"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <animations/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="jvj-ox-h5X" firstAttribute="leading" secondItem="eoT-KR-gq8" secondAttribute="trailing" constant="8" id="7jX-ji-aTf"/>
+                                                    <constraint firstItem="njt-mD-Unf" firstAttribute="leading" secondItem="jvj-ox-h5X" secondAttribute="trailing" constant="8" id="9oc-hP-6Uu"/>
+                                                    <constraint firstItem="aS1-ch-b87" firstAttribute="leading" secondItem="W6C-Zx-PEc" secondAttribute="leading" id="Cfs-g3-Cnl"/>
+                                                    <constraint firstItem="jvj-ox-h5X" firstAttribute="centerX" secondItem="W6C-Zx-PEc" secondAttribute="centerX" id="D99-PG-wFt"/>
+                                                    <constraint firstItem="jvj-ox-h5X" firstAttribute="centerY" secondItem="W6C-Zx-PEc" secondAttribute="centerY" id="IaG-Dw-4Ch"/>
+                                                    <constraint firstItem="aS1-ch-b87" firstAttribute="top" secondItem="W6C-Zx-PEc" secondAttribute="top" id="MOR-rj-4Tm"/>
+                                                    <constraint firstAttribute="height" constant="60" id="T00-EQ-gqF"/>
+                                                    <constraint firstItem="GwD-91-dvY" firstAttribute="top" secondItem="W6C-Zx-PEc" secondAttribute="top" id="XOQ-Hs-qkw"/>
+                                                    <constraint firstAttribute="trailing" secondItem="GwD-91-dvY" secondAttribute="trailing" id="ahZ-fM-1k3"/>
+                                                    <constraint firstAttribute="bottom" secondItem="aS1-ch-b87" secondAttribute="bottom" id="csu-qN-ouK"/>
+                                                    <constraint firstItem="njt-mD-Unf" firstAttribute="top" secondItem="W6C-Zx-PEc" secondAttribute="top" id="lMy-an-K9i"/>
+                                                    <constraint firstItem="eoT-KR-gq8" firstAttribute="top" secondItem="W6C-Zx-PEc" secondAttribute="top" id="nSP-i8-OxJ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="eoT-KR-gq8" secondAttribute="bottom" id="s9P-fn-XV9"/>
+                                                    <constraint firstAttribute="bottom" secondItem="njt-mD-Unf" secondAttribute="bottom" id="vEV-0s-ye5"/>
+                                                    <constraint firstAttribute="bottom" secondItem="GwD-91-dvY" secondAttribute="bottom" id="vxq-9Z-juJ"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="cP6-rG-HCa" firstAttribute="top" secondItem="3EY-Yl-tZN" secondAttribute="top" constant="22" id="A6y-nQ-Js9"/>
                                             <constraint firstAttribute="trailing" secondItem="cP6-rG-HCa" secondAttribute="trailing" constant="20" id="B3f-e6-3d3"/>
-                                            <constraint firstAttribute="trailing" secondItem="W6C-Zx-PEc" secondAttribute="trailing" constant="20" id="E4y-RG-TtQ"/>
                                             <constraint firstItem="CBw-6m-ecL" firstAttribute="top" secondItem="peK-Oi-lQR" secondAttribute="bottom" constant="8" id="HWt-bT-Id8"/>
                                             <constraint firstItem="CBw-6m-ecL" firstAttribute="centerY" secondItem="3EY-Yl-tZN" secondAttribute="centerY" id="I3T-NJ-eLE"/>
-                                            <constraint firstAttribute="bottom" secondItem="W6C-Zx-PEc" secondAttribute="bottom" constant="8" id="Mjg-w4-aeQ"/>
                                             <constraint firstItem="CBw-6m-ecL" firstAttribute="centerX" secondItem="3EY-Yl-tZN" secondAttribute="centerX" id="QAt-AG-ztz"/>
                                             <constraint firstItem="CBw-6m-ecL" firstAttribute="top" secondItem="jFd-mz-trM" secondAttribute="bottom" constant="27" id="QQY-ln-NOq"/>
-                                            <constraint firstItem="W6C-Zx-PEc" firstAttribute="leading" secondItem="3EY-Yl-tZN" secondAttribute="leading" constant="20" id="TQn-2B-ewg"/>
+                                            <constraint firstAttribute="bottom" secondItem="W6C-Zx-PEc" secondAttribute="bottom" id="Sdf-Ku-qM4"/>
+                                            <constraint firstAttribute="trailing" secondItem="W6C-Zx-PEc" secondAttribute="trailing" id="Shr-4r-p6p"/>
                                             <constraint firstItem="jFd-mz-trM" firstAttribute="top" secondItem="cP6-rG-HCa" secondAttribute="bottom" constant="8" id="Xl0-6Q-5HM"/>
                                             <constraint firstItem="jFd-mz-trM" firstAttribute="leading" secondItem="3EY-Yl-tZN" secondAttribute="leading" constant="20" id="YEr-oj-iBV"/>
                                             <constraint firstItem="CBw-6m-ecL" firstAttribute="leading" secondItem="3EY-Yl-tZN" secondAttribute="leading" constant="20" id="Z58-t5-UDz"/>
+                                            <constraint firstItem="W6C-Zx-PEc" firstAttribute="leading" secondItem="3EY-Yl-tZN" secondAttribute="leading" id="b3z-Vb-teE"/>
                                             <constraint firstAttribute="trailing" secondItem="jFd-mz-trM" secondAttribute="trailing" constant="20" id="bw3-aV-OD4"/>
-                                            <constraint firstItem="W6C-Zx-PEc" firstAttribute="top" secondItem="CBw-6m-ecL" secondAttribute="bottom" constant="8" id="ezA-Vb-pst"/>
                                             <constraint firstItem="jFd-mz-trM" firstAttribute="height" secondItem="cP6-rG-HCa" secondAttribute="height" id="gvD-FY-Pdg"/>
                                             <constraint firstItem="CBw-6m-ecL" firstAttribute="top" secondItem="eSz-de-PCP" secondAttribute="bottom" constant="8" id="oH0-N0-aPK"/>
                                             <constraint firstItem="cP6-rG-HCa" firstAttribute="leading" secondItem="3EY-Yl-tZN" secondAttribute="leading" constant="20" id="qaz-hL-kOB"/>
@@ -178,6 +200,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sam-eE-2SY" customClass="TwitterIconImageView">
                                                 <rect key="frame" x="20" y="380" width="120" height="120"/>
                                                 <animations/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="sam-eE-2SY" secondAttribute="height" multiplier="1:1" id="ydH-s0-Qle"/>
                                                 </constraints>
