@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ModelLocator.h"
 
 @interface AppDelegate ()
 

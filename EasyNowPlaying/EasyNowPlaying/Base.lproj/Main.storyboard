@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -21,27 +21,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJg-a9-EQg">
                                 <rect key="frame" x="0.0" y="0.0" width="500" height="700"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3EY-Yl-tZN">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3EY-Yl-tZN" customClass="MusicOperationView">
                                         <rect key="frame" x="0.0" y="500" width="500" height="200"/>
                                         <subviews>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CBw-6m-ecL">
                                                 <rect key="frame" x="20" y="99" width="460" height="2"/>
                                                 <animations/>
                                             </progressView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="米津玄氏 - YANKEE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cP6-rG-HCa">
-                                                <rect key="frame" x="20" y="22" width="460" height="21"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アイネクライネ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFd-mz-trM">
-                                                <rect key="frame" x="20" y="51" width="460" height="21"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1:53" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSz-de-PCP">
                                                 <rect key="frame" x="20" y="70" width="42" height="21"/>
                                                 <animations/>
@@ -50,7 +36,7 @@
                                                     <constraint firstAttribute="height" constant="21" id="jFy-NW-lPu"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="11"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W6C-Zx-PEc">
@@ -64,15 +50,9 @@
                                                             <constraint firstAttribute="width" constant="60" id="m3y-V1-m5C"/>
                                                         </constraints>
                                                         <state key="normal" title="Button" image="Play"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoT-KR-gq8">
-                                                        <rect key="frame" x="152" y="22" width="40" height="40"/>
-                                                        <animations/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="40" id="5Yf-LY-EsU"/>
-                                                            <constraint firstAttribute="height" constant="40" id="NFx-30-t9T"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button" image="Rewind"/>
+                                                        <connections>
+                                                            <action selector="switchPlayStatus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vYb-Eg-wUD"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njt-mD-Unf">
                                                         <rect key="frame" x="268" y="22" width="40" height="40"/>
@@ -82,6 +62,21 @@
                                                             <constraint firstAttribute="height" constant="40" id="ZdR-lq-fva"/>
                                                         </constraints>
                                                         <state key="normal" title="Button" image="Fast Forward"/>
+                                                        <connections>
+                                                            <action selector="skipToNextMusic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Psj-JO-TfS"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoT-KR-gq8">
+                                                        <rect key="frame" x="152" y="22" width="40" height="40"/>
+                                                        <animations/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="5Yf-LY-EsU"/>
+                                                            <constraint firstAttribute="height" constant="40" id="NFx-30-t9T"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="Rewind"/>
+                                                        <connections>
+                                                            <action selector="skipToPreviousMusic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eMd-Pf-AcO"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <animations/>
@@ -103,11 +98,26 @@
                                                     <constraint firstAttribute="width" constant="42" id="bc4-z7-GlP"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="11"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="米津玄氏 - YANKEE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cP6-rG-HCa">
+                                                <rect key="frame" x="20" y="22" width="460" height="21"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アイネクライネ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFd-mz-trM">
+                                                <rect key="frame" x="20" y="51" width="460" height="21"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="cP6-rG-HCa" firstAttribute="top" secondItem="3EY-Yl-tZN" secondAttribute="top" constant="22" id="A6y-nQ-Js9"/>
                                             <constraint firstAttribute="trailing" secondItem="cP6-rG-HCa" secondAttribute="trailing" constant="20" id="B3f-e6-3d3"/>
@@ -130,14 +140,18 @@
                                             <constraint firstAttribute="trailing" secondItem="peK-Oi-lQR" secondAttribute="trailing" constant="20" id="uqR-09-bqN"/>
                                             <constraint firstAttribute="trailing" secondItem="CBw-6m-ecL" secondAttribute="trailing" constant="20" id="wrB-xX-RZu"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="artistAlbumLabel" destination="cP6-rG-HCa" id="B9G-Ab-Ky1"/>
+                                            <outlet property="musicTitleLabel" destination="jFd-mz-trM" id="hra-95-RV8"/>
+                                        </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dM0-OF-WJl">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dM0-OF-WJl" customClass="ArtworkAndTwitterDataView">
                                         <rect key="frame" x="0.0" y="0.0" width="500" height="500"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SampleImage" translatesAutoresizingMaskIntoConstraints="NO" id="rbU-WL-Cnw">
                                                 <rect key="frame" x="0.0" y="0.0" width="500" height="500"/>
                                                 <animations/>
-                                                <color key="backgroundColor" red="0.35294117650000001" green="0.61960784310000006" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="rbU-WL-Cnw" secondAttribute="height" multiplier="1:1" id="NGq-yM-HAE"/>
                                                 </constraints>
@@ -145,6 +159,8 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CleannessHeaderView" translatesAutoresizingMaskIntoConstraints="NO" id="lwd-cb-USd">
                                                 <rect key="frame" x="0.0" y="400" width="500" height="100"/>
                                                 <animations/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="lwd-cb-USd" secondAttribute="height" multiplier="5:1" id="z6Q-Jv-f8p"/>
                                                 </constraints>
@@ -155,8 +171,8 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="jD3-9r-2DN"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sam-eE-2SY" customClass="TwitterIconImageView">
@@ -169,6 +185,7 @@
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="rbU-WL-Cnw" secondAttribute="trailing" id="26M-HT-0ck"/>
                                             <constraint firstItem="sam-eE-2SY" firstAttribute="leading" secondItem="dM0-OF-WJl" secondAttribute="leading" constant="20" id="49c-JX-3Nr"/>
@@ -186,6 +203,10 @@
                                             <constraint firstAttribute="trailing" secondItem="Goi-Dc-T5j" secondAttribute="trailing" constant="8" id="rjz-ML-fzr"/>
                                             <constraint firstItem="lwd-cb-USd" firstAttribute="leading" secondItem="dM0-OF-WJl" secondAttribute="leading" id="yYQ-Uf-KNM"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="twitterIDLabel" destination="Goi-Dc-T5j" id="FmP-2a-G4h"/>
+                                            <outlet property="twitterIconImageView" destination="sam-eE-2SY" id="Hbr-FM-oic"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <animations/>
@@ -212,10 +233,16 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="500" height="700"/>
+                    <connections>
+                        <outlet property="artworkAndTwitterDataView" destination="dM0-OF-WJl" id="oNe-Gh-Tjg"/>
+                        <outlet property="artworkBlurImageView" destination="lwd-cb-USd" id="TK1-wc-dsK"/>
+                        <outlet property="artworkImageView" destination="rbU-WL-Cnw" id="z8Y-RD-oFW"/>
+                        <outlet property="musicOperationView" destination="3EY-Yl-tZN" id="IHT-5g-e6U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="340" y="429"/>
+            <point key="canvasLocation" x="447" y="429"/>
         </scene>
     </scenes>
     <resources>
