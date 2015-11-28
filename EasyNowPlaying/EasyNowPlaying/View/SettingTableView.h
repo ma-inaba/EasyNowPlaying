@@ -1,5 +1,5 @@
 //
-//  TwitterIconImageView.h
+//  SettingTableView.h
 //  EasyNowPlaying
 //
 //  Created by inaba masaya on 2015/11/28.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TwitterIconImageView : UIImageView
+@interface SettingTableView : UITableView
 
 @end

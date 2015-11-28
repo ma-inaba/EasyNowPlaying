@@ -8,16 +8,11 @@
 
 #import "PlaybackViewController.h"
 #import "ModelLocator.h"
-#import "MusicOperationView.h"
-#import "ArtworkAndTwitterDataView.h"
 #import <Social/Social.h>
 
 @interface PlaybackViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *artworkImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *artworkBlurImageView;
-
-@property (weak, nonatomic) IBOutlet ArtworkAndTwitterDataView *artworkAndTwitterDataView;
-@property (weak, nonatomic) IBOutlet MusicOperationView *musicOperationView;
 
 @end
 
@@ -49,15 +44,9 @@
     
     if ([keyPath isEqualToString:@"completeLoadData"]) {
         self.artworkImageView.image = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artworkImage;
-        [self.musicOperationView reloadViewData];
         
         self.artworkBlurImageView.image = [self.artworkBlurImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        self.artworkBlurImageView.tintColor = self.musicOperationView.backgroundColor;
-        
-        // TODO: twitterアカウント取得時に以下コードを移動
-        // ※このメソッドが呼ばれた後にtwitterアカウント取得を行う事
-        [self.artworkAndTwitterDataView reloadViewData];
-
+        self.artworkBlurImageView.tintColor = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.backgroundColor;
     }
 }
 
