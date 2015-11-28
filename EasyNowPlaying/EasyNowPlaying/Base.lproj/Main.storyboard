@@ -96,7 +96,10 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="60" id="syI-bL-5MA"/>
                                                         </constraints>
-                                                        <state key="normal" title="Button"/>
+                                                        <state key="normal" title="tweet"/>
+                                                        <connections>
+                                                            <action selector="postTweet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JOi-R1-Y5Q"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aS1-ch-b87">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>

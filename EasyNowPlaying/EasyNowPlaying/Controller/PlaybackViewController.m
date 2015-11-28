@@ -10,6 +10,7 @@
 #import "ModelLocator.h"
 #import "MusicOperationView.h"
 #import "ArtworkAndTwitterDataView.h"
+#import <Social/Social.h>
 
 @interface PlaybackViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *artworkImageView;
@@ -76,5 +77,30 @@
 - (IBAction)skipToPreviousMusic:(id)sender {
     
     [[ModelLocator sharedInstance].playbackViewModel skipToPreviousMusic];
+}
+- (IBAction)postTweet:(id)sender {
+    
+    NSString *serviceType = SLServiceTypeTwitter;
+    if ([SLComposeViewController isAvailableForServiceType:serviceType]) {
+        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:serviceType];
+        
+        [controller setCompletionHandler:^(SLComposeViewControllerResult result) {
+            if (result == SLComposeViewControllerResultDone) {
+                //投稿成功時の処理
+                NSLog(@"%@での投稿に成功しました", serviceType);
+            }
+        }];
+        
+        NSString *musicTitle = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.musicTitle;
+        NSString *artistName = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artistName;
+        NSString *postString = [NSString stringWithFormat:@"#nowplaying %@ - %@",musicTitle, artistName];
+        UIImage *postImage = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artworkImage;
+        [controller setInitialText:postString];
+        [controller addImage:postImage];
+        
+        [self presentViewController:controller
+                           animated:NO
+                         completion:NULL];
+    }
 }
 @end
