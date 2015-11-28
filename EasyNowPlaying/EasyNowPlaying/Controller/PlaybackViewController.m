@@ -66,18 +66,25 @@
     // Dispose of any resources that can be recreated.
 }
 
+// 再生ストップ切り替えボタンのアクション
 - (IBAction)switchPlayStatus:(id)sender {
 
     [[ModelLocator sharedInstance].playbackViewModel switchPlayStatus];
 }
+
+// 次の曲ボタンのアクション
 - (IBAction)skipToNextMusic:(id)sender {
     
     [[ModelLocator sharedInstance].playbackViewModel skipToNextMusic];
 }
+
+// 前の曲ボタンのアクション
 - (IBAction)skipToPreviousMusic:(id)sender {
     
     [[ModelLocator sharedInstance].playbackViewModel skipToPreviousMusic];
 }
+
+// ツイート投稿ボタンのアクション
 - (IBAction)postTweet:(id)sender {
     
     NSString *serviceType = SLServiceTypeTwitter;
