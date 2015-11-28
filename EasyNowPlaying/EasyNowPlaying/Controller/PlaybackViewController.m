@@ -8,11 +8,12 @@
 
 #import "PlaybackViewController.h"
 #import "ModelLocator.h"
-#import <Social/Social.h>
+#import "MusicTableView.h"
 
 @interface PlaybackViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *artworkImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *artworkBlurImageView;
+@property (weak, nonatomic) IBOutlet MusicTableView *tableView;
 
 @end
 
@@ -47,6 +48,8 @@
         
         self.artworkBlurImageView.image = [self.artworkBlurImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         self.artworkBlurImageView.tintColor = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.backgroundColor;
+        self.tableView.backgroundColor = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.backgroundColor;
+        [self.tableView reloadData];
     }
 }
 
@@ -55,48 +58,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-// 再生ストップ切り替えボタンのアクション
-- (IBAction)switchPlayStatus:(id)sender {
-
-    [[ModelLocator sharedInstance].playbackViewModel switchPlayStatus];
-}
-
-// 次の曲ボタンのアクション
-- (IBAction)skipToNextMusic:(id)sender {
-    
-    [[ModelLocator sharedInstance].playbackViewModel skipToNextMusic];
-}
-
-// 前の曲ボタンのアクション
-- (IBAction)skipToPreviousMusic:(id)sender {
-    
-    [[ModelLocator sharedInstance].playbackViewModel skipToPreviousMusic];
-}
-
-// ツイート投稿ボタンのアクション
-- (IBAction)postTweet:(id)sender {
-    
-    NSString *serviceType = SLServiceTypeTwitter;
-    if ([SLComposeViewController isAvailableForServiceType:serviceType]) {
-        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:serviceType];
-        
-        [controller setCompletionHandler:^(SLComposeViewControllerResult result) {
-            if (result == SLComposeViewControllerResultDone) {
-                //投稿成功時の処理
-                NSLog(@"%@での投稿に成功しました", serviceType);
-            }
-        }];
-        
-        NSString *musicTitle = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.musicTitle;
-        NSString *artistName = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artistName;
-        NSString *postString = [NSString stringWithFormat:@"#nowplaying %@ - %@",musicTitle, artistName];
-        UIImage *postImage = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artworkImage;
-        [controller setInitialText:postString];
-        [controller addImage:postImage];
-        
-        [self presentViewController:controller
-                           animated:NO
-                         completion:NULL];
-    }
-}
 @end

@@ -56,22 +56,10 @@
                                             <constraint firstItem="lwd-cb-USd" firstAttribute="leading" secondItem="dM0-OF-WJl" secondAttribute="leading" id="yYQ-Uf-KNM"/>
                                         </constraints>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="foh-B6-uAa" customClass="SettingTableView">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="foh-B6-uAa" customClass="MusicTableView">
                                         <rect key="frame" x="0.0" y="500" width="500" height="200"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="A7o-vt-ahf">
-                                                <rect key="frame" x="0.0" y="28" width="500" height="44"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A7o-vt-ahf" id="IYX-HO-x9x">
-                                                    <rect key="frame" x="0.0" y="0.0" width="500" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <animations/>
-                                                </tableViewCellContentView>
-                                                <animations/>
-                                            </tableViewCell>
-                                        </prototypes>
                                     </tableView>
                                 </subviews>
                                 <animations/>
@@ -101,116 +89,16 @@
                     <connections>
                         <outlet property="artworkBlurImageView" destination="lwd-cb-USd" id="TK1-wc-dsK"/>
                         <outlet property="artworkImageView" destination="rbU-WL-Cnw" id="z8Y-RD-oFW"/>
+                        <outlet property="tableView" destination="foh-B6-uAa" id="37y-Gn-OHL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="447" y="429"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="rVx-eE-KYl">
-            <objects>
-                <viewController id="KIl-lo-0PE" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1UW-zE-acs"/>
-                        <viewControllerLayoutGuide type="bottom" id="nJI-1a-mkt"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1qg-3C-YnF">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W6C-Zx-PEc">
-                                <rect key="frame" x="-93" y="327" width="500" height="60"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvj-ox-h5X">
-                                        <rect key="frame" x="220" y="0.0" width="60" height="60"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="XT2-nW-sz5"/>
-                                            <constraint firstAttribute="width" constant="60" id="tSF-fE-jTb"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="Play"/>
-                                        <connections>
-                                            <action selector="switchPlayStatus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vYb-Eg-wUD"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoT-KR-gq8">
-                                        <rect key="frame" x="152" y="0.0" width="60" height="60"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="f3h-vF-tFL"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="Rewind"/>
-                                        <connections>
-                                            <action selector="skipToPreviousMusic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eMd-Pf-AcO"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GwD-91-dvY">
-                                        <rect key="frame" x="440" y="0.0" width="60" height="60"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="syI-bL-5MA"/>
-                                        </constraints>
-                                        <state key="normal" title="tweet"/>
-                                        <connections>
-                                            <action selector="postTweet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JOi-R1-Y5Q"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aS1-ch-b87">
-                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="LcF-rV-rM8"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njt-mD-Unf">
-                                        <rect key="frame" x="288" y="0.0" width="60" height="60"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="e1p-XE-RUw"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="Fast Forward"/>
-                                        <connections>
-                                            <action selector="skipToNextMusic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Psj-JO-TfS"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="jvj-ox-h5X" firstAttribute="leading" secondItem="eoT-KR-gq8" secondAttribute="trailing" constant="8" id="7jX-ji-aTf"/>
-                                    <constraint firstItem="njt-mD-Unf" firstAttribute="leading" secondItem="jvj-ox-h5X" secondAttribute="trailing" constant="8" id="9oc-hP-6Uu"/>
-                                    <constraint firstItem="aS1-ch-b87" firstAttribute="leading" secondItem="W6C-Zx-PEc" secondAttribute="leading" id="Cfs-g3-Cnl"/>
-                                    <constraint firstItem="jvj-ox-h5X" firstAttribute="centerX" secondItem="W6C-Zx-PEc" secondAttribute="centerX" id="D99-PG-wFt"/>
-                                    <constraint firstItem="jvj-ox-h5X" firstAttribute="centerY" secondItem="W6C-Zx-PEc" secondAttribute="centerY" id="IaG-Dw-4Ch"/>
-                                    <constraint firstItem="aS1-ch-b87" firstAttribute="top" secondItem="W6C-Zx-PEc" secondAttribute="top" id="MOR-rj-4Tm"/>
-                                    <constraint firstAttribute="height" constant="60" id="T00-EQ-gqF"/>
-                                    <constraint firstItem="GwD-91-dvY" firstAttribute="top" secondItem="W6C-Zx-PEc" secondAttribute="top" id="XOQ-Hs-qkw"/>
-                                    <constraint firstAttribute="trailing" secondItem="GwD-91-dvY" secondAttribute="trailing" id="ahZ-fM-1k3"/>
-                                    <constraint firstAttribute="bottom" secondItem="aS1-ch-b87" secondAttribute="bottom" id="csu-qN-ouK"/>
-                                    <constraint firstItem="njt-mD-Unf" firstAttribute="top" secondItem="W6C-Zx-PEc" secondAttribute="top" id="lMy-an-K9i"/>
-                                    <constraint firstItem="eoT-KR-gq8" firstAttribute="top" secondItem="W6C-Zx-PEc" secondAttribute="top" id="nSP-i8-OxJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="eoT-KR-gq8" secondAttribute="bottom" id="s9P-fn-XV9"/>
-                                    <constraint firstAttribute="bottom" secondItem="njt-mD-Unf" secondAttribute="bottom" id="vEV-0s-ye5"/>
-                                    <constraint firstAttribute="bottom" secondItem="GwD-91-dvY" secondAttribute="bottom" id="vxq-9Z-juJ"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="92Q-dK-SlS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1102" y="603"/>
-        </scene>
     </scenes>
     <resources>
         <image name="CleannessHeaderView" width="600" height="80"/>
-        <image name="Fast Forward" width="100" height="100"/>
-        <image name="Play" width="100" height="100"/>
-        <image name="Rewind" width="100" height="100"/>
         <image name="SampleImage" width="600" height="600"/>
     </resources>
 </document>

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingTableView : UITableView
+@interface MusicTableView : UITableView
+<
+UITableViewDelegate,
+UITableViewDataSource
+>
 
 @end

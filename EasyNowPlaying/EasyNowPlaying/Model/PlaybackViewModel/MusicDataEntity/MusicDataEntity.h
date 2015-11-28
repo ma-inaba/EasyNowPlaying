@@ -22,6 +22,8 @@
 @property (nonatomic, strong) NSString *musicTitle;
 @property (nonatomic, strong) NSString *albumTitle;
 @property (nonatomic, strong) NSString *artistName;
+@property NSUInteger nowTrackNumber;
+@property NSUInteger allTrackNumber;
 @property float duration;   // 再生時間
 
 @end

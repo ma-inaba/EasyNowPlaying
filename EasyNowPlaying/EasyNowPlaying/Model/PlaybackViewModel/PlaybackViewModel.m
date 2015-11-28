@@ -48,7 +48,11 @@
         self.musicDataEntity.albumTitle = [mediaItem valueForProperty:MPMediaItemPropertyAlbumTitle];
         // アーティスト名
         self.musicDataEntity.artistName = [mediaItem valueForProperty:MPMediaItemPropertyArtist];
-        
+        // トラックナンバー
+        self.musicDataEntity.nowTrackNumber = [[mediaItem valueForProperty:MPMediaItemPropertyAlbumTrackNumber] unsignedIntegerValue];
+        // 全てのトラック数
+        self.musicDataEntity.allTrackNumber = [[mediaItem valueForProperty:MPMediaItemPropertyAlbumTrackCount] unsignedIntegerValue];
+
         // アートワーク（ジャケット写真）
         MPMediaItemArtwork *artwork = [mediaItem valueForProperty:MPMediaItemPropertyArtwork];
         UIImage *artworkImage = [artwork imageWithSize:CGSizeMake(artwork.bounds.size.width, artwork.bounds.size.height)];
