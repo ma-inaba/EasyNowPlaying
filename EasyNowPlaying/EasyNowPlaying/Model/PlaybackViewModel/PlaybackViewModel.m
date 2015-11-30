@@ -8,7 +8,6 @@
 
 #import "PlaybackViewModel.h"
 #import <MediaPlayer/MediaPlayer.h>
-#import "LEColorPicker.h"
 
 @implementation PlaybackViewModel
 {
@@ -56,14 +55,7 @@
         // アートワーク（ジャケット写真）
         MPMediaItemArtwork *artwork = [mediaItem valueForProperty:MPMediaItemPropertyArtwork];
         UIImage *artworkImage = [artwork imageWithSize:CGSizeMake(artwork.bounds.size.width, artwork.bounds.size.height)];
-        
-        // 取得したアートワークから色情報を抜き取る
-        LEColorPicker* colorpicker = [LEColorPicker new];
-        LEColorScheme* scheme = [colorpicker colorSchemeFromImage:artworkImage];
         self.musicDataEntity.artworkImage = artworkImage;
-        self.musicDataEntity.backgroundColor = scheme.backgroundColor;
-        self.musicDataEntity.primaryTextColor = scheme.primaryTextColor;
-        self.musicDataEntity.secondaryTextColor = scheme.secondaryTextColor;
         
         // 再生時間
         self.musicDataEntity.duration = [[mediaItem valueForProperty:MPMediaItemPropertyPlaybackDuration] floatValue];

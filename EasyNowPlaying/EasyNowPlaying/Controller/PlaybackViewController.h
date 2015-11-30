@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "OperationButtonsView.h"
 @interface PlaybackViewController : UIViewController
+<
+OperationButtonsViewDelegate
+>
 
 @end

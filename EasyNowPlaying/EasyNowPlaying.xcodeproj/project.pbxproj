@@ -7,24 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A248A42F1C09E92C007621DA /* MusicTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A248A42E1C09E92C007621DA /* MusicTableView.m */; };
-		A248A4331C09F578007621DA /* HeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A248A4321C09F578007621DA /* HeadCell.m */; };
-		A248A4351C09F588007621DA /* HeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A248A4341C09F588007621DA /* HeadCell.xib */; };
-		A248A4391C09F751007621DA /* TweetTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A248A4371C09F751007621DA /* TweetTagCell.m */; };
-		A248A43A1C09F751007621DA /* TweetTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A248A4381C09F751007621DA /* TweetTagCell.xib */; };
-		A248A43E1C09F792007621DA /* MusicDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A248A43C1C09F792007621DA /* MusicDataCell.m */; };
-		A248A43F1C09F792007621DA /* MusicDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A248A43D1C09F792007621DA /* MusicDataCell.xib */; };
-		A248A4431C0A00CD007621DA /* ChoiceAddImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A248A4411C0A00CD007621DA /* ChoiceAddImageCell.m */; };
-		A248A4441C0A00CD007621DA /* ChoiceAddImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A248A4421C0A00CD007621DA /* ChoiceAddImageCell.xib */; };
+		A254BBB31C0C5FAA006AB8D9 /* AlbumTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A254BBB21C0C5FAA006AB8D9 /* AlbumTableView.m */; };
+		A254BBB61C0C61AD006AB8D9 /* MusicDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = A254BBB51C0C61AD006AB8D9 /* MusicDataView.m */; };
+		A254BBB91C0C6282006AB8D9 /* OperationButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A254BBB81C0C6282006AB8D9 /* OperationButtonsView.m */; };
 		A29F58B61C08A18300233ADA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A29F58B51C08A18300233ADA /* main.m */; };
 		A29F58BF1C08A18300233ADA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A29F58BD1C08A18300233ADA /* Main.storyboard */; };
 		A29F58C41C08A18300233ADA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A29F58C21C08A18300233ADA /* LaunchScreen.storyboard */; };
 		A29F58D31C08A20100233ADA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A29F58CD1C08A20100233ADA /* AppDelegate.m */; };
 		A29F58D81C08A2AA00233ADA /* PlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A29F58D71C08A2AA00233ADA /* PlaybackViewController.m */; };
 		A29F58DA1C08A59800233ADA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A29F58D91C08A59800233ADA /* Assets.xcassets */; };
-		A29F58E11C08B89B00233ADA /* UIImage+Ex.m in Sources */ = {isa = PBXBuildFile; fileRef = A29F58E01C08B89B00233ADA /* UIImage+Ex.m */; };
-		A2B8C5DF1C097A170094F14C /* LEColorPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B8C5DC1C097A170094F14C /* LEColorPicker.m */; };
-		A2B8C5E01C097A170094F14C /* UIColor+YUVSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B8C5DE1C097A170094F14C /* UIColor+YUVSpace.m */; };
 		A2B8C5E61C0980CD0094F14C /* ModelLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B8C5E51C0980CD0094F14C /* ModelLocator.m */; };
 		A2B8C5EB1C0981C00094F14C /* PlaybackViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B8C5EA1C0981C00094F14C /* PlaybackViewModel.m */; };
 		A2B8C5ED1C0982780094F14C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B8C5EC1C0982780094F14C /* MediaPlayer.framework */; };
@@ -32,20 +23,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A248A42D1C09E92C007621DA /* MusicTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicTableView.h; sourceTree = "<group>"; };
-		A248A42E1C09E92C007621DA /* MusicTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicTableView.m; sourceTree = "<group>"; };
-		A248A4311C09F578007621DA /* HeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadCell.h; sourceTree = "<group>"; };
-		A248A4321C09F578007621DA /* HeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadCell.m; sourceTree = "<group>"; };
-		A248A4341C09F588007621DA /* HeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeadCell.xib; sourceTree = "<group>"; };
-		A248A4361C09F751007621DA /* TweetTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetTagCell.h; sourceTree = "<group>"; };
-		A248A4371C09F751007621DA /* TweetTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetTagCell.m; sourceTree = "<group>"; };
-		A248A4381C09F751007621DA /* TweetTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetTagCell.xib; sourceTree = "<group>"; };
-		A248A43B1C09F792007621DA /* MusicDataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicDataCell.h; sourceTree = "<group>"; };
-		A248A43C1C09F792007621DA /* MusicDataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDataCell.m; sourceTree = "<group>"; };
-		A248A43D1C09F792007621DA /* MusicDataCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicDataCell.xib; sourceTree = "<group>"; };
-		A248A4401C0A00CD007621DA /* ChoiceAddImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoiceAddImageCell.h; sourceTree = "<group>"; };
-		A248A4411C0A00CD007621DA /* ChoiceAddImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoiceAddImageCell.m; sourceTree = "<group>"; };
-		A248A4421C0A00CD007621DA /* ChoiceAddImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChoiceAddImageCell.xib; sourceTree = "<group>"; };
+		A254BBB11C0C5FAA006AB8D9 /* AlbumTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumTableView.h; sourceTree = "<group>"; };
+		A254BBB21C0C5FAA006AB8D9 /* AlbumTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTableView.m; sourceTree = "<group>"; };
+		A254BBB41C0C61AD006AB8D9 /* MusicDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicDataView.h; sourceTree = "<group>"; };
+		A254BBB51C0C61AD006AB8D9 /* MusicDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDataView.m; sourceTree = "<group>"; };
+		A254BBB71C0C6282006AB8D9 /* OperationButtonsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationButtonsView.h; sourceTree = "<group>"; };
+		A254BBB81C0C6282006AB8D9 /* OperationButtonsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationButtonsView.m; sourceTree = "<group>"; };
 		A29F58B11C08A18300233ADA /* EasyNowPlaying.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyNowPlaying.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A29F58B51C08A18300233ADA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A29F58BE1C08A18300233ADA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,12 +39,6 @@
 		A29F58D61C08A2AA00233ADA /* PlaybackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaybackViewController.h; sourceTree = "<group>"; };
 		A29F58D71C08A2AA00233ADA /* PlaybackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaybackViewController.m; sourceTree = "<group>"; };
 		A29F58D91C08A59800233ADA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A29F58DF1C08B89B00233ADA /* UIImage+Ex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Ex.h"; sourceTree = "<group>"; };
-		A29F58E01C08B89B00233ADA /* UIImage+Ex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Ex.m"; sourceTree = "<group>"; };
-		A2B8C5DB1C097A170094F14C /* LEColorPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEColorPicker.h; sourceTree = "<group>"; };
-		A2B8C5DC1C097A170094F14C /* LEColorPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEColorPicker.m; sourceTree = "<group>"; };
-		A2B8C5DD1C097A170094F14C /* UIColor+YUVSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+YUVSpace.h"; sourceTree = "<group>"; };
-		A2B8C5DE1C097A170094F14C /* UIColor+YUVSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+YUVSpace.m"; sourceTree = "<group>"; };
 		A2B8C5E41C0980CD0094F14C /* ModelLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelLocator.h; sourceTree = "<group>"; };
 		A2B8C5E51C0980CD0094F14C /* ModelLocator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelLocator.m; sourceTree = "<group>"; };
 		A2B8C5E91C0981C00094F14C /* PlaybackViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaybackViewModel.h; sourceTree = "<group>"; };
@@ -88,25 +65,6 @@
 			children = (
 			);
 			path = API;
-			sourceTree = "<group>";
-		};
-		A248A4301C09F51B007621DA /* SettingTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				A248A4311C09F578007621DA /* HeadCell.h */,
-				A248A4321C09F578007621DA /* HeadCell.m */,
-				A248A4341C09F588007621DA /* HeadCell.xib */,
-				A248A4361C09F751007621DA /* TweetTagCell.h */,
-				A248A4371C09F751007621DA /* TweetTagCell.m */,
-				A248A4381C09F751007621DA /* TweetTagCell.xib */,
-				A248A4401C0A00CD007621DA /* ChoiceAddImageCell.h */,
-				A248A4411C0A00CD007621DA /* ChoiceAddImageCell.m */,
-				A248A4421C0A00CD007621DA /* ChoiceAddImageCell.xib */,
-				A248A43B1C09F792007621DA /* MusicDataCell.h */,
-				A248A43C1C09F792007621DA /* MusicDataCell.m */,
-				A248A43D1C09F792007621DA /* MusicDataCell.xib */,
-			);
-			path = SettingTableViewCell;
 			sourceTree = "<group>";
 		};
 		A29F58A81C08A18300233ADA = {
@@ -174,7 +132,6 @@
 		A29F58CF1C08A20100233ADA /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				A2B8C5DA1C097A160094F14C /* LEColorPicker */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -199,9 +156,12 @@
 		A29F58D21C08A20100233ADA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A248A42D1C09E92C007621DA /* MusicTableView.h */,
-				A248A42E1C09E92C007621DA /* MusicTableView.m */,
-				A248A4301C09F51B007621DA /* SettingTableViewCell */,
+				A254BBB41C0C61AD006AB8D9 /* MusicDataView.h */,
+				A254BBB51C0C61AD006AB8D9 /* MusicDataView.m */,
+				A254BBB71C0C6282006AB8D9 /* OperationButtonsView.h */,
+				A254BBB81C0C6282006AB8D9 /* OperationButtonsView.m */,
+				A254BBB11C0C5FAA006AB8D9 /* AlbumTableView.h */,
+				A254BBB21C0C5FAA006AB8D9 /* AlbumTableView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -226,21 +186,8 @@
 		A29F58DE1C08B7F100233ADA /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				A29F58DF1C08B89B00233ADA /* UIImage+Ex.h */,
-				A29F58E01C08B89B00233ADA /* UIImage+Ex.m */,
 			);
 			path = Category;
-			sourceTree = "<group>";
-		};
-		A2B8C5DA1C097A160094F14C /* LEColorPicker */ = {
-			isa = PBXGroup;
-			children = (
-				A2B8C5DB1C097A170094F14C /* LEColorPicker.h */,
-				A2B8C5DC1C097A170094F14C /* LEColorPicker.m */,
-				A2B8C5DD1C097A170094F14C /* UIColor+YUVSpace.h */,
-				A2B8C5DE1C097A170094F14C /* UIColor+YUVSpace.m */,
-			);
-			path = LEColorPicker;
 			sourceTree = "<group>";
 		};
 		A2B8C5E71C0981780094F14C /* PlaybackViewModel */ = {
@@ -322,10 +269,6 @@
 				A29F58C41C08A18300233ADA /* LaunchScreen.storyboard in Resources */,
 				A29F58DA1C08A59800233ADA /* Assets.xcassets in Resources */,
 				A29F58BF1C08A18300233ADA /* Main.storyboard in Resources */,
-				A248A43F1C09F792007621DA /* MusicDataCell.xib in Resources */,
-				A248A4441C0A00CD007621DA /* ChoiceAddImageCell.xib in Resources */,
-				A248A4351C09F588007621DA /* HeadCell.xib in Resources */,
-				A248A43A1C09F751007621DA /* TweetTagCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,18 +279,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A254BBB31C0C5FAA006AB8D9 /* AlbumTableView.m in Sources */,
 				A2B8C5E61C0980CD0094F14C /* ModelLocator.m in Sources */,
-				A2B8C5E01C097A170094F14C /* UIColor+YUVSpace.m in Sources */,
-				A248A4391C09F751007621DA /* TweetTagCell.m in Sources */,
-				A2B8C5DF1C097A170094F14C /* LEColorPicker.m in Sources */,
-				A29F58E11C08B89B00233ADA /* UIImage+Ex.m in Sources */,
-				A248A43E1C09F792007621DA /* MusicDataCell.m in Sources */,
-				A248A4431C0A00CD007621DA /* ChoiceAddImageCell.m in Sources */,
 				A29F58D31C08A20100233ADA /* AppDelegate.m in Sources */,
 				A2B8C5F01C0984940094F14C /* MusicDataEntity.m in Sources */,
 				A2B8C5EB1C0981C00094F14C /* PlaybackViewModel.m in Sources */,
-				A248A42F1C09E92C007621DA /* MusicTableView.m in Sources */,
-				A248A4331C09F578007621DA /* HeadCell.m in Sources */,
+				A254BBB91C0C6282006AB8D9 /* OperationButtonsView.m in Sources */,
+				A254BBB61C0C61AD006AB8D9 /* MusicDataView.m in Sources */,
 				A29F58B61C08A18300233ADA /* main.m in Sources */,
 				A29F58D81C08A2AA00233ADA /* PlaybackViewController.m in Sources */,
 			);

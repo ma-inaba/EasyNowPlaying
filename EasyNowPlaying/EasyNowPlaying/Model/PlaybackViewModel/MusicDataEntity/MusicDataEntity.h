@@ -13,10 +13,6 @@
 
 // アートワーク
 @property UIImage *artworkImage;
-// アートワークから取得した使用されている色
-@property UIColor *backgroundColor;
-@property UIColor *primaryTextColor;
-@property UIColor *secondaryTextColor;
 
 // 曲情報
 @property (nonatomic, strong) NSString *musicTitle;
@@ -25,5 +21,6 @@
 @property NSUInteger nowTrackNumber;
 @property NSUInteger allTrackNumber;
 @property float duration;   // 再生時間
+@property NSUInteger albumTrackNumber;
 
 @end

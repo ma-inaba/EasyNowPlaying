@@ -8,12 +8,15 @@
 
 #import "PlaybackViewController.h"
 #import "ModelLocator.h"
-#import "MusicTableView.h"
+#import "MusicDataView.h"
+#import "AlbumTableView.h"
+#import <Social/Social.h>
 
 @interface PlaybackViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *artworkImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *artworkBlurImageView;
-@property (weak, nonatomic) IBOutlet MusicTableView *tableView;
+@property (weak, nonatomic) IBOutlet MusicDataView *musicDataView;
+@property (weak, nonatomic) IBOutlet AlbumTableView *albumDataTableView;
+@property (weak, nonatomic) IBOutlet OperationButtonsView *operationButtonsView;
 
 @end
 
@@ -22,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.operationButtonsView.operationButtonsViewDelegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -45,17 +49,39 @@
     
     if ([keyPath isEqualToString:@"completeLoadData"]) {
         self.artworkImageView.image = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artworkImage;
-        
-        self.artworkBlurImageView.image = [self.artworkBlurImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        self.artworkBlurImageView.tintColor = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.backgroundColor;
-        self.tableView.backgroundColor = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.backgroundColor;
-        [self.tableView reloadData];
+        [self.musicDataView setNeedsDisplay];
+        [self.albumDataTableView reloadData];
     }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+- (void)onTweetButton {
+    
+    NSString *serviceType = SLServiceTypeTwitter;
+    if ([SLComposeViewController isAvailableForServiceType:serviceType]) {
+        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:serviceType];
+        
+        [controller setCompletionHandler:^(SLComposeViewControllerResult result) {
+            if (result == SLComposeViewControllerResultDone) {
+                //投稿成功時の処理
+                NSLog(@"%@での投稿に成功しました", serviceType);
+            }
+        }];
+        
+        NSString *musicTitle = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.musicTitle;
+        NSString *artistName = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artistName;
+        NSString *postString = [NSString stringWithFormat:@"#nowplaying %@ - %@",musicTitle, artistName];
+        UIImage *postImage = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artworkImage;
+        [controller setInitialText:postString];
+        [controller addImage:postImage];
+        
+        [self presentViewController:controller
+                           animated:NO
+                         completion:NULL];
+    }
 }
 
 @end

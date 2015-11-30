@@ -1,14 +1,14 @@
 //
-//  SettingTableView.h
+//  AlbumTableView.h
 //  EasyNowPlaying
 //
-//  Created by inaba masaya on 2015/11/28.
+//  Created by inaba masaya on 2015/11/30.
 //  Copyright © 2015年 inaba masaya. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface MusicTableView : UITableView
+@interface AlbumTableView : UITableView
 <
 UITableViewDelegate,
 UITableViewDataSource
