@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Playback View Controller-->
@@ -183,6 +184,7 @@
                                         </state>
                                         <connections>
                                             <action selector="settingAction:" destination="4UK-Xw-FzG" eventType="touchUpInside" id="Ivb-zn-hJQ"/>
+                                            <segue destination="rg2-pm-PvH" kind="presentation" id="Y1x-i5-RcV"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -224,6 +226,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="145.5" y="430.5"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="Zec-vd-0uS">
+            <objects>
+                <viewController id="rg2-pm-PvH" customClass="SettingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b8y-kS-xqH"/>
+                        <viewControllerLayoutGuide type="bottom" id="05I-gK-efR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="64g-Vt-Wuv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Kb-zB-1XU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comming soon..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yde-rF-qNU">
+                                        <rect key="frame" x="20" y="323" width="335" height="21"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="wpS-4b-PMd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.1843137255" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="yde-rF-qNU" secondAttribute="trailing" constant="12" id="4Ay-G1-PGa"/>
+                                    <constraint firstItem="yde-rF-qNU" firstAttribute="leading" secondItem="6Kb-zB-1XU" secondAttribute="leadingMargin" constant="12" id="BfD-Co-TJn"/>
+                                    <constraint firstItem="yde-rF-qNU" firstAttribute="centerX" secondItem="6Kb-zB-1XU" secondAttribute="centerX" id="Bp6-Qo-f2x"/>
+                                    <constraint firstItem="yde-rF-qNU" firstAttribute="centerY" secondItem="6Kb-zB-1XU" secondAttribute="centerY" id="aoJ-3X-XTR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="05I-gK-efR" firstAttribute="top" secondItem="6Kb-zB-1XU" secondAttribute="bottom" id="43i-sK-t06"/>
+                            <constraint firstAttribute="trailing" secondItem="6Kb-zB-1XU" secondAttribute="trailing" id="DCI-xr-wY8"/>
+                            <constraint firstItem="6Kb-zB-1XU" firstAttribute="leading" secondItem="64g-Vt-Wuv" secondAttribute="leading" id="STW-yN-dMK"/>
+                            <constraint firstItem="6Kb-zB-1XU" firstAttribute="top" secondItem="64g-Vt-Wuv" secondAttribute="top" id="n5l-RI-8EF"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="mainView" destination="6Kb-zB-1XU" id="Pox-uZ-rFO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u3f-oo-GOQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="600.5" y="430.5"/>
         </scene>
     </scenes>
 </document>
