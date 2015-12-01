@@ -8,6 +8,7 @@
 
 #import "AlbumTableView.h"
 #import "ModelLocator.h"
+#import "AlbumTableViewSongCell.h"
 
 @implementation AlbumTableView
 
@@ -15,6 +16,9 @@
     
     self.delegate = self;
     self.dataSource = self;
+    
+    UINib *nib = [UINib nibWithNibName:@"AlbumTableViewSongCell" bundle:nil];
+    [self registerNib:nib forCellReuseIdentifier:@"Cell"];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -48,19 +52,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    AlbumTableViewSongCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+        cell = [[AlbumTableViewSongCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
     
-    cell.textLabel.text = @"Music Title";
-    cell.textLabel.textColor = [UIColor whiteColor];
-    cell.textLabel.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
+    cell.musicNoLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row +1];
+    cell.musicNoLabel.textColor = [UIColor whiteColor];
+    
+    cell.musicTitleLabel.text = @"Music Title";
+    cell.musicTitleLabel.textColor = [UIColor whiteColor];
+    cell.musicTitleLabel.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
 
-    cell.detailTextLabel.text = @"5:21";
-    cell.detailTextLabel.textColor = [UIColor lightGrayColor];
-    cell.detailTextLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
+    cell.musicDurationLabel.text = @"5:21";
+    cell.musicDurationLabel.textColor = [UIColor lightGrayColor];
+    cell.musicDurationLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
+    
+    cell.backgroundColor = [UIColor clearColor];
 
     return cell;
 }

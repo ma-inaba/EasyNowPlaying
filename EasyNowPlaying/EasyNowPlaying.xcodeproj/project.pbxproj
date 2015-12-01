@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A254BBB31C0C5FAA006AB8D9 /* AlbumTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A254BBB21C0C5FAA006AB8D9 /* AlbumTableView.m */; };
+		A214CA4B1C0DBCCF00DD7F51 /* AlbumTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A214CA491C0DBCCF00DD7F51 /* AlbumTableView.m */; };
+		A214CA4E1C0DBD9A00DD7F51 /* AlbumTableViewSongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A214CA4D1C0DBD9A00DD7F51 /* AlbumTableViewSongCell.m */; };
+		A214CA501C0DBDAA00DD7F51 /* AlbumTableViewSongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A214CA4F1C0DBDAA00DD7F51 /* AlbumTableViewSongCell.xib */; };
 		A254BBB61C0C61AD006AB8D9 /* MusicDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = A254BBB51C0C61AD006AB8D9 /* MusicDataView.m */; };
 		A254BBB91C0C6282006AB8D9 /* OperationButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A254BBB81C0C6282006AB8D9 /* OperationButtonsView.m */; };
 		A254BBBC1C0C7282006AB8D9 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A254BBBB1C0C7282006AB8D9 /* SettingViewController.m */; };
@@ -24,8 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A254BBB11C0C5FAA006AB8D9 /* AlbumTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumTableView.h; sourceTree = "<group>"; };
-		A254BBB21C0C5FAA006AB8D9 /* AlbumTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTableView.m; sourceTree = "<group>"; };
+		A214CA481C0DBCCF00DD7F51 /* AlbumTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumTableView.h; sourceTree = "<group>"; };
+		A214CA491C0DBCCF00DD7F51 /* AlbumTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTableView.m; sourceTree = "<group>"; };
+		A214CA4C1C0DBD9A00DD7F51 /* AlbumTableViewSongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumTableViewSongCell.h; sourceTree = "<group>"; };
+		A214CA4D1C0DBD9A00DD7F51 /* AlbumTableViewSongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTableViewSongCell.m; sourceTree = "<group>"; };
+		A214CA4F1C0DBDAA00DD7F51 /* AlbumTableViewSongCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumTableViewSongCell.xib; sourceTree = "<group>"; };
 		A254BBB41C0C61AD006AB8D9 /* MusicDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicDataView.h; sourceTree = "<group>"; };
 		A254BBB51C0C61AD006AB8D9 /* MusicDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDataView.m; sourceTree = "<group>"; };
 		A254BBB71C0C6282006AB8D9 /* OperationButtonsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationButtonsView.h; sourceTree = "<group>"; };
@@ -63,6 +68,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A214CA471C0DBCCF00DD7F51 /* AlbumTableView */ = {
+			isa = PBXGroup;
+			children = (
+				A214CA481C0DBCCF00DD7F51 /* AlbumTableView.h */,
+				A214CA491C0DBCCF00DD7F51 /* AlbumTableView.m */,
+				A214CA4A1C0DBCCF00DD7F51 /* AlbumTableViewCells */,
+			);
+			path = AlbumTableView;
+			sourceTree = "<group>";
+		};
+		A214CA4A1C0DBCCF00DD7F51 /* AlbumTableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				A214CA4C1C0DBD9A00DD7F51 /* AlbumTableViewSongCell.h */,
+				A214CA4D1C0DBD9A00DD7F51 /* AlbumTableViewSongCell.m */,
+				A214CA4F1C0DBDAA00DD7F51 /* AlbumTableViewSongCell.xib */,
+			);
+			path = AlbumTableViewCells;
+			sourceTree = "<group>";
+		};
 		A248A3C31C09C9C5007621DA /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,12 +186,11 @@
 		A29F58D21C08A20100233ADA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A214CA471C0DBCCF00DD7F51 /* AlbumTableView */,
 				A254BBB41C0C61AD006AB8D9 /* MusicDataView.h */,
 				A254BBB51C0C61AD006AB8D9 /* MusicDataView.m */,
 				A254BBB71C0C6282006AB8D9 /* OperationButtonsView.h */,
 				A254BBB81C0C6282006AB8D9 /* OperationButtonsView.m */,
-				A254BBB11C0C5FAA006AB8D9 /* AlbumTableView.h */,
-				A254BBB21C0C5FAA006AB8D9 /* AlbumTableView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -273,6 +297,7 @@
 			files = (
 				A29F58C41C08A18300233ADA /* LaunchScreen.storyboard in Resources */,
 				A29F58DA1C08A59800233ADA /* Assets.xcassets in Resources */,
+				A214CA501C0DBDAA00DD7F51 /* AlbumTableViewSongCell.xib in Resources */,
 				A29F58BF1C08A18300233ADA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,13 +309,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A254BBB31C0C5FAA006AB8D9 /* AlbumTableView.m in Sources */,
 				A2B8C5E61C0980CD0094F14C /* ModelLocator.m in Sources */,
 				A29F58D31C08A20100233ADA /* AppDelegate.m in Sources */,
 				A2B8C5F01C0984940094F14C /* MusicDataEntity.m in Sources */,
 				A2B8C5EB1C0981C00094F14C /* PlaybackViewModel.m in Sources */,
 				A254BBB91C0C6282006AB8D9 /* OperationButtonsView.m in Sources */,
+				A214CA4B1C0DBCCF00DD7F51 /* AlbumTableView.m in Sources */,
 				A254BBB61C0C61AD006AB8D9 /* MusicDataView.m in Sources */,
+				A214CA4E1C0DBD9A00DD7F51 /* AlbumTableViewSongCell.m in Sources */,
 				A29F58B61C08A18300233ADA /* main.m in Sources */,
 				A29F58D81C08A2AA00233ADA /* PlaybackViewController.m in Sources */,
 				A254BBBC1C0C7282006AB8D9 /* SettingViewController.m in Sources */,
