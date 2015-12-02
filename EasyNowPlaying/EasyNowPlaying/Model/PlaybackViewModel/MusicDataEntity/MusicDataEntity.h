@@ -15,7 +15,7 @@
 @property UIImage *artworkImage;
 
 // 曲情報
-@property (nonatomic, retain) NSArray *albumSongs;
+@property (nonatomic, retain) NSArray *artistSongs;
 @property (nonatomic, strong) NSString *musicTitle;
 @property (nonatomic, strong) NSString *albumTitle;
 @property (nonatomic, strong) NSString *artistName;

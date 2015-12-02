@@ -60,14 +60,14 @@
         // 再生時間
         self.musicDataEntity.duration = [[mediaItem valueForProperty:MPMediaItemPropertyPlaybackDuration] floatValue];
      
-        MPMediaQuery *albumQuery = [MPMediaQuery albumsQuery];
-        NSArray *albums = [albumQuery collections];
-        for (MPMediaItemCollection *albumCollection in albums) {
-            NSString *albumTitle = [[albumCollection representativeItem] valueForProperty:MPMediaItemPropertyAlbumTitle];
-            if ([albumTitle isEqualToString:self.musicDataEntity.albumTitle]) {
-                self.musicDataEntity.albumSongs = albumCollection.items;
-            }
-        }
+//        MPMediaQuery *artistsQuery = [MPMediaQuery artistsQuery];
+//        NSArray *artists = [artistsQuery collections];
+//        for (MPMediaItemCollection *artistCollection in artists) {
+//            NSString *artistName = [[artistCollection representativeItem] valueForProperty:MPMediaItemPropertyArtist];
+//            if ([artistName isEqualToString:self.musicDataEntity.artistName]) {
+//                self.musicDataEntity.artistSongs = artistCollection.items;
+//            }
+//        }
         
         // データ取得完了フラグ
         self.completeLoadData = YES;

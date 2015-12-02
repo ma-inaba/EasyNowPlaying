@@ -24,6 +24,9 @@
     NSString *albumTitle = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.albumTitle;
     NSString *artistAlbumStr = [NSString stringWithFormat:@"%@ - %@",artistName, albumTitle];
     self.artistAlbumLabel.text = artistAlbumStr;
+    
+    self.layer.shadowOffset = CGSizeMake(0, 5);
+    self.layer.shadowOpacity = 0.5;
 }
 
 @end

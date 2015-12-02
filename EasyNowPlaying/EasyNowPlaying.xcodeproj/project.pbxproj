@@ -19,6 +19,13 @@
 		A29F58D31C08A20100233ADA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A29F58CD1C08A20100233ADA /* AppDelegate.m */; };
 		A29F58D81C08A2AA00233ADA /* PlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A29F58D71C08A2AA00233ADA /* PlaybackViewController.m */; };
 		A29F58DA1C08A59800233ADA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A29F58D91C08A59800233ADA /* Assets.xcassets */; };
+		A2AE983D1C0F00AB0064FFEB /* SettingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AE983C1C0F00AB0064FFEB /* SettingTableView.m */; };
+		A2AE98411C0F01190064FFEB /* SettingTableViewTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AE983F1C0F01190064FFEB /* SettingTableViewTagCell.m */; };
+		A2AE98421C0F01190064FFEB /* SettingTableViewTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2AE98401C0F01190064FFEB /* SettingTableViewTagCell.xib */; };
+		A2AE98461C0F01300064FFEB /* SettingTableViewImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AE98441C0F01300064FFEB /* SettingTableViewImageCell.m */; };
+		A2AE98471C0F01300064FFEB /* SettingTableViewImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2AE98451C0F01300064FFEB /* SettingTableViewImageCell.xib */; };
+		A2AE984B1C0F01560064FFEB /* SettingTableViewProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AE98491C0F01560064FFEB /* SettingTableViewProfileCell.m */; };
+		A2AE984C1C0F01560064FFEB /* SettingTableViewProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2AE984A1C0F01560064FFEB /* SettingTableViewProfileCell.xib */; };
 		A2B8C5E61C0980CD0094F14C /* ModelLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B8C5E51C0980CD0094F14C /* ModelLocator.m */; };
 		A2B8C5EB1C0981C00094F14C /* PlaybackViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B8C5EA1C0981C00094F14C /* PlaybackViewModel.m */; };
 		A2B8C5ED1C0982780094F14C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B8C5EC1C0982780094F14C /* MediaPlayer.framework */; };
@@ -47,6 +54,17 @@
 		A29F58D61C08A2AA00233ADA /* PlaybackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaybackViewController.h; sourceTree = "<group>"; };
 		A29F58D71C08A2AA00233ADA /* PlaybackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaybackViewController.m; sourceTree = "<group>"; };
 		A29F58D91C08A59800233ADA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A2AE983B1C0F00AB0064FFEB /* SettingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableView.h; sourceTree = "<group>"; };
+		A2AE983C1C0F00AB0064FFEB /* SettingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableView.m; sourceTree = "<group>"; };
+		A2AE983E1C0F01190064FFEB /* SettingTableViewTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewTagCell.h; sourceTree = "<group>"; };
+		A2AE983F1C0F01190064FFEB /* SettingTableViewTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewTagCell.m; sourceTree = "<group>"; };
+		A2AE98401C0F01190064FFEB /* SettingTableViewTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewTagCell.xib; sourceTree = "<group>"; };
+		A2AE98431C0F01300064FFEB /* SettingTableViewImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewImageCell.h; sourceTree = "<group>"; };
+		A2AE98441C0F01300064FFEB /* SettingTableViewImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewImageCell.m; sourceTree = "<group>"; };
+		A2AE98451C0F01300064FFEB /* SettingTableViewImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewImageCell.xib; sourceTree = "<group>"; };
+		A2AE98481C0F01560064FFEB /* SettingTableViewProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewProfileCell.h; sourceTree = "<group>"; };
+		A2AE98491C0F01560064FFEB /* SettingTableViewProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewProfileCell.m; sourceTree = "<group>"; };
+		A2AE984A1C0F01560064FFEB /* SettingTableViewProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewProfileCell.xib; sourceTree = "<group>"; };
 		A2B8C5E41C0980CD0094F14C /* ModelLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelLocator.h; sourceTree = "<group>"; };
 		A2B8C5E51C0980CD0094F14C /* ModelLocator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelLocator.m; sourceTree = "<group>"; };
 		A2B8C5E91C0981C00094F14C /* PlaybackViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaybackViewModel.h; sourceTree = "<group>"; };
@@ -187,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				A214CA471C0DBCCF00DD7F51 /* AlbumTableView */,
+				A2AE98391C0F00930064FFEB /* SettingTableView */,
 				A254BBB41C0C61AD006AB8D9 /* MusicDataView.h */,
 				A254BBB51C0C61AD006AB8D9 /* MusicDataView.m */,
 				A254BBB71C0C6282006AB8D9 /* OperationButtonsView.h */,
@@ -217,6 +236,32 @@
 			children = (
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		A2AE98391C0F00930064FFEB /* SettingTableView */ = {
+			isa = PBXGroup;
+			children = (
+				A2AE983B1C0F00AB0064FFEB /* SettingTableView.h */,
+				A2AE983C1C0F00AB0064FFEB /* SettingTableView.m */,
+				A2AE983A1C0F00930064FFEB /* SettingTableViewCells */,
+			);
+			path = SettingTableView;
+			sourceTree = "<group>";
+		};
+		A2AE983A1C0F00930064FFEB /* SettingTableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				A2AE983E1C0F01190064FFEB /* SettingTableViewTagCell.h */,
+				A2AE983F1C0F01190064FFEB /* SettingTableViewTagCell.m */,
+				A2AE98401C0F01190064FFEB /* SettingTableViewTagCell.xib */,
+				A2AE98431C0F01300064FFEB /* SettingTableViewImageCell.h */,
+				A2AE98441C0F01300064FFEB /* SettingTableViewImageCell.m */,
+				A2AE98451C0F01300064FFEB /* SettingTableViewImageCell.xib */,
+				A2AE98481C0F01560064FFEB /* SettingTableViewProfileCell.h */,
+				A2AE98491C0F01560064FFEB /* SettingTableViewProfileCell.m */,
+				A2AE984A1C0F01560064FFEB /* SettingTableViewProfileCell.xib */,
+			);
+			path = SettingTableViewCells;
 			sourceTree = "<group>";
 		};
 		A2B8C5E71C0981780094F14C /* PlaybackViewModel */ = {
@@ -298,7 +343,10 @@
 				A29F58C41C08A18300233ADA /* LaunchScreen.storyboard in Resources */,
 				A29F58DA1C08A59800233ADA /* Assets.xcassets in Resources */,
 				A214CA501C0DBDAA00DD7F51 /* AlbumTableViewSongCell.xib in Resources */,
+				A2AE98421C0F01190064FFEB /* SettingTableViewTagCell.xib in Resources */,
+				A2AE98471C0F01300064FFEB /* SettingTableViewImageCell.xib in Resources */,
 				A29F58BF1C08A18300233ADA /* Main.storyboard in Resources */,
+				A2AE984C1C0F01560064FFEB /* SettingTableViewProfileCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +359,7 @@
 			files = (
 				A2B8C5E61C0980CD0094F14C /* ModelLocator.m in Sources */,
 				A29F58D31C08A20100233ADA /* AppDelegate.m in Sources */,
+				A2AE983D1C0F00AB0064FFEB /* SettingTableView.m in Sources */,
 				A2B8C5F01C0984940094F14C /* MusicDataEntity.m in Sources */,
 				A2B8C5EB1C0981C00094F14C /* PlaybackViewModel.m in Sources */,
 				A254BBB91C0C6282006AB8D9 /* OperationButtonsView.m in Sources */,
@@ -318,7 +367,10 @@
 				A254BBB61C0C61AD006AB8D9 /* MusicDataView.m in Sources */,
 				A214CA4E1C0DBD9A00DD7F51 /* AlbumTableViewSongCell.m in Sources */,
 				A29F58B61C08A18300233ADA /* main.m in Sources */,
+				A2AE98411C0F01190064FFEB /* SettingTableViewTagCell.m in Sources */,
+				A2AE984B1C0F01560064FFEB /* SettingTableViewProfileCell.m in Sources */,
 				A29F58D81C08A2AA00233ADA /* PlaybackViewController.m in Sources */,
+				A2AE98461C0F01300064FFEB /* SettingTableViewImageCell.m in Sources */,
 				A254BBBC1C0C7282006AB8D9 /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
