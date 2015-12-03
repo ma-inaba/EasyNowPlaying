@@ -46,11 +46,10 @@
         // アルバム名
         self.musicDataEntity.albumTitle = [mediaItem valueForProperty:MPMediaItemPropertyAlbumTitle];
         // アーティスト名
-        self.musicDataEntity.artistName = [mediaItem valueForProperty:MPMediaItemPropertyArtist];
+        // アルバムアーティストにするとコンピレーションと違うやつを混合できる
+        self.musicDataEntity.artistName = [mediaItem valueForProperty:MPMediaItemPropertyAlbumArtist];
         // トラックナンバー
         self.musicDataEntity.nowTrackNumber = [[mediaItem valueForProperty:MPMediaItemPropertyAlbumTrackNumber] unsignedIntegerValue];
-        // 全てのトラック数
-//        self.musicDataEntity.allTrackNumber = [[mediaItem valueForProperty:MPMediaItemPropertyAlbumTrackCount] unsignedIntegerValue];
 
         // アートワーク（ジャケット写真）
         MPMediaItemArtwork *artwork = [mediaItem valueForProperty:MPMediaItemPropertyArtwork];
@@ -60,20 +59,50 @@
         // 再生時間
         self.musicDataEntity.duration = [[mediaItem valueForProperty:MPMediaItemPropertyPlaybackDuration] floatValue];
      
-//        MPMediaQuery *artistsQuery = [MPMediaQuery artistsQuery];
-//        NSArray *artists = [artistsQuery collections];
+//        MPMediaQuery *albumsQuery = [MPMediaQuery albumsQuery];
+//        [albumsQuery addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:self.musicDataEntity.artistName forProperty:MPMediaItemPropertyArtist]];
+//        NSArray *albums = [albumsQuery collections];
 //        for (MPMediaItemCollection *artistCollection in artists) {
 //            NSString *artistName = [[artistCollection representativeItem] valueForProperty:MPMediaItemPropertyArtist];
 //            if ([artistName isEqualToString:self.musicDataEntity.artistName]) {
 //                self.musicDataEntity.artistSongs = artistCollection.items;
 //            }
 //        }
-        MPMediaQuery *query = [[MPMediaQuery alloc] init];
         
+//        MPMediaQuery *albumsQuery = [MPMediaQuery albumsQuery];
+//        // アーティスト名を指定
+//        [albumsQuery addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:self.musicDataEntity.artistName forProperty:MPMediaItemPropertyArtist]];
+//        // 条件に一致する曲を取得。配列の要素は MPMediaItem
+//        self.musicDataEntity.artistSongs = [albumsQuery items];
+        
+        MPMediaQuery *query = [[MPMediaQuery alloc] init];
+        // アルバム単位でグルーピング
+        query.groupingType = MPMediaGroupingAlbum;
         // アーティスト名を指定
-        [query addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:self.musicDataEntity.artistName forProperty:MPMediaItemPropertyArtist]];
-        // 条件に一致する曲を取得。配列の要素は MPMediaItem
-        self.musicDataEntity.artistSongs = [query items];
+        [query addFilterPredicate:
+         [MPMediaPropertyPredicate predicateWithValue:self.musicDataEntity.artistName
+                                          forProperty:MPMediaItemPropertyArtist]];
+        // 全てのトラック数
+        self.musicDataEntity.allTrackNumber = 0;
+        // 指定したアーティストの全てのアルバムを取得。配列の要素は MPMediaItemCollection
+        for (MPMediaItemCollection *albumCollection in [query collections]) {
+            
+            NSString *albumTitle = [[albumCollection representativeItem] valueForProperty:MPMediaItemPropertyAlbumTitle];
+            MPMediaQuery *query = [[MPMediaQuery alloc] init];
+            // アーティスト名を指定
+            NSString *artistNameProperty = MPMediaItemPropertyAlbumArtist;
+            NSString *artistName = [[albumCollection representativeItem] valueForProperty:MPMediaItemPropertyAlbumArtist];
+            if (!artistName) {
+                artistNameProperty = MPMediaItemPropertyArtist;
+            }
+            [query addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:self.musicDataEntity.artistName forProperty:artistNameProperty]];
+            // アルバム名を指定
+            [query addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:albumTitle forProperty:MPMediaItemPropertyAlbumTitle]];
+            // 条件に一致する曲を取得。配列の要素は MPMediaItem
+            NSArray *songs = [query items];
+            self.musicDataEntity.allTrackNumber = self.musicDataEntity.allTrackNumber + [songs count];
+            [self.musicDataEntity.musicDataDict setObject:songs forKey:albumTitle];
+        }
         
         // データ取得完了フラグ
         self.completeLoadData = YES;

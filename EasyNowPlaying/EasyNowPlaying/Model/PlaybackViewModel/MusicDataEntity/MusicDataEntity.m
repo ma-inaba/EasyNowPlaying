@@ -10,4 +10,13 @@
 
 @implementation MusicDataEntity
 
+- (instancetype)init {
+    
+    self = [super init];
+    if (self) {
+        self.musicDataDict = [NSMutableDictionary dictionary];
+    }
+    return self;
+}
+
 @end

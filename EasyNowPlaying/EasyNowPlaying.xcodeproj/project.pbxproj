@@ -10,6 +10,7 @@
 		A214CA4B1C0DBCCF00DD7F51 /* AlbumTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A214CA491C0DBCCF00DD7F51 /* AlbumTableView.m */; };
 		A214CA4E1C0DBD9A00DD7F51 /* AlbumTableViewSongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A214CA4D1C0DBD9A00DD7F51 /* AlbumTableViewSongCell.m */; };
 		A214CA501C0DBDAA00DD7F51 /* AlbumTableViewSongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A214CA4F1C0DBDAA00DD7F51 /* AlbumTableViewSongCell.xib */; };
+		A2400D8A1C10730200BFCEA8 /* AlbumTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2400D891C10730200BFCEA8 /* AlbumTableHeaderView.m */; };
 		A254BBB61C0C61AD006AB8D9 /* MusicDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = A254BBB51C0C61AD006AB8D9 /* MusicDataView.m */; };
 		A254BBB91C0C6282006AB8D9 /* OperationButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A254BBB81C0C6282006AB8D9 /* OperationButtonsView.m */; };
 		A254BBBC1C0C7282006AB8D9 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A254BBBB1C0C7282006AB8D9 /* SettingViewController.m */; };
@@ -38,6 +39,8 @@
 		A214CA4C1C0DBD9A00DD7F51 /* AlbumTableViewSongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumTableViewSongCell.h; sourceTree = "<group>"; };
 		A214CA4D1C0DBD9A00DD7F51 /* AlbumTableViewSongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTableViewSongCell.m; sourceTree = "<group>"; };
 		A214CA4F1C0DBDAA00DD7F51 /* AlbumTableViewSongCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumTableViewSongCell.xib; sourceTree = "<group>"; };
+		A2400D881C10730200BFCEA8 /* AlbumTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumTableHeaderView.h; sourceTree = "<group>"; };
+		A2400D891C10730200BFCEA8 /* AlbumTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTableHeaderView.m; sourceTree = "<group>"; };
 		A254BBB41C0C61AD006AB8D9 /* MusicDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicDataView.h; sourceTree = "<group>"; };
 		A254BBB51C0C61AD006AB8D9 /* MusicDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDataView.m; sourceTree = "<group>"; };
 		A254BBB71C0C6282006AB8D9 /* OperationButtonsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationButtonsView.h; sourceTree = "<group>"; };
@@ -210,6 +213,8 @@
 				A254BBB51C0C61AD006AB8D9 /* MusicDataView.m */,
 				A254BBB71C0C6282006AB8D9 /* OperationButtonsView.h */,
 				A254BBB81C0C6282006AB8D9 /* OperationButtonsView.m */,
+				A2400D881C10730200BFCEA8 /* AlbumTableHeaderView.h */,
+				A2400D891C10730200BFCEA8 /* AlbumTableHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -371,6 +376,7 @@
 				A2AE984B1C0F01560064FFEB /* SettingTableViewProfileCell.m in Sources */,
 				A29F58D81C08A2AA00233ADA /* PlaybackViewController.m in Sources */,
 				A2AE98461C0F01300064FFEB /* SettingTableViewImageCell.m in Sources */,
+				A2400D8A1C10730200BFCEA8 /* AlbumTableHeaderView.m in Sources */,
 				A254BBBC1C0C7282006AB8D9 /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

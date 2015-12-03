@@ -30,25 +30,25 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 30.0;
 }
-
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [[[ModelLocator sharedInstance].playbackViewModel.musicDataEntity.musicDataDict allKeys] count];
+}
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 
     UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, tableView.frame.size.width, 30.0f)];
     headerLabel.backgroundColor = tableView.backgroundColor;
-    NSString *albumTitle = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artistName;
-    NSString *text = [NSString stringWithFormat:@"%@ - %lu曲",albumTitle, (unsigned long)[[ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artistSongs count]
-];
-    headerLabel.text = text;
     headerLabel.textAlignment = NSTextAlignmentCenter;
-    headerLabel.textColor = [UIColor whiteColor];
-    headerLabel.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
+    headerLabel.textColor = [UIColor colorWithRed:0.98 green:0.99 blue:0.91 alpha:1.0];
+    headerLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
+    NSString *text = [NSString stringWithFormat:@"%@",[[[ModelLocator sharedInstance].playbackViewModel.musicDataEntity.musicDataDict allKeys] objectAtIndex:section]];
+    headerLabel.text = text;
 
     return headerLabel;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artistSongs count];
+    NSArray *array = [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity.musicDataDict allKeys];
+    return [[[ModelLocator sharedInstance].playbackViewModel.musicDataEntity.musicDataDict objectForKey:[array objectAtIndex:section]] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

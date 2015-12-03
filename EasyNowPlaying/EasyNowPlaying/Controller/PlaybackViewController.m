@@ -10,6 +10,7 @@
 #import "ModelLocator.h"
 #import "MusicDataView.h"
 #import "AlbumTableView.h"
+#import "AlbumTableHeaderView.h"
 #import <Social/Social.h>
 
 @interface PlaybackViewController ()
@@ -17,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet MusicDataView *musicDataView;
 @property (weak, nonatomic) IBOutlet AlbumTableView *albumDataTableView;
 @property (weak, nonatomic) IBOutlet OperationButtonsView *operationButtonsView;
+@property (weak, nonatomic) IBOutlet AlbumTableHeaderView *albumTableHeaderView;
 
 @end
 
@@ -50,6 +52,7 @@
     if ([keyPath isEqualToString:@"completeLoadData"]) {
         self.artworkImageView.image = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artworkImage;
         [self.musicDataView setNeedsDisplay];
+        [self.albumTableHeaderView setNeedsDisplay];
         [self.albumDataTableView reloadData];
     }
 }
