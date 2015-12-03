@@ -18,7 +18,7 @@
                         <rect key="frame" x="8" y="8" width="304" height="27"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.98039215690000003" green="0.98823529409999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -31,7 +31,7 @@
                 </constraints>
             </tableViewCellContentView>
             <animations/>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.27193399288201381" green="0.30437097190951012" blue="0.38089013383915338" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="tagLabel" destination="KI8-pE-Jqd" id="i18-a5-B1v"/>
             </connections>

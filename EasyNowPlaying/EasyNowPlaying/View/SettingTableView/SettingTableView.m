@@ -62,12 +62,10 @@
     
     if (indexPath.section == 0) {
         SettingTableViewTagCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SettingTableViewTagCell"];
-        cell.tagLabel.textColor = [UIColor whiteColor];
         
         return cell;
     } else if (indexPath.section == 1) {
         SettingTableViewImageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SettingTableViewImageCell"];
-        cell.messageLabel.textColor = [UIColor whiteColor];
         
         return cell;
     } else {

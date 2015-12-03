@@ -33,12 +33,12 @@
 
 - (IBAction)nextAction:(id)sender {
     
-    [[ModelLocator sharedInstance].playbackViewModel skipToPreviousMusic];
+    [[ModelLocator sharedInstance].playbackViewModel skipToNextMusic];
 }
 
 - (IBAction)backAction:(id)sender {
     
-    [[ModelLocator sharedInstance].playbackViewModel skipToNextMusic];
+    [[ModelLocator sharedInstance].playbackViewModel skipToPreviousMusic];
 }
 
 - (IBAction)settingAction:(id)sender {

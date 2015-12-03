@@ -66,7 +66,6 @@
     cell.musicTitleLabel.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
 
     cell.musicDurationLabel.text = @"5:21";
-    cell.musicDurationLabel.textColor = [UIColor lightGrayColor];
     cell.musicDurationLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
     
     cell.backgroundColor = [UIColor clearColor];
