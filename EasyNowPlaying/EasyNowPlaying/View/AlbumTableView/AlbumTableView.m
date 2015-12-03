@@ -35,8 +35,9 @@
 
     UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, tableView.frame.size.width, 30.0f)];
     headerLabel.backgroundColor = tableView.backgroundColor;
-    NSString *albumTitle = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.albumTitle;
-    NSString *text = [NSString stringWithFormat:@"%@ - %lu曲",albumTitle, (unsigned long)[ModelLocator sharedInstance].playbackViewModel.musicDataEntity.allTrackNumber];
+    NSString *albumTitle = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artistName;
+    NSString *text = [NSString stringWithFormat:@"%@ - %lu曲",albumTitle, (unsigned long)[[ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artistSongs count]
+];
     headerLabel.text = text;
     headerLabel.textAlignment = NSTextAlignmentCenter;
     headerLabel.textColor = [UIColor whiteColor];
@@ -47,7 +48,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.allTrackNumber;
+    return [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artistSongs count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -28,6 +28,7 @@
                             <constraint firstAttribute="width" constant="49" id="yxs-SX-Ha8"/>
                             <constraint firstAttribute="height" constant="31" id="z7b-kR-ziW"/>
                         </constraints>
+                        <color key="onTintColor" red="0.1647058824" green="0.1843137255" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                     </switch>
                 </subviews>
                 <animations/>

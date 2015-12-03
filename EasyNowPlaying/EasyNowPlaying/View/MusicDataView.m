@@ -12,6 +12,7 @@
 @interface MusicDataView()
 @property (weak, nonatomic) IBOutlet UILabel *musicTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *artistAlbumLabel;
+@property (weak, nonatomic) IBOutlet UILabel *musicDurationLabel;
 @end
 
 @implementation MusicDataView
@@ -25,6 +26,11 @@
     NSString *artistAlbumStr = [NSString stringWithFormat:@"%@ - %@",artistName, albumTitle];
     self.artistAlbumLabel.text = artistAlbumStr;
     
+    int duration = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.duration;
+    int secondTime = duration%60; //秒
+    int minutTime = (duration/60)%60;  //分
+
+    self.musicDurationLabel.text = [NSString stringWithFormat:@"%d:%d", minutTime,secondTime];
     self.layer.shadowOffset = CGSizeMake(0, 5);
     self.layer.shadowOpacity = 0.5;
 }

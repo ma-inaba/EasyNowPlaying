@@ -50,7 +50,7 @@
         // トラックナンバー
         self.musicDataEntity.nowTrackNumber = [[mediaItem valueForProperty:MPMediaItemPropertyAlbumTrackNumber] unsignedIntegerValue];
         // 全てのトラック数
-        self.musicDataEntity.allTrackNumber = [[mediaItem valueForProperty:MPMediaItemPropertyAlbumTrackCount] unsignedIntegerValue];
+//        self.musicDataEntity.allTrackNumber = [[mediaItem valueForProperty:MPMediaItemPropertyAlbumTrackCount] unsignedIntegerValue];
 
         // アートワーク（ジャケット写真）
         MPMediaItemArtwork *artwork = [mediaItem valueForProperty:MPMediaItemPropertyArtwork];
@@ -68,6 +68,12 @@
 //                self.musicDataEntity.artistSongs = artistCollection.items;
 //            }
 //        }
+        MPMediaQuery *query = [[MPMediaQuery alloc] init];
+        
+        // アーティスト名を指定
+        [query addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:self.musicDataEntity.artistName forProperty:MPMediaItemPropertyArtist]];
+        // 条件に一致する曲を取得。配列の要素は MPMediaItem
+        self.musicDataEntity.artistSongs = [query items];
         
         // データ取得完了フラグ
         self.completeLoadData = YES;
