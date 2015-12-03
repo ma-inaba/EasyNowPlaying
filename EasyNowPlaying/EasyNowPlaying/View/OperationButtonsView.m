@@ -20,15 +20,15 @@
 
 - (void)drawRect:(CGRect)rect {
     self.tweetImageView.image = [self.tweetImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.tweetImageView.tintColor = [UIColor whiteColor];
+    self.tweetImageView.tintColor = [UIColor colorWithRed:0.98 green:0.99 blue:0.91 alpha:1.0];
     self.playImageView.image = [self.playImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.playImageView.tintColor = [UIColor whiteColor];
+    self.playImageView.tintColor = [UIColor colorWithRed:0.98 green:0.99 blue:0.91 alpha:1.0];
     self.nextImageView.image = [self.nextImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.nextImageView.tintColor = [UIColor whiteColor];
+    self.nextImageView.tintColor = [UIColor colorWithRed:0.98 green:0.99 blue:0.91 alpha:1.0];
     self.backImageView.image = [self.backImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.backImageView.tintColor = [UIColor whiteColor];
+    self.backImageView.tintColor = [UIColor colorWithRed:0.98 green:0.99 blue:0.91 alpha:1.0];
     self.settingImageView.image = [self.settingImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.settingImageView.tintColor = [UIColor whiteColor];
+    self.settingImageView.tintColor = [UIColor colorWithRed:0.98 green:0.99 blue:0.91 alpha:1.0];
 }
 
 - (IBAction)tweetAction:(id)sender {
