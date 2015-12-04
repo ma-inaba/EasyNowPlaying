@@ -19,6 +19,7 @@
     self = [super init];
     if (self) {
         self.musicDataEntity = [[MusicDataEntity alloc] init];
+        self.tableViewMode = TableViewModeArtist;
         [[NSNotificationCenter defaultCenter] removeObserver:self];
         player = [MPMusicPlayerController systemMusicPlayer];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onNowPlayingItemChanged:)
@@ -75,40 +76,69 @@
 //        // 条件に一致する曲を取得。配列の要素は MPMediaItem
 //        self.musicDataEntity.artistSongs = [albumsQuery items];
         
-        MPMediaQuery *query = [[MPMediaQuery alloc] init];
-        // アルバム単位でグルーピング
-        query.groupingType = MPMediaGroupingAlbum;
-        // アーティスト名を指定
-        [query addFilterPredicate:
-         [MPMediaPropertyPredicate predicateWithValue:self.musicDataEntity.artistName
-                                          forProperty:MPMediaItemPropertyArtist]];
-        // 全てのトラック数
-        self.musicDataEntity.allTrackNumber = 0;
-        // 指定したアーティストの全てのアルバムを取得。配列の要素は MPMediaItemCollection
-        for (MPMediaItemCollection *albumCollection in [query collections]) {
-            
-            NSString *albumTitle = [[albumCollection representativeItem] valueForProperty:MPMediaItemPropertyAlbumTitle];
-            MPMediaQuery *query = [[MPMediaQuery alloc] init];
-            // アーティスト名を指定
-            NSString *artistNameProperty = MPMediaItemPropertyAlbumArtist;
-            NSString *artistName = [[albumCollection representativeItem] valueForProperty:MPMediaItemPropertyAlbumArtist];
-            if (!artistName) {
-                artistNameProperty = MPMediaItemPropertyArtist;
-            }
-            [query addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:self.musicDataEntity.artistName forProperty:artistNameProperty]];
-            // アルバム名を指定
-            [query addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:albumTitle forProperty:MPMediaItemPropertyAlbumTitle]];
-            // 条件に一致する曲を取得。配列の要素は MPMediaItem
-            NSArray *songs = [query items];
-            self.musicDataEntity.allTrackNumber = self.musicDataEntity.allTrackNumber + [songs count];
-            [self.musicDataEntity.musicDataDict setObject:songs forKey:albumTitle];
-        }
+//        MPMediaQuery *query = [[MPMediaQuery alloc] init];
+//        // アルバム単位でグルーピング
+//        query.groupingType = MPMediaGroupingAlbum;
+//        // アーティスト名を指定
+//        [query addFilterPredicate:
+//         [MPMediaPropertyPredicate predicateWithValue:self.musicDataEntity.artistName
+//                                          forProperty:MPMediaItemPropertyArtist]];
+//        // 全てのトラック数
+//        self.musicDataEntity.allTrackNumber = 0;
+//        // 指定したアーティストの全てのアルバムを取得。配列の要素は MPMediaItemCollection
+//        for (MPMediaItemCollection *albumCollection in [query collections]) {
+//            
+//            NSString *albumTitle = [[albumCollection representativeItem] valueForProperty:MPMediaItemPropertyAlbumTitle];
+//            MPMediaQuery *query = [[MPMediaQuery alloc] init];
+//            // アーティスト名を指定
+//            NSString *artistNameProperty = MPMediaItemPropertyAlbumArtist;
+//            NSString *artistName = [[albumCollection representativeItem] valueForProperty:MPMediaItemPropertyAlbumArtist];
+//            if (!artistName) {
+//                artistNameProperty = MPMediaItemPropertyArtist;
+//            }
+//            [query addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:self.musicDataEntity.artistName forProperty:artistNameProperty]];
+//            // アルバム名を指定
+//            [query addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:albumTitle forProperty:MPMediaItemPropertyAlbumTitle]];
+//            // 条件に一致する曲を取得。配列の要素は MPMediaItem
+//            NSArray *songs = [query items];
+//            self.musicDataEntity.allTrackNumber = self.musicDataEntity.allTrackNumber + [songs count];
+//            [self.musicDataEntity.musicDataDict setObject:songs forKey:albumTitle];
+//        }
+        
+        MPMediaQuery *artistsQuery = [MPMediaQuery artistsQuery];
+        artistsQuery.groupingType = MPMediaGroupingAlbumArtist;
+
+        self.musicDataEntity.artistDataArray = [artistsQuery collections];
         
         // データ取得完了フラグ
         self.completeLoadData = YES;
     }
 }
 
+#pragma mark アーティストデータの操作
+- (NSString *)loadArtistNameForArtistDataArraywithIndex:(NSInteger)row {
+    
+    NSString *artistName;
+    if (self.musicDataEntity.artistDataArray) {
+        MPMediaItemCollection *albumCollection = [self.musicDataEntity.artistDataArray objectAtIndex:row];
+        artistName = [[albumCollection representativeItem] valueForProperty:MPMediaItemPropertyAlbumArtist];
+    }
+    return artistName;
+}
+
+- (UIImage *)loadArtistArtworkForArtistDataArraywithIndex:(NSInteger)row {
+    
+    UIImage *albumArtwork = [UIImage alloc];
+    if (self.musicDataEntity.artistDataArray) {
+        MPMediaItemCollection *albumCollection = [self.musicDataEntity.artistDataArray objectAtIndex:row];
+        MPMediaItemArtwork *artwork = [[albumCollection representativeItem] valueForProperty:MPMediaItemPropertyArtwork];
+        albumArtwork = [artwork imageWithSize:artwork.bounds.size];
+    }
+    return albumArtwork;
+}
+
+
+#pragma mark 各操作ボタン押下時の処理
 - (void)switchPlayStatus
 {
     if( [player playbackState] == MPMusicPlaybackStatePlaying ){

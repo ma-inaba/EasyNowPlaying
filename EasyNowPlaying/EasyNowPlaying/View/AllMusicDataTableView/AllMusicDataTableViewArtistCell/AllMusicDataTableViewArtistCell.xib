@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AllMusicDataTableViewArtistCell" rowHeight="65" id="KGk-i7-Jjw" customClass="AllMusicDataTableViewArtistCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wO-2I-7J0">
+                        <rect key="frame" x="72" y="8" width="295" height="48"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EcK-zh-5Da">
+                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="64" id="0CN-4o-D5G"/>
+                            <constraint firstAttribute="width" constant="64" id="Vs7-bw-zGp"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="EcK-zh-5Da" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="BIy-wH-qg6"/>
+                    <constraint firstItem="2wO-2I-7J0" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="OUO-fG-yNS"/>
+                    <constraint firstItem="2wO-2I-7J0" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="Ri7-mM-bJN"/>
+                    <constraint firstItem="2wO-2I-7J0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Tro-b9-4QY"/>
+                    <constraint firstItem="EcK-zh-5Da" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="c2c-e4-zwK"/>
+                    <constraint firstItem="2wO-2I-7J0" firstAttribute="leading" secondItem="EcK-zh-5Da" secondAttribute="trailing" constant="8" id="zMW-fu-Pjv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <inset key="separatorInset" minX="64" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="artistImageView" destination="EcK-zh-5Da" id="zXR-EV-MO9"/>
+                <outlet property="artistNameLabel" destination="2wO-2I-7J0" id="d3A-cd-cI4"/>
+            </connections>
+            <point key="canvasLocation" x="567.5" y="435.5"/>
+        </tableViewCell>
+    </objects>
+</document>

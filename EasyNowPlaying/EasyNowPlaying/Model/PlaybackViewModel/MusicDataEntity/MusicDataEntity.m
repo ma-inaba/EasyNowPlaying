@@ -14,7 +14,7 @@
     
     self = [super init];
     if (self) {
-        self.musicDataDict = [NSMutableDictionary dictionary];
+        self.artistDataArray = [NSMutableArray array];
     }
     return self;
 }

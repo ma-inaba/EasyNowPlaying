@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A2400D8A1C10730200BFCEA8 /* AlbumTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2400D891C10730200BFCEA8 /* AlbumTableHeaderView.m */; };
 		A254BBB61C0C61AD006AB8D9 /* MusicDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = A254BBB51C0C61AD006AB8D9 /* MusicDataView.m */; };
 		A254BBB91C0C6282006AB8D9 /* OperationButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A254BBB81C0C6282006AB8D9 /* OperationButtonsView.m */; };
 		A254BBBC1C0C7282006AB8D9 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A254BBBB1C0C7282006AB8D9 /* SettingViewController.m */; };
 		A2788C971C11A3170033CD76 /* AllMusicDataTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2788C941C11A3170033CD76 /* AllMusicDataTableView.m */; };
 		A2788C9C1C11A3E50033CD76 /* AllMusicDataTableViewMusicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2788C9A1C11A3E50033CD76 /* AllMusicDataTableViewMusicCell.m */; };
 		A2788C9D1C11A3E50033CD76 /* AllMusicDataTableViewMusicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2788C9B1C11A3E50033CD76 /* AllMusicDataTableViewMusicCell.xib */; };
+		A2788CA01C11A7D80033CD76 /* AllMusicDataTableBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2788C9F1C11A7D80033CD76 /* AllMusicDataTableBaseView.m */; };
+		A2788CA31C11AA930033CD76 /* AllMusicDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2788CA21C11AA930033CD76 /* AllMusicDataViewController.m */; };
+		A2788CA91C11C2AA0033CD76 /* AllMusicDataTableViewArtistCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2788CA71C11C2AA0033CD76 /* AllMusicDataTableViewArtistCell.m */; };
+		A2788CAA1C11C2AA0033CD76 /* AllMusicDataTableViewArtistCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2788CA81C11C2AA0033CD76 /* AllMusicDataTableViewArtistCell.xib */; };
 		A29F58B61C08A18300233ADA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A29F58B51C08A18300233ADA /* main.m */; };
 		A29F58BF1C08A18300233ADA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A29F58BD1C08A18300233ADA /* Main.storyboard */; };
 		A29F58C41C08A18300233ADA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A29F58C21C08A18300233ADA /* LaunchScreen.storyboard */; };
@@ -34,8 +37,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A2400D881C10730200BFCEA8 /* AlbumTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumTableHeaderView.h; sourceTree = "<group>"; };
-		A2400D891C10730200BFCEA8 /* AlbumTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTableHeaderView.m; sourceTree = "<group>"; };
 		A254BBB41C0C61AD006AB8D9 /* MusicDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicDataView.h; sourceTree = "<group>"; };
 		A254BBB51C0C61AD006AB8D9 /* MusicDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDataView.m; sourceTree = "<group>"; };
 		A254BBB71C0C6282006AB8D9 /* OperationButtonsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationButtonsView.h; sourceTree = "<group>"; };
@@ -47,6 +48,13 @@
 		A2788C991C11A3E50033CD76 /* AllMusicDataTableViewMusicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllMusicDataTableViewMusicCell.h; sourceTree = "<group>"; };
 		A2788C9A1C11A3E50033CD76 /* AllMusicDataTableViewMusicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllMusicDataTableViewMusicCell.m; sourceTree = "<group>"; };
 		A2788C9B1C11A3E50033CD76 /* AllMusicDataTableViewMusicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllMusicDataTableViewMusicCell.xib; sourceTree = "<group>"; };
+		A2788C9E1C11A7D80033CD76 /* AllMusicDataTableBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllMusicDataTableBaseView.h; sourceTree = "<group>"; };
+		A2788C9F1C11A7D80033CD76 /* AllMusicDataTableBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllMusicDataTableBaseView.m; sourceTree = "<group>"; };
+		A2788CA11C11AA930033CD76 /* AllMusicDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllMusicDataViewController.h; sourceTree = "<group>"; };
+		A2788CA21C11AA930033CD76 /* AllMusicDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllMusicDataViewController.m; sourceTree = "<group>"; };
+		A2788CA61C11C2AA0033CD76 /* AllMusicDataTableViewArtistCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllMusicDataTableViewArtistCell.h; sourceTree = "<group>"; };
+		A2788CA71C11C2AA0033CD76 /* AllMusicDataTableViewArtistCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllMusicDataTableViewArtistCell.m; sourceTree = "<group>"; };
+		A2788CA81C11C2AA0033CD76 /* AllMusicDataTableViewArtistCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllMusicDataTableViewArtistCell.xib; sourceTree = "<group>"; };
 		A29F58B11C08A18300233ADA /* EasyNowPlaying.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyNowPlaying.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A29F58B51C08A18300233ADA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A29F58BE1C08A18300233ADA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +110,7 @@
 				A2788C931C11A3170033CD76 /* AllMusicDataTableView.h */,
 				A2788C941C11A3170033CD76 /* AllMusicDataTableView.m */,
 				A2788C981C11A3E50033CD76 /* AllMusicDataTableViewMusicCell */,
+				A2788CA51C11C2860033CD76 /* AllMusicDataTableViewArtistCell */,
 			);
 			path = AllMusicDataTableView;
 			sourceTree = "<group>";
@@ -114,6 +123,16 @@
 				A2788C9B1C11A3E50033CD76 /* AllMusicDataTableViewMusicCell.xib */,
 			);
 			path = AllMusicDataTableViewMusicCell;
+			sourceTree = "<group>";
+		};
+		A2788CA51C11C2860033CD76 /* AllMusicDataTableViewArtistCell */ = {
+			isa = PBXGroup;
+			children = (
+				A2788CA61C11C2AA0033CD76 /* AllMusicDataTableViewArtistCell.h */,
+				A2788CA71C11C2AA0033CD76 /* AllMusicDataTableViewArtistCell.m */,
+				A2788CA81C11C2AA0033CD76 /* AllMusicDataTableViewArtistCell.xib */,
+			);
+			path = AllMusicDataTableViewArtistCell;
 			sourceTree = "<group>";
 		};
 		A29F58A81C08A18300233ADA = {
@@ -176,6 +195,8 @@
 				A29F58D71C08A2AA00233ADA /* PlaybackViewController.m */,
 				A254BBBA1C0C7282006AB8D9 /* SettingViewController.h */,
 				A254BBBB1C0C7282006AB8D9 /* SettingViewController.m */,
+				A2788CA11C11AA930033CD76 /* AllMusicDataViewController.h */,
+				A2788CA21C11AA930033CD76 /* AllMusicDataViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -213,8 +234,8 @@
 				A254BBB51C0C61AD006AB8D9 /* MusicDataView.m */,
 				A254BBB71C0C6282006AB8D9 /* OperationButtonsView.h */,
 				A254BBB81C0C6282006AB8D9 /* OperationButtonsView.m */,
-				A2400D881C10730200BFCEA8 /* AlbumTableHeaderView.h */,
-				A2400D891C10730200BFCEA8 /* AlbumTableHeaderView.m */,
+				A2788C9E1C11A7D80033CD76 /* AllMusicDataTableBaseView.h */,
+				A2788C9F1C11A7D80033CD76 /* AllMusicDataTableBaseView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -347,6 +368,7 @@
 			files = (
 				A29F58C41C08A18300233ADA /* LaunchScreen.storyboard in Resources */,
 				A29F58DA1C08A59800233ADA /* Assets.xcassets in Resources */,
+				A2788CAA1C11C2AA0033CD76 /* AllMusicDataTableViewArtistCell.xib in Resources */,
 				A2AE98421C0F01190064FFEB /* SettingTableViewTagCell.xib in Resources */,
 				A2AE98471C0F01300064FFEB /* SettingTableViewImageCell.xib in Resources */,
 				A29F58BF1C08A18300233ADA /* Main.storyboard in Resources */,
@@ -370,13 +392,15 @@
 				A254BBB91C0C6282006AB8D9 /* OperationButtonsView.m in Sources */,
 				A2788C9C1C11A3E50033CD76 /* AllMusicDataTableViewMusicCell.m in Sources */,
 				A254BBB61C0C61AD006AB8D9 /* MusicDataView.m in Sources */,
+				A2788CA01C11A7D80033CD76 /* AllMusicDataTableBaseView.m in Sources */,
 				A29F58B61C08A18300233ADA /* main.m in Sources */,
+				A2788CA91C11C2AA0033CD76 /* AllMusicDataTableViewArtistCell.m in Sources */,
 				A2788C971C11A3170033CD76 /* AllMusicDataTableView.m in Sources */,
+				A2788CA31C11AA930033CD76 /* AllMusicDataViewController.m in Sources */,
 				A2AE98411C0F01190064FFEB /* SettingTableViewTagCell.m in Sources */,
 				A2AE984B1C0F01560064FFEB /* SettingTableViewProfileCell.m in Sources */,
 				A29F58D81C08A2AA00233ADA /* PlaybackViewController.m in Sources */,
 				A2AE98461C0F01300064FFEB /* SettingTableViewImageCell.m in Sources */,
-				A2400D8A1C10730200BFCEA8 /* AlbumTableHeaderView.m in Sources */,
 				A254BBBC1C0C7282006AB8D9 /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

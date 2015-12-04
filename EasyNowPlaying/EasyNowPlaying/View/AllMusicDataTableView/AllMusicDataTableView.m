@@ -8,6 +8,7 @@
 
 #import "AllMusicDataTableView.h"
 #import "ModelLocator.h"
+#import "AllMusicDataTableViewArtistCell.h"
 #import "AllMusicDataTableViewMusicCell.h"
 
 @implementation AllMusicDataTableView
@@ -17,8 +18,11 @@
     self.delegate = self;
     self.dataSource = self;
     
-    UINib *nib = [UINib nibWithNibName:@"AllMusicDataTableViewMusicCell" bundle:nil];
-    [self registerNib:nib forCellReuseIdentifier:@"Cell"];
+    UINib *musicCellNib = [UINib nibWithNibName:@"AllMusicDataTableViewMusicCell" bundle:nil];
+    [self registerNib:musicCellNib forCellReuseIdentifier:@"AllMusicDataTableViewMusicCell"];
+    UINib *artistCellNib = [UINib nibWithNibName:@"AllMusicDataTableViewArtistCell" bundle:nil];
+    [self registerNib:artistCellNib forCellReuseIdentifier:@"AllMusicDataTableViewArtistCell"];
+
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -26,51 +30,67 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 30.0;
-}
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [[[ModelLocator sharedInstance].playbackViewModel.musicDataEntity.musicDataDict allKeys] count];
-}
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-
-    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, tableView.frame.size.width, 30.0f)];
-    headerLabel.backgroundColor = tableView.backgroundColor;
-    headerLabel.textAlignment = NSTextAlignmentCenter;
-    headerLabel.textColor = [UIColor colorWithRed:0.98 green:0.99 blue:0.91 alpha:1.0];
-    headerLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
-    NSString *text = [NSString stringWithFormat:@"%@",[[[ModelLocator sharedInstance].playbackViewModel.musicDataEntity.musicDataDict allKeys] objectAtIndex:section]];
-    headerLabel.text = text;
-
-    return headerLabel;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if ([ModelLocator sharedInstance].playbackViewModel.tableViewMode == TableViewModeArtist) {
+        return 65.0f;
+    }
+    return 44.0f;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSArray *array = [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity.musicDataDict allKeys];
-    return [[[ModelLocator sharedInstance].playbackViewModel.musicDataEntity.musicDataDict objectForKey:[array objectAtIndex:section]] count];
+    return [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artistDataArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    AllMusicDataTableViewMusicCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    if ([ModelLocator sharedInstance].playbackViewModel.tableViewMode == TableViewModeArtist) {
+        AllMusicDataTableViewArtistCell *cell = [self allMusicDataTableViewArtistCell:tableView cellForRowAtIndexPath:indexPath];
+        return cell;
+    } else if ([ModelLocator sharedInstance].playbackViewModel.tableViewMode == TableViewModeAlbum) {
+        AllMusicDataTableViewMusicCell *cell = [self allMusicDataTableViewMusicCell:tableView cellForRowAtIndexPath:indexPath];
+        return cell;
+    } else {
+        AllMusicDataTableViewMusicCell *cell = [self allMusicDataTableViewMusicCell:tableView cellForRowAtIndexPath:indexPath];
+        return cell;
+    }
+}
+
+- (AllMusicDataTableViewArtistCell *)allMusicDataTableViewArtistCell:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    AllMusicDataTableViewArtistCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AllMusicDataTableViewArtistCell"];
     
     if (!cell) {
-        cell = [[AllMusicDataTableViewMusicCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+        cell = [[AllMusicDataTableViewArtistCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"AllMusicDataTableViewArtistCell"];
+    }
+    
+    cell.artistNameLabel.text = [[ModelLocator sharedInstance].playbackViewModel loadArtistNameForArtistDataArraywithIndex:indexPath.row];
+    cell.artistNameLabel.textColor = [UIColor whiteColor];
+    cell.artistNameLabel.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
+    
+    cell.artistImageView.image = [[ModelLocator sharedInstance].playbackViewModel loadArtistArtworkForArtistDataArraywithIndex:indexPath.row];
+
+    return cell;
+}
+
+- (AllMusicDataTableViewMusicCell *)allMusicDataTableViewMusicCell:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    AllMusicDataTableViewMusicCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AllMusicDataTableViewMusicCell"];
+    
+    if (!cell) {
+        cell = [[AllMusicDataTableViewMusicCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"AllMusicDataTableViewMusicCell"];
     }
     
     cell.musicNoLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row +1];
     cell.musicNoLabel.textColor = [UIColor whiteColor];
     
-    cell.musicTitleLabel.text = @"Music Title";
+    cell.musicTitleLabel.text = [[ModelLocator sharedInstance].playbackViewModel loadArtistNameForArtistDataArraywithIndex:indexPath.row];
     cell.musicTitleLabel.textColor = [UIColor whiteColor];
     cell.musicTitleLabel.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
-
-    cell.musicDurationLabel.text = @"5:21";
-    cell.musicDurationLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
     
-    cell.backgroundColor = [UIColor clearColor];
-
+    cell.musicDurationLabel.text = @"5:21";
+    cell.musicDurationLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];    
+    
     return cell;
 }
 
