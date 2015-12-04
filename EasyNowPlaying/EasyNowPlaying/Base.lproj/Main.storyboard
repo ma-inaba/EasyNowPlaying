@@ -395,7 +395,11 @@
         <!--All Music Data View Controller-->
         <scene sceneID="BSO-JD-Yul">
             <objects>
-                <viewController id="8kv-Zi-ncH" customClass="AllMusicDataViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AllMusicDataViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8kv-Zi-ncH" customClass="AllMusicDataViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rdS-Ft-j5I"/>
+                        <viewControllerLayoutGuide type="bottom" id="t9m-L6-qp9"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qXb-Cq-5AL">
                         <rect key="frame" x="0.0" y="44" width="375" height="221"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -434,6 +438,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="tintColor" red="0.98039215690000003" green="0.98823529409999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.1647058824" green="0.1843137255" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.98039215690000003" green="0.98823529409999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>

@@ -21,10 +21,24 @@ typedef enum {
 @property TableViewMode tableViewMode;
 @property MusicDataEntity *musicDataEntity;
 
+// アーティストデータの取得
+- (void)acquisitionArtistData;
+// アルバムデータの取得
+- (void)acquisitionAlbumDataWithArtistName:(NSString *)artistName;
+
 // アーティスト一覧配列からアーティスト名を取り出す
 - (NSString *)loadArtistNameForArtistDataArraywithIndex:(NSInteger)row;
 // アーティスト一覧配列からアーティストアートワークを取り出す
 - (UIImage *)loadArtistArtworkForArtistDataArraywithIndex:(NSInteger)row;
+// アルバム一覧配列からアルバム名を取り出す
+- (NSString *)loadAlbumNameForArtistDataArraywithIndex:(NSInteger)row;
+// アルバム一覧配列からアルバムアートワークを取り出す
+- (UIImage *)loadAlbumArtworkForArtistDataArraywithIndex:(NSInteger)row;
+
+
+
+// 選択したアーティストの名前を保持しておく(画面遷移後に保持したアーティストの名前でアルバムを検索するため)
+- (void)saveSelectedArtistName:(NSString *)artistName;
 
 - (void)loadMusicPlayerData;
 - (void)switchPlayStatus;

@@ -10,7 +10,6 @@
 
 @interface AllMusicDataTableView : UITableView
 <
-UITableViewDelegate,
 UITableViewDataSource
 >
 

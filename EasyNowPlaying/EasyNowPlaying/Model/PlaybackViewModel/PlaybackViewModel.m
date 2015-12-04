@@ -105,17 +105,22 @@
 //            [self.musicDataEntity.musicDataDict setObject:songs forKey:albumTitle];
 //        }
         
-        MPMediaQuery *artistsQuery = [MPMediaQuery artistsQuery];
-        artistsQuery.groupingType = MPMediaGroupingAlbumArtist;
-
-        self.musicDataEntity.artistDataArray = [artistsQuery collections];
-        
         // データ取得完了フラグ
         self.completeLoadData = YES;
     }
 }
 
+#pragma mark - アーティストデータの取得
+- (void)acquisitionArtistData {
+    
+    MPMediaQuery *artistsQuery = [MPMediaQuery artistsQuery];
+    artistsQuery.groupingType = MPMediaGroupingAlbumArtist;
+    
+    self.musicDataEntity.artistDataArray = [artistsQuery collections];
+}
+
 #pragma mark アーティストデータの操作
+// 名前の読み込み
 - (NSString *)loadArtistNameForArtistDataArraywithIndex:(NSInteger)row {
     
     NSString *artistName;
@@ -126,8 +131,11 @@
     return artistName;
 }
 
+// アートワークの読み込み
 - (UIImage *)loadArtistArtworkForArtistDataArraywithIndex:(NSInteger)row {
     
+    // アートワークについてはアルバムのアートワークを取得する。
+    // TODO: 実装見込み次第アーティストのアートワークを取得する
     UIImage *albumArtwork = [UIImage alloc];
     if (self.musicDataEntity.artistDataArray) {
         MPMediaItemCollection *albumCollection = [self.musicDataEntity.artistDataArray objectAtIndex:row];
@@ -135,6 +143,48 @@
         albumArtwork = [artwork imageWithSize:artwork.bounds.size];
     }
     return albumArtwork;
+}
+
+#pragma mark - アルバムデータの取得
+- (void)acquisitionAlbumDataWithArtistName:(NSString *)artistName {
+    
+    MPMediaQuery *albumsQuery = [MPMediaQuery albumsQuery];
+    // アーティスト名を指定
+    [albumsQuery addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:artistName forProperty:MPMediaItemPropertyAlbumArtist]];
+    self.musicDataEntity.albumDataArray = [albumsQuery collections];
+}
+
+#pragma mark - アルバムデータの操作
+// 名前の読み込み
+- (NSString *)loadAlbumNameForArtistDataArraywithIndex:(NSInteger)row {
+    
+    NSString *albumName;
+    if (self.musicDataEntity.artistDataArray) {
+        MPMediaItemCollection *albumCollection = [self.musicDataEntity.albumDataArray objectAtIndex:row];
+        albumName = [[albumCollection representativeItem] valueForProperty:MPMediaItemPropertyAlbumTitle];
+        if ([albumName isEqualToString:@""]) {
+            albumName = @"不明なアーティスト";
+        }
+    }
+    return albumName;
+}
+
+// アートワークの読み込み
+- (UIImage *)loadAlbumArtworkForArtistDataArraywithIndex:(NSInteger)row {
+    
+    UIImage *albumArtwork = [UIImage alloc];
+    if (self.musicDataEntity.albumDataArray) {
+        MPMediaItemCollection *albumCollection = [self.musicDataEntity.albumDataArray objectAtIndex:row];
+        MPMediaItemArtwork *artwork = [[albumCollection representativeItem] valueForProperty:MPMediaItemPropertyArtwork];
+        albumArtwork = [artwork imageWithSize:artwork.bounds.size];
+    }
+    return albumArtwork;
+}
+
+#pragma mark - その他
+- (void)saveSelectedArtistName:(NSString *)artistName {
+    
+    self.musicDataEntity.selectedArtistName = artistName;
 }
 
 

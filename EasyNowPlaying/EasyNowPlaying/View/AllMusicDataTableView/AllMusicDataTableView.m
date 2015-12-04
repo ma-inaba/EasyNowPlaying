@@ -9,37 +9,32 @@
 #import "AllMusicDataTableView.h"
 #import "ModelLocator.h"
 #import "AllMusicDataTableViewArtistCell.h"
+#import "AllMusicDataTableViewAlbumCell.h"
 #import "AllMusicDataTableViewMusicCell.h"
 
 @implementation AllMusicDataTableView
 
 - (void)awakeFromNib {
     
-    self.delegate = self;
     self.dataSource = self;
     
-    UINib *musicCellNib = [UINib nibWithNibName:@"AllMusicDataTableViewMusicCell" bundle:nil];
-    [self registerNib:musicCellNib forCellReuseIdentifier:@"AllMusicDataTableViewMusicCell"];
     UINib *artistCellNib = [UINib nibWithNibName:@"AllMusicDataTableViewArtistCell" bundle:nil];
     [self registerNib:artistCellNib forCellReuseIdentifier:@"AllMusicDataTableViewArtistCell"];
-
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if ([ModelLocator sharedInstance].playbackViewModel.tableViewMode == TableViewModeArtist) {
-        return 65.0f;
-    }
-    return 44.0f;
+    UINib *albumCellNib = [UINib nibWithNibName:@"AllMusicDataTableViewAlbumCell" bundle:nil];
+    [self registerNib:albumCellNib forCellReuseIdentifier:@"AllMusicDataTableViewAlbumCell"];
+    UINib *musicCellNib = [UINib nibWithNibName:@"AllMusicDataTableViewMusicCell" bundle:nil];
+    [self registerNib:musicCellNib forCellReuseIdentifier:@"AllMusicDataTableViewMusicCell"];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artistDataArray count];
+    if ([ModelLocator sharedInstance].playbackViewModel.tableViewMode == TableViewModeArtist) {
+        return [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artistDataArray count];
+    } else if ([ModelLocator sharedInstance].playbackViewModel.tableViewMode == TableViewModeAlbum) {
+        return [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity.albumDataArray count];
+    } else {
+        // TODO: 変更
+        return [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artistDataArray count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -48,7 +43,7 @@
         AllMusicDataTableViewArtistCell *cell = [self allMusicDataTableViewArtistCell:tableView cellForRowAtIndexPath:indexPath];
         return cell;
     } else if ([ModelLocator sharedInstance].playbackViewModel.tableViewMode == TableViewModeAlbum) {
-        AllMusicDataTableViewMusicCell *cell = [self allMusicDataTableViewMusicCell:tableView cellForRowAtIndexPath:indexPath];
+        AllMusicDataTableViewAlbumCell *cell = [self allMusicDataTableViewAlbumCell:tableView cellForRowAtIndexPath:indexPath];
         return cell;
     } else {
         AllMusicDataTableViewMusicCell *cell = [self allMusicDataTableViewMusicCell:tableView cellForRowAtIndexPath:indexPath];
@@ -70,6 +65,23 @@
     
     cell.artistImageView.image = [[ModelLocator sharedInstance].playbackViewModel loadArtistArtworkForArtistDataArraywithIndex:indexPath.row];
 
+    return cell;
+}
+
+- (AllMusicDataTableViewAlbumCell *)allMusicDataTableViewAlbumCell:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    AllMusicDataTableViewAlbumCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AllMusicDataTableViewAlbumCell"];
+    
+    if (!cell) {
+        cell = [[AllMusicDataTableViewAlbumCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"AllMusicDataTableViewAlbumCell"];
+    }
+    
+    cell.albumNameLabel.text = [[ModelLocator sharedInstance].playbackViewModel loadAlbumNameForArtistDataArraywithIndex:indexPath.row];
+    cell.albumNameLabel.textColor = [UIColor whiteColor];
+    cell.albumNameLabel.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
+    
+    cell.albumImageView.image = [[ModelLocator sharedInstance].playbackViewModel loadAlbumArtworkForArtistDataArraywithIndex:indexPath.row];
+    
     return cell;
 }
 
