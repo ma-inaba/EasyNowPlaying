@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AlbumTableViewSongCell : UITableViewCell
+@interface AllMusicDataTableViewMusicCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *musicNoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *musicTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *musicDurationLabel;

@@ -1,23 +1,23 @@
 //
-//  AlbumTableView.m
+//  AllMusicDataTableView.m
 //  EasyNowPlaying
 //
 //  Created by inaba masaya on 2015/11/30.
 //  Copyright © 2015年 inaba masaya. All rights reserved.
 //
 
-#import "AlbumTableView.h"
+#import "AllMusicDataTableView.h"
 #import "ModelLocator.h"
-#import "AlbumTableViewSongCell.h"
+#import "AllMusicDataTableViewMusicCell.h"
 
-@implementation AlbumTableView
+@implementation AllMusicDataTableView
 
 - (void)awakeFromNib {
     
     self.delegate = self;
     self.dataSource = self;
     
-    UINib *nib = [UINib nibWithNibName:@"AlbumTableViewSongCell" bundle:nil];
+    UINib *nib = [UINib nibWithNibName:@"AllMusicDataTableViewMusicCell" bundle:nil];
     [self registerNib:nib forCellReuseIdentifier:@"Cell"];
 }
 
@@ -53,10 +53,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    AlbumTableViewSongCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    AllMusicDataTableViewMusicCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
     if (!cell) {
-        cell = [[AlbumTableViewSongCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+        cell = [[AllMusicDataTableViewMusicCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
     
     cell.musicNoLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row +1];

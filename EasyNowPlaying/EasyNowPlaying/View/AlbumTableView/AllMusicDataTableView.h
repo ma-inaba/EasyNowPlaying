@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AlbumTableView : UITableView
+@interface AllMusicDataTableView : UITableView
 <
 UITableViewDelegate,
 UITableViewDataSource

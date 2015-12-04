@@ -9,14 +9,14 @@
 #import "PlaybackViewController.h"
 #import "ModelLocator.h"
 #import "MusicDataView.h"
-#import "AlbumTableView.h"
+#import "AllMusicDataTableView.h"
 #import "AlbumTableHeaderView.h"
 #import <Social/Social.h>
 
 @interface PlaybackViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *artworkImageView;
 @property (weak, nonatomic) IBOutlet MusicDataView *musicDataView;
-@property (weak, nonatomic) IBOutlet AlbumTableView *albumDataTableView;
+@property (weak, nonatomic) IBOutlet AllMusicDataTableView *albumDataTableView;
 @property (weak, nonatomic) IBOutlet OperationButtonsView *operationButtonsView;
 @property (weak, nonatomic) IBOutlet AlbumTableHeaderView *albumTableHeaderView;
 
