@@ -7,7 +7,6 @@
 //
 
 #import "PlaybackViewController.h"
-#import "ModelLocator.h"
 #import "MusicDataView.h"
 #import <Social/Social.h>
 
@@ -31,7 +30,7 @@
     [super viewWillAppear:animated];
     
     // KVO監視を始める
-    [[ModelLocator sharedInstance].playbackViewModel addObserver:self forKeyPath:@"completeLoadData" options:0 context:nil];
+    [[ModelLocator sharedInstance].playbackViewModel addObserver:self forKeyPath:kCompleteLoadData options:0 context:nil];
     [[ModelLocator sharedInstance].playbackViewModel loadMusicPlayerData];
 }
 
@@ -40,12 +39,12 @@
     [super viewWillDisappear:animated];
     
     // KVO監視を解除する
-    [[ModelLocator sharedInstance].playbackViewModel removeObserver:self forKeyPath:@"completeLoadData"];
+    [[ModelLocator sharedInstance].playbackViewModel removeObserver:self forKeyPath:kCompleteLoadData];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     
-    if ([keyPath isEqualToString:@"completeLoadData"]) {
+    if ([keyPath isEqualToString:kCompleteLoadData]) {
         self.artworkImageView.image = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artworkImage;
         [self.musicDataView setNeedsDisplay];
     }
@@ -64,7 +63,6 @@
         [controller setCompletionHandler:^(SLComposeViewControllerResult result) {
             if (result == SLComposeViewControllerResultDone) {
                 //投稿成功時の処理
-                NSLog(@"%@での投稿に成功しました", serviceType);
             }
         }];
         

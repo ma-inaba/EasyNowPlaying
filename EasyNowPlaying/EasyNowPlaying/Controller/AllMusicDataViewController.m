@@ -8,7 +8,6 @@
 
 #import "AllMusicDataViewController.h"
 #import "AllMusicDataTableView.h"
-#import "ModelLocator.h"
 
 @interface AllMusicDataViewController ()
 @property (weak, nonatomic) IBOutlet AllMusicDataTableView *allMusicDataTableView;
@@ -30,17 +29,17 @@
 
     switch ([ModelLocator sharedInstance].playbackViewModel.tableViewMode) {
         case TableViewModeArtist:
-            [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity addObserver:self forKeyPath:@"artistDataArray" options:0 context:nil];
+            [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity addObserver:self forKeyPath:kArtistDataArray options:0 context:nil];
             [[ModelLocator sharedInstance].playbackViewModel acquisitionArtistData];
             break;
         case TableViewModeAlbum:{
-            [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity addObserver:self forKeyPath:@"albumDataArray" options:0 context:nil];
+            [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity addObserver:self forKeyPath:kAlbumDataArray options:0 context:nil];
             NSString *artistName = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.selectedArtistName;
             [[ModelLocator sharedInstance].playbackViewModel acquisitionAlbumDataWithArtistName:artistName];
             break;
         }
         case TableViewModeMusic:{
-            [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity addObserver:self forKeyPath:@"songsDataArray" options:0 context:nil];
+            [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity addObserver:self forKeyPath:kSongsDataArray options:0 context:nil];
             NSString *albumName = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.selectedAlbumName;
             [[ModelLocator sharedInstance].playbackViewModel acquisitionMusicDataWithAlbumName:albumName];
             break;
@@ -57,14 +56,14 @@
     if (![self.navigationController.viewControllers containsObject:self]) {
         switch ([ModelLocator sharedInstance].playbackViewModel.tableViewMode) {
             case TableViewModeArtist:
-                [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:@"artistDataArray"];
+                [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:kArtistDataArray];
                 break;
             case TableViewModeAlbum:
-                [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:@"albumDataArray"];
+                [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:kAlbumDataArray];
                 [[ModelLocator sharedInstance].playbackViewModel setTableViewMode:TableViewModeArtist];
                 break;
             case TableViewModeMusic:
-                [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:@"songsDataArray"];
+                [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:kSongsDataArray];
                 [[ModelLocator sharedInstance].playbackViewModel setTableViewMode:TableViewModeAlbum];
                 break;
             default:
@@ -73,15 +72,15 @@
     } else {
         switch ([ModelLocator sharedInstance].playbackViewModel.tableViewMode) {
             case TableViewModeArtist:
-                [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:@"artistDataArray"];
+                [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:kArtistDataArray];
                 [[ModelLocator sharedInstance].playbackViewModel setTableViewMode:TableViewModeAlbum];
                 break;
             case TableViewModeAlbum:
-                [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:@"albumDataArray"];
+                [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:kAlbumDataArray];
                 [[ModelLocator sharedInstance].playbackViewModel setTableViewMode:TableViewModeMusic];
                 break;
             case TableViewModeMusic:
-                [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:@"songsDataArray"];
+                [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:kSongsDataArray];
                 break;
             default:
                 break;
@@ -98,13 +97,13 @@
     
     switch ([ModelLocator sharedInstance].playbackViewModel.tableViewMode) {
         case TableViewModeArtist:
-            self.navigationItem.title = @"アーティスト";
+            self.navigationItem.title = kArtist;
             break;
         case TableViewModeAlbum:
-            self.navigationItem.title = @"アルバム";
+            self.navigationItem.title = kAlbum;
             break;
         case TableViewModeMusic:
-            self.navigationItem.title = @"曲";
+            self.navigationItem.title = kMusic;
             break;
         default:
             break;
@@ -116,13 +115,13 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     
-    if ([keyPath isEqualToString:@"artistDataArray"]) {
+    if ([keyPath isEqualToString:kArtistDataArray]) {
         [self.allMusicDataTableView reloadData];
     }
-    if ([keyPath isEqualToString:@"albumDataArray"]) {
+    if ([keyPath isEqualToString:kAlbumDataArray]) {
         [self.allMusicDataTableView reloadData];
     }
-    if ([keyPath isEqualToString:@"songsDataArray"]) {
+    if ([keyPath isEqualToString:kSongsDataArray]) {
         [self.allMusicDataTableView reloadData];
     }
 }

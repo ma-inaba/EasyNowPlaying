@@ -88,6 +88,8 @@
 		A2B8C5EC1C0982780094F14C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		A2B8C5EE1C0984940094F14C /* MusicDataEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicDataEntity.h; sourceTree = "<group>"; };
 		A2B8C5EF1C0984940094F14C /* MusicDataEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDataEntity.m; sourceTree = "<group>"; };
+		A2E7E97E1C12ED82008ED5A9 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		A2E7E97F1C12F04A008ED5A9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +156,6 @@
 		A29F58A81C08A18300233ADA = {
 			isa = PBXGroup;
 			children = (
-				A2B8C5EC1C0982780094F14C /* MediaPlayer.framework */,
 				A29F58B31C08A18300233ADA /* EasyNowPlaying */,
 				A29F58B21C08A18300233ADA /* Products */,
 			);
@@ -181,6 +182,7 @@
 				A29F58DE1C08B7F100233ADA /* Category */,
 				A29F58D41C08A21B00233ADA /* Storyboard */,
 				A29F58D51C08A26600233ADA /* Resource */,
+				A2E7E9801C12F65B008ED5A9 /* Framework */,
 				A29F58B41C08A18300233ADA /* Supporting Files */,
 			);
 			path = EasyNowPlaying;
@@ -200,6 +202,7 @@
 				A29F58C51C08A18300233ADA /* Info.plist */,
 				A29F58CC1C08A20100233ADA /* AppDelegate.h */,
 				A29F58CD1C08A20100233ADA /* AppDelegate.m */,
+				A2E7E97F1C12F04A008ED5A9 /* PrefixHeader.pch */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 		A29F58D11C08A20100233ADA /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				A2E7E97E1C12ED82008ED5A9 /* Define.h */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -323,6 +327,14 @@
 				A2B8C5EF1C0984940094F14C /* MusicDataEntity.m */,
 			);
 			path = MusicDataEntity;
+			sourceTree = "<group>";
+		};
+		A2E7E9801C12F65B008ED5A9 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				A2B8C5EC1C0982780094F14C /* MediaPlayer.framework */,
+			);
+			path = Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -534,6 +546,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/Application/PrefixHeader.pch";
 				INFOPLIST_FILE = EasyNowPlaying/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = masaya.inaba.EasyNowPlaying;
@@ -546,6 +559,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/Application/PrefixHeader.pch";
 				INFOPLIST_FILE = EasyNowPlaying/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = masaya.inaba.EasyNowPlaying;

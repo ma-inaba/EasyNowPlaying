@@ -7,7 +7,6 @@
 //
 
 #import "MusicDataView.h"
-#import "ModelLocator.h"
 
 @interface MusicDataView()
 @property (weak, nonatomic) IBOutlet UILabel *musicTitleLabel;
@@ -19,18 +18,32 @@
 
 - (void)drawRect:(CGRect)rect {
     
-    self.musicTitleLabel.text = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.musicTitle;
-    
+    NSString *musicTitle = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.musicTitle;
     NSString *artistName = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artistName;
     NSString *albumTitle = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.albumTitle;
+    
+    if ([musicTitle isEqualToString:@""]) {
+        musicTitle = kUnknownTitle;
+    }
+    
+    if ([artistName isEqualToString:@""]) {
+        artistName = kUnknownArtist;
+    }
+    
+    if ([albumTitle isEqualToString:@""]) {
+        albumTitle = kUnknownAlbum;
+    }
+
     NSString *artistAlbumStr = [NSString stringWithFormat:@"%@ - %@",artistName, albumTitle];
-    self.artistAlbumLabel.text = artistAlbumStr;
     
     int duration = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.duration;
     int secondTime = duration%60; //秒
     int minutTime = (duration/60)%60;  //分
 
+    self.musicTitleLabel.text = musicTitle;
+    self.artistAlbumLabel.text = artistAlbumStr;
     self.musicDurationLabel.text = [NSString stringWithFormat:@"%d:%02d", minutTime,secondTime];
+
     self.layer.shadowOffset = CGSizeMake(0, 5);
     self.layer.shadowOpacity = 0.5;    
 }

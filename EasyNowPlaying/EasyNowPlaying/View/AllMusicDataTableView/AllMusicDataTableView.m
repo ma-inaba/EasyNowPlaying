@@ -7,7 +7,6 @@
 //
 
 #import "AllMusicDataTableView.h"
-#import "ModelLocator.h"
 #import "AllMusicDataTableViewArtistCell.h"
 #import "AllMusicDataTableViewAlbumCell.h"
 #import "AllMusicDataTableViewMusicCell.h"
@@ -18,12 +17,12 @@
     
     self.dataSource = self;
     
-    UINib *artistCellNib = [UINib nibWithNibName:@"AllMusicDataTableViewArtistCell" bundle:nil];
-    [self registerNib:artistCellNib forCellReuseIdentifier:@"AllMusicDataTableViewArtistCell"];
-    UINib *albumCellNib = [UINib nibWithNibName:@"AllMusicDataTableViewAlbumCell" bundle:nil];
-    [self registerNib:albumCellNib forCellReuseIdentifier:@"AllMusicDataTableViewAlbumCell"];
-    UINib *musicCellNib = [UINib nibWithNibName:@"AllMusicDataTableViewMusicCell" bundle:nil];
-    [self registerNib:musicCellNib forCellReuseIdentifier:@"AllMusicDataTableViewMusicCell"];
+    UINib *artistCellNib = [UINib nibWithNibName:kMusicDataTableArtistCell bundle:nil];
+    [self registerNib:artistCellNib forCellReuseIdentifier:kMusicDataTableArtistCell];
+    UINib *albumCellNib = [UINib nibWithNibName:kMusicDataTableAlbumCell bundle:nil];
+    [self registerNib:albumCellNib forCellReuseIdentifier:kMusicDataTableAlbumCell];
+    UINib *musicCellNib = [UINib nibWithNibName:kMusicDataTableMusicCell bundle:nil];
+    [self registerNib:musicCellNib forCellReuseIdentifier:kMusicDataTableMusicCell];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -52,10 +51,10 @@
 
 - (AllMusicDataTableViewArtistCell *)allMusicDataTableViewArtistCell:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    AllMusicDataTableViewArtistCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AllMusicDataTableViewArtistCell"];
+    AllMusicDataTableViewArtistCell *cell = [tableView dequeueReusableCellWithIdentifier:kMusicDataTableArtistCell];
     
     if (!cell) {
-        cell = [[AllMusicDataTableViewArtistCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"AllMusicDataTableViewArtistCell"];
+        cell = [[AllMusicDataTableViewArtistCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kMusicDataTableArtistCell];
     }
     
     cell.artistNameLabel.text = [[ModelLocator sharedInstance].playbackViewModel loadArtistNameForArtistDataArraywithIndex:indexPath.row];
@@ -69,10 +68,10 @@
 
 - (AllMusicDataTableViewAlbumCell *)allMusicDataTableViewAlbumCell:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    AllMusicDataTableViewAlbumCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AllMusicDataTableViewAlbumCell"];
+    AllMusicDataTableViewAlbumCell *cell = [tableView dequeueReusableCellWithIdentifier:kMusicDataTableAlbumCell];
     
     if (!cell) {
-        cell = [[AllMusicDataTableViewAlbumCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"AllMusicDataTableViewAlbumCell"];
+        cell = [[AllMusicDataTableViewAlbumCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kMusicDataTableAlbumCell];
     }
     
     cell.albumNameLabel.text = [[ModelLocator sharedInstance].playbackViewModel loadAlbumNameForArtistDataArraywithIndex:indexPath.row];
@@ -86,10 +85,10 @@
 
 - (AllMusicDataTableViewMusicCell *)allMusicDataTableViewMusicCell:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    AllMusicDataTableViewMusicCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AllMusicDataTableViewMusicCell"];
+    AllMusicDataTableViewMusicCell *cell = [tableView dequeueReusableCellWithIdentifier:kMusicDataTableMusicCell];
     
     if (!cell) {
-        cell = [[AllMusicDataTableViewMusicCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"AllMusicDataTableViewMusicCell"];
+        cell = [[AllMusicDataTableViewMusicCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kMusicDataTableMusicCell];
     }
     
     cell.musicNoLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row +1];

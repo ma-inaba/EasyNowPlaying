@@ -7,7 +7,7 @@
 //
 
 #import "OperationButtonsView.h"
-#import "ModelLocator.h"
+
 @interface OperationButtonsView()
 @property (weak, nonatomic) IBOutlet UIImageView *tweetImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *playImageView;
@@ -21,9 +21,9 @@
     
     BOOL isPlayingState = [[ModelLocator sharedInstance].playbackViewModel isNowPlayingState];
     if (isPlayingState) {
-        self.playImageView.image = [UIImage imageNamed:@"Pause"];
+        self.playImageView.image = [UIImage imageNamed:kPause];
     } else {
-        self.playImageView.image = [UIImage imageNamed:@"Play"];
+        self.playImageView.image = [UIImage imageNamed:kPlay];
     }
     
     self.tweetImageView.image = [self.tweetImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -51,9 +51,9 @@
     
     BOOL isPlayingState = [[ModelLocator sharedInstance].playbackViewModel isNowPlayingState];
     if (isPlayingState) {
-        self.playImageView.image = [UIImage imageNamed:@"Play"];
+        self.playImageView.image = [UIImage imageNamed:kPlay];
     } else {
-        self.playImageView.image = [UIImage imageNamed:@"Pause"];
+        self.playImageView.image = [UIImage imageNamed:kPause];
     }
     self.playImageView.image = [self.playImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.playImageView.tintColor = [UIColor colorWithRed:0.98 green:0.99 blue:0.91 alpha:1.0];

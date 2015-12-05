@@ -18,12 +18,12 @@
     self.delegate = self;
     self.dataSource = self;
     
-    UINib *tagNib = [UINib nibWithNibName:@"SettingTableViewTagCell" bundle:nil];
-    [self registerNib:tagNib forCellReuseIdentifier:@"SettingTableViewTagCell"];
-    UINib *imageNib = [UINib nibWithNibName:@"SettingTableViewImageCell" bundle:nil];
-    [self registerNib:imageNib forCellReuseIdentifier:@"SettingTableViewImageCell"];
-    UINib *profileNib = [UINib nibWithNibName:@"SettingTableViewProfileCell" bundle:nil];
-    [self registerNib:profileNib forCellReuseIdentifier:@"SettingTableViewProfileCell"];
+    UINib *tagNib = [UINib nibWithNibName:kSettingTableViewTagCell bundle:nil];
+    [self registerNib:tagNib forCellReuseIdentifier:kSettingTableViewTagCell];
+    UINib *imageNib = [UINib nibWithNibName:kSettingTableViewImageCell bundle:nil];
+    [self registerNib:imageNib forCellReuseIdentifier:kSettingTableViewImageCell];
+    UINib *profileNib = [UINib nibWithNibName:kSettingTableViewProfileCell bundle:nil];
+    [self registerNib:profileNib forCellReuseIdentifier:kSettingTableViewProfileCell];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -50,26 +50,26 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (section == 0) {
-        return @"Tag";
+        return kSettingTableHeaderTag;
     } else if (section == 1) {
-        return @"Artwork";
+        return kSettingTableHeaderArtwork;
     } else {
-        return @"Creator";
+        return kSettingTableHeaderCreator;
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
-        SettingTableViewTagCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SettingTableViewTagCell"];
+        SettingTableViewTagCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewTagCell];
         
         return cell;
     } else if (indexPath.section == 1) {
-        SettingTableViewImageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SettingTableViewImageCell"];
+        SettingTableViewImageCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewImageCell];
         
         return cell;
     } else {
-        SettingTableViewProfileCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SettingTableViewProfileCell"];
+        SettingTableViewProfileCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewProfileCell];
         
         return cell;
     }

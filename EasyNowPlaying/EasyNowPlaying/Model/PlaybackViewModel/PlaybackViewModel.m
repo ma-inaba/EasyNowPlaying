@@ -164,7 +164,7 @@
         MPMediaItemCollection *albumCollection = [self.musicDataEntity.albumDataArray objectAtIndex:row];
         albumName = [[albumCollection representativeItem] valueForProperty:MPMediaItemPropertyAlbumTitle];
         if ([albumName isEqualToString:@""]) {
-            albumName = @"不明なアーティスト";
+            albumName = kUnknownArtist;
         }
     }
     return albumName;
