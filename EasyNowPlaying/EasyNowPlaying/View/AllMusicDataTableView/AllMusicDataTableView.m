@@ -62,6 +62,11 @@
     cell.artistNameLabel.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
     
     cell.artistImageView.image = [[ModelLocator sharedInstance].playbackViewModel loadArtistArtworkForArtistDataArraywithIndex:indexPath.row];
+    
+    NSString *albumTrack = [[ModelLocator sharedInstance].playbackViewModel loadAlbumTrackCountForArtistDataArraywithIndex:indexPath.row];
+    cell.albumTrackLabel.text = [NSString stringWithFormat:@"%@枚のアルバム",albumTrack];
+    cell.albumTrackLabel.textColor = [UIColor lightGrayColor];
+    cell.albumTrackLabel.font = [UIFont boldSystemFontOfSize:9.0f];
 
     return cell;
 }

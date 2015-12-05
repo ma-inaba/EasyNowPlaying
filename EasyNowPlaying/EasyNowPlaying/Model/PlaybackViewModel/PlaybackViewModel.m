@@ -100,6 +100,17 @@
     return albumArtwork;
 }
 
+// アーティストのアルバム数の読み込み
+- (NSString *)loadAlbumTrackCountForArtistDataArraywithIndex:(NSInteger)row {
+    
+    MPMediaQuery *albumsQuery = [MPMediaQuery albumsQuery];
+    
+    NSString *artistName = [self loadArtistNameForArtistDataArraywithIndex:row];
+    // アーティスト名を指定
+    [albumsQuery addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:artistName forProperty: MPMediaItemPropertyAlbumArtist]];
+    return [NSString stringWithFormat:@"%lu",[[albumsQuery collections] count]];
+}
+
 #pragma mark - アルバムデータの取得
 - (void)acquisitionAlbumDataWithArtistName:(NSString *)artistName {
     

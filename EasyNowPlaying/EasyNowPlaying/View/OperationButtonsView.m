@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *backImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *settingImageView;
 @end
+
 @implementation OperationButtonsView
 
 - (void)drawRect:(CGRect)rect {

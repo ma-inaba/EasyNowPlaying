@@ -11,5 +11,6 @@
 @interface AllMusicDataTableViewArtistCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *artistImageView;
 @property (weak, nonatomic) IBOutlet UILabel *artistNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *albumTrackLabel;
 
 @end

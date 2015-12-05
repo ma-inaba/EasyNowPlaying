@@ -32,6 +32,8 @@ typedef enum {
 - (NSString *)loadArtistNameForArtistDataArraywithIndex:(NSInteger)row;
 // アーティスト一覧配列からアーティストアートワークを取り出す
 - (UIImage *)loadArtistArtworkForArtistDataArraywithIndex:(NSInteger)row;
+// アーティスト一覧配列からアルバムのトラック数を取り出す
+- (NSString *)loadAlbumTrackCountForArtistDataArraywithIndex:(NSInteger)row;
 // アルバム一覧配列からアルバム名を取り出す
 - (NSString *)loadAlbumNameForArtistDataArraywithIndex:(NSInteger)row;
 // アルバム一覧配列からアルバムアートワークを取り出す
