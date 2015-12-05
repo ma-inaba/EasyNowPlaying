@@ -150,6 +150,27 @@
                                             <outlet property="tweetImageView" destination="ZjR-k0-LhS" id="Uba-U9-1pO"/>
                                         </connections>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgh-Qz-dTE" customClass="AllMusicDataTableBaseView">
+                                        <rect key="frame" x="-3" y="402" width="381" height="265"/>
+                                        <subviews>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOH-vX-Z7T">
+                                                <rect key="frame" x="3" y="0.0" width="375" height="265"/>
+                                                <animations/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <segue destination="Erq-T1-zaw" kind="embed" id="UOm-iF-sAd"/>
+                                                </connections>
+                                            </containerView>
+                                        </subviews>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.1647058824" green="0.1843137255" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="hOH-vX-Z7T" firstAttribute="top" secondItem="jgh-Qz-dTE" secondAttribute="top" id="PWS-2p-8u9"/>
+                                            <constraint firstItem="hOH-vX-Z7T" firstAttribute="leading" secondItem="jgh-Qz-dTE" secondAttribute="leading" constant="3" id="RfK-9q-AEL"/>
+                                            <constraint firstAttribute="bottom" secondItem="hOH-vX-Z7T" secondAttribute="bottom" id="dVp-aw-1dy"/>
+                                            <constraint firstAttribute="trailing" secondItem="hOH-vX-Z7T" secondAttribute="trailing" constant="3" id="kVi-Ts-xdv"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwm-Tm-LLZ" customClass="MusicDataView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                         <subviews>
@@ -228,27 +249,6 @@
                                             <outlet property="musicDurationLabel" destination="sxP-OE-q4I" id="vl1-1K-YjK"/>
                                             <outlet property="musicTitleLabel" destination="3aE-qa-anr" id="UPa-9p-Ptk"/>
                                         </connections>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgh-Qz-dTE" customClass="AllMusicDataTableBaseView">
-                                        <rect key="frame" x="-3" y="402" width="381" height="265"/>
-                                        <subviews>
-                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOH-vX-Z7T">
-                                                <rect key="frame" x="3" y="0.0" width="375" height="265"/>
-                                                <animations/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <connections>
-                                                    <segue destination="Erq-T1-zaw" kind="embed" id="UOm-iF-sAd"/>
-                                                </connections>
-                                            </containerView>
-                                        </subviews>
-                                        <animations/>
-                                        <color key="backgroundColor" red="0.1647058824" green="0.1843137255" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="hOH-vX-Z7T" firstAttribute="top" secondItem="jgh-Qz-dTE" secondAttribute="top" id="PWS-2p-8u9"/>
-                                            <constraint firstItem="hOH-vX-Z7T" firstAttribute="leading" secondItem="jgh-Qz-dTE" secondAttribute="leading" constant="3" id="RfK-9q-AEL"/>
-                                            <constraint firstAttribute="bottom" secondItem="hOH-vX-Z7T" secondAttribute="bottom" id="dVp-aw-1dy"/>
-                                            <constraint firstAttribute="trailing" secondItem="hOH-vX-Z7T" secondAttribute="trailing" constant="3" id="kVi-Ts-xdv"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                                 <animations/>

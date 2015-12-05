@@ -32,8 +32,7 @@
     } else if ([ModelLocator sharedInstance].playbackViewModel.tableViewMode == TableViewModeAlbum) {
         return [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity.albumDataArray count];
     } else {
-        // TODO: 変更
-        return [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artistDataArray count];
+        return [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity.songsDataArray count];
     }
 }
 
@@ -60,7 +59,7 @@
     }
     
     cell.artistNameLabel.text = [[ModelLocator sharedInstance].playbackViewModel loadArtistNameForArtistDataArraywithIndex:indexPath.row];
-    cell.artistNameLabel.textColor = [UIColor whiteColor];
+    cell.artistNameLabel.textColor = [UIColor colorWithRed:0.98 green:0.99 blue:0.91 alpha:1.0];
     cell.artistNameLabel.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
     
     cell.artistImageView.image = [[ModelLocator sharedInstance].playbackViewModel loadArtistArtworkForArtistDataArraywithIndex:indexPath.row];
@@ -77,7 +76,7 @@
     }
     
     cell.albumNameLabel.text = [[ModelLocator sharedInstance].playbackViewModel loadAlbumNameForArtistDataArraywithIndex:indexPath.row];
-    cell.albumNameLabel.textColor = [UIColor whiteColor];
+    cell.albumNameLabel.textColor = [UIColor colorWithRed:0.98 green:0.99 blue:0.91 alpha:1.0];
     cell.albumNameLabel.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
     
     cell.albumImageView.image = [[ModelLocator sharedInstance].playbackViewModel loadAlbumArtworkForArtistDataArraywithIndex:indexPath.row];
@@ -96,7 +95,7 @@
     cell.musicNoLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row +1];
     cell.musicNoLabel.textColor = [UIColor whiteColor];
     
-    cell.musicTitleLabel.text = [[ModelLocator sharedInstance].playbackViewModel loadArtistNameForArtistDataArraywithIndex:indexPath.row];
+    cell.musicTitleLabel.text = [[ModelLocator sharedInstance].playbackViewModel loadMusicNameForsongsDataArraywithIndex:indexPath.row];
     cell.musicTitleLabel.textColor = [UIColor whiteColor];
     cell.musicTitleLabel.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
     

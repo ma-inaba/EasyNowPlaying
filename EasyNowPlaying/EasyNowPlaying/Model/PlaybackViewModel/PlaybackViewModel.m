@@ -160,6 +160,7 @@
     
     NSString *albumName;
     if (self.musicDataEntity.artistDataArray) {
+        // TODO: 曲一覧をスクロールしながら画面を戻るとここでクラッシュ(rowの値が配列のindexpathを超えてる)
         MPMediaItemCollection *albumCollection = [self.musicDataEntity.albumDataArray objectAtIndex:row];
         albumName = [[albumCollection representativeItem] valueForProperty:MPMediaItemPropertyAlbumTitle];
         if ([albumName isEqualToString:@""]) {
@@ -181,24 +182,54 @@
     return albumArtwork;
 }
 
+#pragma mark - 曲データの取得
+- (void)acquisitionMusicDataWithAlbumName:(NSString *)albumName {
+    
+    MPMediaQuery *songsQuery = [MPMediaQuery songsQuery];
+    // アルバム名を指定
+    [songsQuery addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:albumName forProperty:MPMediaItemPropertyAlbumTitle]];
+    self.musicDataEntity.songsDataArray = [songsQuery collections];
+}
+
+#pragma mark - 曲データの操作
+// 曲のタイトルの読み込み
+- (NSString *)loadMusicNameForsongsDataArraywithIndex:(NSInteger)row {
+    
+    NSString *musicName;
+    if (self.musicDataEntity.songsDataArray) {
+        MPMediaItemCollection *musicCollection = [self.musicDataEntity.songsDataArray objectAtIndex:row];
+        musicName = [[musicCollection representativeItem] valueForProperty:MPMediaItemPropertyTitle];
+    }
+    return musicName;
+}
+
 #pragma mark - その他
 - (void)saveSelectedArtistName:(NSString *)artistName {
     
     self.musicDataEntity.selectedArtistName = artistName;
 }
 
+- (void)saveSelectedAlbumName:(NSString *)albumName {
+    
+    self.musicDataEntity.selectedAlbumName = albumName;
+}
+
+- (BOOL)isNowPlayingState {
+    if([player playbackState] == MPMusicPlaybackStatePlaying){
+        return YES;
+    } else {
+        return NO;
+    }
+}
 
 #pragma mark 各操作ボタン押下時の処理
 - (void)switchPlayStatus
 {
-    if( [player playbackState] == MPMusicPlaybackStatePlaying ){
+    if([player playbackState] == MPMusicPlaybackStatePlaying){
         [player pause];
-    }
-    else{
+    } else {
         [player play];
     }
-    
-    // TODO: 戻り値で変更後のステータスを返してボタンのデザインを変更する
 }
 
 - (void)skipToPreviousMusic

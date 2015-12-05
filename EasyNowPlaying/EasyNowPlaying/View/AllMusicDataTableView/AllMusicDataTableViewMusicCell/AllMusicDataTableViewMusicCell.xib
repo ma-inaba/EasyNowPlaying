@@ -56,7 +56,7 @@
             </tableViewCellContentView>
             <animations/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-            <inset key="separatorInset" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <inset key="separatorInset" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="musicDurationLabel" destination="X7P-IN-e8v" id="cS7-IB-Jfh"/>
                 <outlet property="musicNoLabel" destination="ABL-jf-GpH" id="nC7-Qa-MTP"/>

@@ -25,6 +25,8 @@ typedef enum {
 - (void)acquisitionArtistData;
 // アルバムデータの取得
 - (void)acquisitionAlbumDataWithArtistName:(NSString *)artistName;
+// 曲データの取得
+- (void)acquisitionMusicDataWithAlbumName:(NSString *)albumName;
 
 // アーティスト一覧配列からアーティスト名を取り出す
 - (NSString *)loadArtistNameForArtistDataArraywithIndex:(NSInteger)row;
@@ -34,11 +36,16 @@ typedef enum {
 - (NSString *)loadAlbumNameForArtistDataArraywithIndex:(NSInteger)row;
 // アルバム一覧配列からアルバムアートワークを取り出す
 - (UIImage *)loadAlbumArtworkForArtistDataArraywithIndex:(NSInteger)row;
-
+// 曲一覧配列から曲のタイトルの読み込み
+- (NSString *)loadMusicNameForsongsDataArraywithIndex:(NSInteger)row;
 
 
 // 選択したアーティストの名前を保持しておく(画面遷移後に保持したアーティストの名前でアルバムを検索するため)
 - (void)saveSelectedArtistName:(NSString *)artistName;
+// 選択したアルバムの名前を保持しておく(画面遷移後に保持したアルバムの名前で曲を検索するため)
+- (void)saveSelectedAlbumName:(NSString *)albumName;
+// 現在再生中かどうか
+- (BOOL)isNowPlayingState;
 
 - (void)loadMusicPlayerData;
 - (void)switchPlayStatus;

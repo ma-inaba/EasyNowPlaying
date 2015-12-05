@@ -30,9 +30,9 @@
     int secondTime = duration%60; //秒
     int minutTime = (duration/60)%60;  //分
 
-    self.musicDurationLabel.text = [NSString stringWithFormat:@"%d:%d", minutTime,secondTime];
+    self.musicDurationLabel.text = [NSString stringWithFormat:@"%d:%02d", minutTime,secondTime];
     self.layer.shadowOffset = CGSizeMake(0, 5);
-    self.layer.shadowOpacity = 0.5;
+    self.layer.shadowOpacity = 0.5;    
 }
 
 @end

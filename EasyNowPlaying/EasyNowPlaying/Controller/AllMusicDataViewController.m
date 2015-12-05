@@ -27,49 +27,66 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    
-    // KVO監視を始めてデータを取得する
-    [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity addObserver:self forKeyPath:@"artistDataArray" options:0 context:nil];
-    [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity addObserver:self forKeyPath:@"albumDataArray" options:0 context:nil];
 
     switch ([ModelLocator sharedInstance].playbackViewModel.tableViewMode) {
         case TableViewModeArtist:
+            [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity addObserver:self forKeyPath:@"artistDataArray" options:0 context:nil];
             [[ModelLocator sharedInstance].playbackViewModel acquisitionArtistData];
             break;
         case TableViewModeAlbum:{
+            [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity addObserver:self forKeyPath:@"albumDataArray" options:0 context:nil];
             NSString *artistName = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.selectedArtistName;
             [[ModelLocator sharedInstance].playbackViewModel acquisitionAlbumDataWithArtistName:artistName];
             break;
         }
-        case TableViewModeMusic:
+        case TableViewModeMusic:{
+            [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity addObserver:self forKeyPath:@"songsDataArray" options:0 context:nil];
+            NSString *albumName = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.selectedAlbumName;
+            [[ModelLocator sharedInstance].playbackViewModel acquisitionMusicDataWithAlbumName:albumName];
             break;
+        }
         default:
             break;
     }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    
+
     [super viewWillDisappear:animated];
 
-    // KVO監視を解除する
-    [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:@"artistDataArray"];
-    [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:@"albumDataArray"];
     if (![self.navigationController.viewControllers containsObject:self]) {
         switch ([ModelLocator sharedInstance].playbackViewModel.tableViewMode) {
             case TableViewModeArtist:
+                [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:@"artistDataArray"];
                 break;
             case TableViewModeAlbum:
+                [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:@"albumDataArray"];
                 [[ModelLocator sharedInstance].playbackViewModel setTableViewMode:TableViewModeArtist];
                 break;
             case TableViewModeMusic:
+                [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:@"songsDataArray"];
                 [[ModelLocator sharedInstance].playbackViewModel setTableViewMode:TableViewModeAlbum];
                 break;
             default:
                 break;
         }
+    } else {
+        switch ([ModelLocator sharedInstance].playbackViewModel.tableViewMode) {
+            case TableViewModeArtist:
+                [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:@"artistDataArray"];
+                [[ModelLocator sharedInstance].playbackViewModel setTableViewMode:TableViewModeAlbum];
+                break;
+            case TableViewModeAlbum:
+                [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:@"albumDataArray"];
+                [[ModelLocator sharedInstance].playbackViewModel setTableViewMode:TableViewModeMusic];
+                break;
+            case TableViewModeMusic:
+                [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:@"songsDataArray"];
+                break;
+            default:
+                break;
+        }
     }
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -105,6 +122,9 @@
     if ([keyPath isEqualToString:@"albumDataArray"]) {
         [self.allMusicDataTableView reloadData];
     }
+    if ([keyPath isEqualToString:@"songsDataArray"]) {
+        [self.allMusicDataTableView reloadData];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -121,18 +141,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+
     switch ([ModelLocator sharedInstance].playbackViewModel.tableViewMode) {
         case TableViewModeArtist:{
             NSString *artistName = [[ModelLocator sharedInstance].playbackViewModel loadArtistNameForArtistDataArraywithIndex:indexPath.row];
             [[ModelLocator sharedInstance].playbackViewModel saveSelectedArtistName:artistName];
-            [[ModelLocator sharedInstance].playbackViewModel setTableViewMode:TableViewModeAlbum];
             break;
         }
-        case TableViewModeAlbum:
-            //  曲一覧取得処理が完成次第コメントアウトをはずす
-//            [[ModelLocator sharedInstance].playbackViewModel setTableViewMode:TableViewModeMusic];
+        case TableViewModeAlbum:{
+            NSString *albumName = [[ModelLocator sharedInstance].playbackViewModel loadAlbumNameForArtistDataArraywithIndex:indexPath.row];
+            [[ModelLocator sharedInstance].playbackViewModel saveSelectedAlbumName:albumName];
             break;
+        }
         case TableViewModeMusic:
             return;
             break;

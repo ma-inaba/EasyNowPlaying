@@ -17,6 +17,7 @@
 // 曲情報
 @property (nonatomic, retain) NSArray *artistDataArray;
 @property (nonatomic, retain) NSArray *albumDataArray;
+@property (nonatomic, retain) NSArray *songsDataArray;
 @property (nonatomic, strong) NSString *musicTitle;
 @property (nonatomic, strong) NSString *albumTitle;
 @property (nonatomic, strong) NSString *artistName;
@@ -25,5 +26,6 @@
 @property float duration;   // 再生時間
 
 @property (nonatomic, strong) NSString *selectedArtistName;
+@property (nonatomic, strong) NSString *selectedAlbumName;
 
 @end

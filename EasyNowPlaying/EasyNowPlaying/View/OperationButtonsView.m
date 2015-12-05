@@ -17,8 +17,15 @@
 @end
 @implementation OperationButtonsView
 
-
 - (void)drawRect:(CGRect)rect {
+    
+    BOOL isPlayingState = [[ModelLocator sharedInstance].playbackViewModel isNowPlayingState];
+    if (isPlayingState) {
+        self.playImageView.image = [UIImage imageNamed:@"Pause"];
+    } else {
+        self.playImageView.image = [UIImage imageNamed:@"Play"];
+    }
+    
     self.tweetImageView.image = [self.tweetImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.tweetImageView.tintColor = [UIColor colorWithRed:0.98 green:0.99 blue:0.91 alpha:1.0];
     self.playImageView.image = [self.playImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -41,6 +48,15 @@
 - (IBAction)playAction:(id)sender {
     
     [[ModelLocator sharedInstance].playbackViewModel switchPlayStatus];
+    
+    BOOL isPlayingState = [[ModelLocator sharedInstance].playbackViewModel isNowPlayingState];
+    if (isPlayingState) {
+        self.playImageView.image = [UIImage imageNamed:@"Play"];
+    } else {
+        self.playImageView.image = [UIImage imageNamed:@"Pause"];
+    }
+    self.playImageView.image = [self.playImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.playImageView.tintColor = [UIColor colorWithRed:0.98 green:0.99 blue:0.91 alpha:1.0];
 }
 
 - (IBAction)nextAction:(id)sender {
