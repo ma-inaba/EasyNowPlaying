@@ -27,15 +27,15 @@
     }
     
     self.tweetImageView.image = [self.tweetImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.tweetImageView.tintColor = [UIColor colorWithRed:0.98 green:0.99 blue:0.91 alpha:1.0];
+    self.tweetImageView.tintColor = kDefaultTextColor;
     self.playImageView.image = [self.playImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.playImageView.tintColor = [UIColor colorWithRed:0.98 green:0.99 blue:0.91 alpha:1.0];
+    self.playImageView.tintColor = kDefaultTextColor;
     self.nextImageView.image = [self.nextImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.nextImageView.tintColor = [UIColor colorWithRed:0.98 green:0.99 blue:0.91 alpha:1.0];
+    self.nextImageView.tintColor = kDefaultTextColor;
     self.backImageView.image = [self.backImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.backImageView.tintColor = [UIColor colorWithRed:0.98 green:0.99 blue:0.91 alpha:1.0];
+    self.backImageView.tintColor = kDefaultTextColor;
     self.settingImageView.image = [self.settingImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.settingImageView.tintColor = [UIColor colorWithRed:0.98 green:0.99 blue:0.91 alpha:1.0];
+    self.settingImageView.tintColor = kDefaultTextColor;
 }
 
 - (IBAction)tweetAction:(id)sender {
@@ -56,7 +56,7 @@
         self.playImageView.image = [UIImage imageNamed:kPause];
     }
     self.playImageView.image = [self.playImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.playImageView.tintColor = [UIColor colorWithRed:0.98 green:0.99 blue:0.91 alpha:1.0];
+    self.playImageView.tintColor = kDefaultTextColor;
 }
 
 - (IBAction)nextAction:(id)sender {

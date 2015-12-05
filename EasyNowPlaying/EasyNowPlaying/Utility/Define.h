@@ -45,3 +45,5 @@
 #define kMusicDataTableArtistCell @"AllMusicDataTableViewArtistCell"
 #define kMusicDataTableAlbumCell @"AllMusicDataTableViewAlbumCell"
 #define kMusicDataTableMusicCell @"AllMusicDataTableViewMusicCell"
+
+#define kDefaultTextColor [UIColor colorWithRed:0.98 green:0.99 blue:0.91 alpha:1.0];

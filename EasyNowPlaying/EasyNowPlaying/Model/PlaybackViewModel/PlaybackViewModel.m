@@ -59,51 +59,6 @@
         
         // 再生時間
         self.musicDataEntity.duration = [[mediaItem valueForProperty:MPMediaItemPropertyPlaybackDuration] floatValue];
-     
-//        MPMediaQuery *albumsQuery = [MPMediaQuery albumsQuery];
-//        [albumsQuery addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:self.musicDataEntity.artistName forProperty:MPMediaItemPropertyArtist]];
-//        NSArray *albums = [albumsQuery collections];
-//        for (MPMediaItemCollection *artistCollection in artists) {
-//            NSString *artistName = [[artistCollection representativeItem] valueForProperty:MPMediaItemPropertyArtist];
-//            if ([artistName isEqualToString:self.musicDataEntity.artistName]) {
-//                self.musicDataEntity.artistSongs = artistCollection.items;
-//            }
-//        }
-        
-//        MPMediaQuery *albumsQuery = [MPMediaQuery albumsQuery];
-//        // アーティスト名を指定
-//        [albumsQuery addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:self.musicDataEntity.artistName forProperty:MPMediaItemPropertyArtist]];
-//        // 条件に一致する曲を取得。配列の要素は MPMediaItem
-//        self.musicDataEntity.artistSongs = [albumsQuery items];
-        
-//        MPMediaQuery *query = [[MPMediaQuery alloc] init];
-//        // アルバム単位でグルーピング
-//        query.groupingType = MPMediaGroupingAlbum;
-//        // アーティスト名を指定
-//        [query addFilterPredicate:
-//         [MPMediaPropertyPredicate predicateWithValue:self.musicDataEntity.artistName
-//                                          forProperty:MPMediaItemPropertyArtist]];
-//        // 全てのトラック数
-//        self.musicDataEntity.allTrackNumber = 0;
-//        // 指定したアーティストの全てのアルバムを取得。配列の要素は MPMediaItemCollection
-//        for (MPMediaItemCollection *albumCollection in [query collections]) {
-//            
-//            NSString *albumTitle = [[albumCollection representativeItem] valueForProperty:MPMediaItemPropertyAlbumTitle];
-//            MPMediaQuery *query = [[MPMediaQuery alloc] init];
-//            // アーティスト名を指定
-//            NSString *artistNameProperty = MPMediaItemPropertyAlbumArtist;
-//            NSString *artistName = [[albumCollection representativeItem] valueForProperty:MPMediaItemPropertyAlbumArtist];
-//            if (!artistName) {
-//                artistNameProperty = MPMediaItemPropertyArtist;
-//            }
-//            [query addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:self.musicDataEntity.artistName forProperty:artistNameProperty]];
-//            // アルバム名を指定
-//            [query addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:albumTitle forProperty:MPMediaItemPropertyAlbumTitle]];
-//            // 条件に一致する曲を取得。配列の要素は MPMediaItem
-//            NSArray *songs = [query items];
-//            self.musicDataEntity.allTrackNumber = self.musicDataEntity.allTrackNumber + [songs count];
-//            [self.musicDataEntity.musicDataDict setObject:songs forKey:albumTitle];
-//        }
         
         // データ取得完了フラグ
         self.completeLoadData = YES;
@@ -201,6 +156,22 @@
         musicName = [[musicCollection representativeItem] valueForProperty:MPMediaItemPropertyTitle];
     }
     return musicName;
+}
+
+// 曲の再生時間の読み込み
+- (NSString *)loadMusicDurationForsongsDataArraywithIndex:(NSInteger)row {
+    
+    float musicDuration;
+    if (self.musicDataEntity.songsDataArray) {
+        MPMediaItemCollection *musicCollection = [self.musicDataEntity.songsDataArray objectAtIndex:row];
+        musicDuration = [[[musicCollection representativeItem] valueForProperty:MPMediaItemPropertyPlaybackDuration] floatValue];
+    }
+    
+    int duration = musicDuration;
+    int secondTime = duration%60; //秒
+    int minutTime = (duration/60)%60;  //分
+    
+    return [NSString stringWithFormat:@"%d:%02d", minutTime,secondTime];
 }
 
 #pragma mark - その他

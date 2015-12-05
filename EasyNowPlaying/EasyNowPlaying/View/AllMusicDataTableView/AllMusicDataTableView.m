@@ -58,7 +58,7 @@
     }
     
     cell.artistNameLabel.text = [[ModelLocator sharedInstance].playbackViewModel loadArtistNameForArtistDataArraywithIndex:indexPath.row];
-    cell.artistNameLabel.textColor = [UIColor colorWithRed:0.98 green:0.99 blue:0.91 alpha:1.0];
+    cell.artistNameLabel.textColor = kDefaultTextColor;
     cell.artistNameLabel.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
     
     cell.artistImageView.image = [[ModelLocator sharedInstance].playbackViewModel loadArtistArtworkForArtistDataArraywithIndex:indexPath.row];
@@ -75,7 +75,7 @@
     }
     
     cell.albumNameLabel.text = [[ModelLocator sharedInstance].playbackViewModel loadAlbumNameForArtistDataArraywithIndex:indexPath.row];
-    cell.albumNameLabel.textColor = [UIColor colorWithRed:0.98 green:0.99 blue:0.91 alpha:1.0];
+    cell.albumNameLabel.textColor = kDefaultTextColor;
     cell.albumNameLabel.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
     
     cell.albumImageView.image = [[ModelLocator sharedInstance].playbackViewModel loadAlbumArtworkForArtistDataArraywithIndex:indexPath.row];
@@ -92,13 +92,13 @@
     }
     
     cell.musicNoLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row +1];
-    cell.musicNoLabel.textColor = [UIColor whiteColor];
+    cell.musicNoLabel.textColor = kDefaultTextColor;
     
     cell.musicTitleLabel.text = [[ModelLocator sharedInstance].playbackViewModel loadMusicNameForsongsDataArraywithIndex:indexPath.row];
-    cell.musicTitleLabel.textColor = [UIColor whiteColor];
+    cell.musicTitleLabel.textColor = kDefaultTextColor;
     cell.musicTitleLabel.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
     
-    cell.musicDurationLabel.text = @"5:21";
+    cell.musicDurationLabel.text = [[ModelLocator sharedInstance].playbackViewModel loadMusicDurationForsongsDataArraywithIndex:indexPath.row];
     cell.musicDurationLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];    
     
     return cell;
