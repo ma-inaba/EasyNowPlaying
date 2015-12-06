@@ -7,7 +7,6 @@
 //
 
 #import "PlaybackViewModel.h"
-#import <MediaPlayer/MediaPlayer.h>
 
 @implementation PlaybackViewModel
 {
@@ -196,12 +195,14 @@
     self.musicDataEntity.selectedAlbumName = albumName;
 }
 
-- (BOOL)isNowPlayingState {
-    if([player playbackState] == MPMusicPlaybackStatePlaying){
-        return YES;
-    } else {
-        return NO;
-    }
+- (MPMusicPlaybackState)nowPlaybackState {
+    
+    return [player playbackState];
+//    if([player playbackState] == MPMusicPlaybackStatePlaying){
+//        return YES;
+//    } else {
+//        return NO;
+//    }
 }
 
 #pragma mark 各操作ボタン押下時の処理
@@ -209,7 +210,7 @@
 {
     if([player playbackState] == MPMusicPlaybackStatePlaying){
         [player pause];
-    } else {
+    } else if ([player playbackState] == MPMusicPlaybackStatePaused) {
         [player play];
     }
 }

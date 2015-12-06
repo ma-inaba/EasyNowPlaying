@@ -20,17 +20,30 @@
 
 - (void)drawRect:(CGRect)rect {
     
-    BOOL isPlayingState = [[ModelLocator sharedInstance].playbackViewModel isNowPlayingState];
-    if (isPlayingState) {
-        self.playImageView.image = [UIImage imageNamed:kPause];
-    } else {
-        self.playImageView.image = [UIImage imageNamed:kPlay];
-    }
-    
     self.tweetImageView.image = [self.tweetImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.tweetImageView.tintColor = kDefaultTextColor;
+    
+    MPMusicPlaybackState state = [[ModelLocator sharedInstance].playbackViewModel nowPlaybackState];
+    switch (state) {
+        case MPMusicPlaybackStatePlaying:
+            self.playImageView.image = [UIImage imageNamed:kPause];
+            break;
+        case MPMusicPlaybackStatePaused:
+            self.playImageView.image = [UIImage imageNamed:kPlay];
+            break;
+        default:
+            break;
+    }
+    
     self.playImageView.image = [self.playImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.playImageView.tintColor = kDefaultTextColor;
+    if (state == MPMusicPlaybackStateStopped) {
+        self.playImageView.tintColor = [UIColor lightGrayColor];
+        self.playImageView.userInteractionEnabled = YES;
+    } else {
+        self.playImageView.tintColor = kDefaultTextColor;
+        self.playImageView.userInteractionEnabled = NO;
+    }
+    
     self.nextImageView.image = [self.nextImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.nextImageView.tintColor = kDefaultTextColor;
     self.backImageView.image = [self.backImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -50,12 +63,22 @@
     
     [[ModelLocator sharedInstance].playbackViewModel switchPlayStatus];
     
-    BOOL isPlayingState = [[ModelLocator sharedInstance].playbackViewModel isNowPlayingState];
-    if (isPlayingState) {
-        self.playImageView.image = [UIImage imageNamed:kPlay];
-    } else {
-        self.playImageView.image = [UIImage imageNamed:kPause];
+    MPMusicPlaybackState state = [[ModelLocator sharedInstance].playbackViewModel nowPlaybackState];
+    switch (state) {
+        case MPMusicPlaybackStatePlaying:
+            self.playImageView.image = [UIImage imageNamed:kPlay];
+            break;
+        case MPMusicPlaybackStatePaused:
+            self.playImageView.image = [UIImage imageNamed:kPause];
+            break;
+        case MPMusicPlaybackStateStopped:
+            
+            return;
+            break;
+        default:
+            break;
     }
+
     self.playImageView.image = [self.playImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.playImageView.tintColor = kDefaultTextColor;
 }

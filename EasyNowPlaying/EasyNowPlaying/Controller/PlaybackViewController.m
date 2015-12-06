@@ -47,6 +47,7 @@
     if ([keyPath isEqualToString:kCompleteLoadData]) {
         self.artworkImageView.image = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artworkImage;
         [self.musicDataView setNeedsDisplay];
+        [self.operationButtonsView setNeedsDisplay];
     }
 }
 

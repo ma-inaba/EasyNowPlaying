@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "MusicDataEntity.h"
+#import <MediaPlayer/MediaPlayer.h>
+
 
 typedef enum {
     TableViewModeArtist,
@@ -49,7 +51,7 @@ typedef enum {
 // 選択したアルバムの名前を保持しておく(画面遷移後に保持したアルバムの名前で曲を検索するため)
 - (void)saveSelectedAlbumName:(NSString *)albumName;
 // 現在再生中かどうか
-- (BOOL)isNowPlayingState;
+- (MPMusicPlaybackState)nowPlaybackState;
 
 - (void)loadMusicPlayerData;
 - (void)switchPlayStatus;

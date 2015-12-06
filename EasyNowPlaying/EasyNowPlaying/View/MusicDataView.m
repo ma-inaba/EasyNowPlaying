@@ -33,8 +33,12 @@
     if ([albumTitle isEqualToString:@""]) {
         albumTitle = kUnknownAlbum;
     }
-
+    
     NSString *artistAlbumStr = [NSString stringWithFormat:@"%@ - %@",artistName, albumTitle];
+    if (!artistName && !albumTitle) {
+        artistAlbumStr = kNotPlayMusicNow;
+    }
+
     
     int duration = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.duration;
     int secondTime = duration%60; //秒
