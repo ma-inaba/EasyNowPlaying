@@ -52,6 +52,8 @@ typedef enum {
 - (void)saveSelectedAlbumName:(NSString *)albumName;
 // 現在再生中かどうか
 - (MPMusicPlaybackState)nowPlaybackState;
+// 指定された曲を再生
+- (void)playSelectedMusicWithRow:(NSUInteger)row;
 
 - (void)loadMusicPlayerData;
 - (void)switchPlayStatus;

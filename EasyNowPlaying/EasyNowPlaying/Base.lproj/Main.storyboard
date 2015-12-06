@@ -256,6 +256,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="artistAlbumLabel" destination="MFI-QQ-gwg" id="lm8-kr-Ay4"/>
+                                            <outlet property="durationSlider" destination="ijs-Nm-3QD" id="5A5-ll-9ak"/>
                                             <outlet property="musicDurationLabel" destination="sxP-OE-q4I" id="vl1-1K-YjK"/>
                                             <outlet property="musicTitleLabel" destination="3aE-qa-anr" id="UPa-9p-Ptk"/>
                                         </connections>
@@ -361,13 +362,13 @@
                                             <constraint firstAttribute="width" constant="20" id="VD6-f0-tJU"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe down to close setting" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lkb-aq-FZn">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="画面を下げて設定を保存" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lkb-aq-FZn">
                                         <rect key="frame" x="8" y="499" width="359" height="68"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="68" id="6TD-Kf-6nY"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                         <color key="textColor" red="0.98039215690000003" green="0.98823529409999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>

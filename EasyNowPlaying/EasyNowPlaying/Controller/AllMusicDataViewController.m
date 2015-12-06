@@ -153,6 +153,7 @@
             break;
         }
         case TableViewModeMusic:
+            [[ModelLocator sharedInstance].playbackViewModel playSelectedMusicWithRow:indexPath.row];
             return;
             break;
         default:

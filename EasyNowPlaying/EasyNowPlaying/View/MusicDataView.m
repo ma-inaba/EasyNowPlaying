@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *musicTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *artistAlbumLabel;
 @property (weak, nonatomic) IBOutlet UILabel *musicDurationLabel;
+@property (weak, nonatomic) IBOutlet UISlider *durationSlider;
 @end
 
 @implementation MusicDataView
@@ -47,6 +48,9 @@
     self.musicTitleLabel.text = musicTitle;
     self.artistAlbumLabel.text = artistAlbumStr;
     self.musicDurationLabel.text = [NSString stringWithFormat:@"%d:%02d", minutTime,secondTime];
+
+    [self.durationSlider setThumbImage:[UIImage imageNamed:@"PlayLine"] forState:UIControlStateNormal];
+
 
     self.layer.shadowOffset = CGSizeMake(0, 5);
     self.layer.shadowOpacity = 0.5;    
