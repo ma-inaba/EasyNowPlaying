@@ -15,13 +15,13 @@
 // 汎用
 #define kArtist @"アーティスト"
 #define kAlbum @"アルバム"
-#define kMusic @"曲"
+#define kMusic @"ミュージック"
 #define kUnknownTitle @"不明なタイトル"
 #define kUnknownArtist @"不明なアーティスト"
 #define kUnknownAlbum @"不明なアルバム"
 
 // 音楽表示ビュー
-#define kNotPlayMusicNow @"曲を再生したらここに表示されます"
+#define kNotPlayMusicNow @"ミュージックを再生したらここに表示されます"
 
 // 画像のファイル名
 #define kPause @"Pause"

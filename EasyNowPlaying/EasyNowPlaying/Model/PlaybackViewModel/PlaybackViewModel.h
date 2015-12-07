@@ -46,7 +46,8 @@ typedef enum {
 - (NSString *)loadMusicNameForsongsDataArraywithIndex:(NSInteger)row;
 // 曲一覧配列から曲の再生時間の読み込み
 - (NSString *)loadMusicDurationForsongsDataArraywithIndex:(NSInteger)row;
-
+// 曲の現在の再生時間の読み込み
+- (NSTimeInterval)loadCurrentPlaybackTime;
 
 // 選択したアーティストの名前を保持しておく(画面遷移後に保持したアーティストの名前でアルバムを検索するため)
 - (void)saveSelectedArtistName:(NSString *)artistName;

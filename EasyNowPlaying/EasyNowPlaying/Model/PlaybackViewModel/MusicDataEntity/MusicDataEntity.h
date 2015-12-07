@@ -24,7 +24,6 @@
 @property NSUInteger nowTrackNumber;
 @property NSUInteger allTrackNumber;
 @property float duration;   // 再生時間
-
 @property (nonatomic, strong) NSString *selectedArtistName;
 @property (nonatomic, strong) NSString *selectedAlbumName;
 

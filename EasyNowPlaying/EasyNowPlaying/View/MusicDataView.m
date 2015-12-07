@@ -11,8 +11,10 @@
 @interface MusicDataView()
 @property (weak, nonatomic) IBOutlet UILabel *musicTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *artistAlbumLabel;
+@property (weak, nonatomic) IBOutlet UILabel *minimumMusicDurationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *musicDurationLabel;
 @property (weak, nonatomic) IBOutlet UISlider *durationSlider;
+
 @end
 
 @implementation MusicDataView
@@ -50,10 +52,22 @@
     self.musicDurationLabel.text = [NSString stringWithFormat:@"%d:%02d", minutTime,secondTime];
 
     [self.durationSlider setThumbImage:[UIImage imageNamed:@"PlayLine"] forState:UIControlStateNormal];
-
-
+    [self reloaddurationSlider];
+    
     self.layer.shadowOffset = CGSizeMake(0, 5);
     self.layer.shadowOpacity = 0.5;    
+}
+
+- (void)reloaddurationSlider {
+    
+    self.durationSlider.maximumValue = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.duration;
+    self.durationSlider.value = [ModelLocator sharedInstance].playbackViewModel.loadCurrentPlaybackTime;
+  
+    int duration = self.durationSlider.value;
+    int secondTime = duration%60; //秒
+    int minutTime = (duration/60)%60;  //分
+    
+    self.minimumMusicDurationLabel.text = [NSString stringWithFormat:@"%d:%02d", minutTime,secondTime];
 }
 
 @end

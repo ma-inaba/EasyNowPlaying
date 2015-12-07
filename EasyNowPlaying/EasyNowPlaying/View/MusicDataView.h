@@ -10,4 +10,6 @@
 
 @interface MusicDataView : UIView
 
+- (void)reloaddurationSlider;
+
 @end

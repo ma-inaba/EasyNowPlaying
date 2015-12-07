@@ -32,6 +32,15 @@
     // KVO監視を始める
     [[ModelLocator sharedInstance].playbackViewModel addObserver:self forKeyPath:kCompleteLoadData options:0 context:nil];
     [[ModelLocator sharedInstance].playbackViewModel loadMusicPlayerData];
+    
+    NSTimer *timer =[NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(reloadSlider) userInfo:nil repeats:YES];
+    [timer fire];
+}
+
+- (void)reloadSlider {
+    
+    [self.musicDataView reloaddurationSlider];
+    [self.musicDataView setNeedsDisplay];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

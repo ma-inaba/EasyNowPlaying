@@ -56,9 +56,9 @@
         UIImage *artworkImage = [artwork imageWithSize:CGSizeMake(artwork.bounds.size.width, artwork.bounds.size.height)];
         self.musicDataEntity.artworkImage = artworkImage;
         
-        // 再生時間
+        // 総再生時間
         self.musicDataEntity.duration = [[mediaItem valueForProperty:MPMediaItemPropertyPlaybackDuration] floatValue];
-        
+
         // データ取得完了フラグ
         self.completeLoadData = YES;
     }
@@ -193,6 +193,11 @@
     int minutTime = (duration/60)%60;  //分
     
     return [NSString stringWithFormat:@"%d:%02d", minutTime,secondTime];
+}
+
+- (NSTimeInterval)loadCurrentPlaybackTime {
+    
+    return player.currentPlaybackTime;
 }
 
 #pragma mark - その他

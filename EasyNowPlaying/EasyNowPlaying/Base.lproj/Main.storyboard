@@ -257,6 +257,7 @@
                                         <connections>
                                             <outlet property="artistAlbumLabel" destination="MFI-QQ-gwg" id="lm8-kr-Ay4"/>
                                             <outlet property="durationSlider" destination="ijs-Nm-3QD" id="5A5-ll-9ak"/>
+                                            <outlet property="minimumMusicDurationLabel" destination="3EY-8V-qqM" id="vn4-az-3B5"/>
                                             <outlet property="musicDurationLabel" destination="sxP-OE-q4I" id="vl1-1K-YjK"/>
                                             <outlet property="musicTitleLabel" destination="3aE-qa-anr" id="UPa-9p-Ptk"/>
                                         </connections>
