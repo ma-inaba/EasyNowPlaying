@@ -202,17 +202,21 @@
 
 - (void)playSelectedMusicWithRow:(NSUInteger)row {
     
-    MPMediaQuery *query = [[MPMediaQuery alloc] init];
-    [query addFilterPredicate:[MPMediaPropertyPredicate
-                               predicateWithValue:[[self.musicDataEntity.songsDataArray objectAtIndex:row] valueForProperty: MPMediaItemPropertyPersistentID]
-                               forProperty: MPMediaItemPropertyPersistentID]];
-    [player setQueueWithQuery:query]; //条件をセット
+    MPMediaQuery *songsQuery = [MPMediaQuery songsQuery];
+    MPMediaItemCollection *albumCollection = [self.musicDataEntity.songsDataArray objectAtIndex:row];
+    NSString *albumName = [[albumCollection representativeItem] valueForProperty:MPMediaItemPropertyAlbumTitle];
+
+    // アルバム名を指定
+    [songsQuery addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:albumName forProperty:MPMediaItemPropertyAlbumTitle]];
+
+    [player setQueueWithQuery:songsQuery];
+    player.nowPlayingItem = songsQuery.items[row];
     [player play];
 }
 
 #pragma mark 各操作ボタン押下時の処理
-- (void)switchPlayStatus
-{
+- (void)switchPlayStatus {
+    
     if([player playbackState] == MPMusicPlaybackStatePlaying){
         [player pause];
     } else if ([player playbackState] == MPMusicPlaybackStatePaused) {
@@ -220,13 +224,13 @@
     }
 }
 
-- (void)skipToPreviousMusic
-{
+- (void)skipToPreviousMusic {
+    
     [player skipToPreviousItem];
 }
 
-- (void)skipToNextMusic
-{
+- (void)skipToNextMusic {
+    
     [player skipToNextItem];
 }
 @end
