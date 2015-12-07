@@ -85,6 +85,11 @@
     
     cell.albumImageView.image = [[ModelLocator sharedInstance].playbackViewModel loadAlbumArtworkForArtistDataArraywithIndex:indexPath.row];
     
+    NSString *songsTrack = [[ModelLocator sharedInstance].playbackViewModel loadSongsTrackCountForArtistDataArraywithIndex:indexPath.row];
+    cell.songsTrackLabel.text = [NSString stringWithFormat:@"%@曲",songsTrack];
+    cell.songsTrackLabel.textColor = [UIColor lightGrayColor];
+    cell.songsTrackLabel.font = [UIFont boldSystemFontOfSize:9.0f];
+    
     return cell;
 }
 

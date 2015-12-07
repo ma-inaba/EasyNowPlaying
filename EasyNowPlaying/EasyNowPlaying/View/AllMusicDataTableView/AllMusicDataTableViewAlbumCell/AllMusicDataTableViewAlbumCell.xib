@@ -22,22 +22,35 @@
                             <constraint firstAttribute="height" constant="64" id="kxv-JE-aTR"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bD3-2K-JKQ">
-                        <rect key="frame" x="72" y="8" width="295" height="48"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOa-J4-YfY">
+                        <rect key="frame" x="84" y="36" width="283" height="20"/>
                         <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bD3-2K-JKQ">
+                        <rect key="frame" x="72" y="8" width="295" height="28"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="WMQ-DJ-2Y1"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <animations/>
                 <constraints>
+                    <constraint firstItem="xOa-J4-YfY" firstAttribute="leading" secondItem="KF0-00-3Ws" secondAttribute="trailing" constant="20" id="265-eP-58S"/>
+                    <constraint firstItem="bD3-2K-JKQ" firstAttribute="leading" secondItem="KF0-00-3Ws" secondAttribute="trailing" constant="8" id="5rq-a9-Ibl"/>
                     <constraint firstItem="KF0-00-3Ws" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ASf-iY-ke8"/>
                     <constraint firstItem="KF0-00-3Ws" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="JYj-VC-fMh"/>
-                    <constraint firstItem="bD3-2K-JKQ" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="Sq8-ku-GAa"/>
-                    <constraint firstItem="bD3-2K-JKQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Ubh-Ft-kXf"/>
-                    <constraint firstItem="bD3-2K-JKQ" firstAttribute="leading" secondItem="KF0-00-3Ws" secondAttribute="trailing" constant="8" id="hTT-2b-fOc"/>
-                    <constraint firstItem="bD3-2K-JKQ" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="zMJ-XM-53d"/>
+                    <constraint firstItem="xOa-J4-YfY" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="Qjj-RW-4WK"/>
+                    <constraint firstItem="xOa-J4-YfY" firstAttribute="top" secondItem="bD3-2K-JKQ" secondAttribute="bottom" id="ctN-kj-6Fa"/>
+                    <constraint firstItem="xOa-J4-YfY" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="fje-Vf-ER9"/>
+                    <constraint firstItem="bD3-2K-JKQ" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="lOf-ut-YKg"/>
+                    <constraint firstItem="bD3-2K-JKQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="tQ2-EX-lPb"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>
@@ -46,6 +59,7 @@
             <connections>
                 <outlet property="albumImageView" destination="KF0-00-3Ws" id="kiC-8r-yKB"/>
                 <outlet property="albumNameLabel" destination="bD3-2K-JKQ" id="mbK-Dz-yFt"/>
+                <outlet property="songsTrackLabel" destination="xOa-J4-YfY" id="Ka0-30-a79"/>
             </connections>
             <point key="canvasLocation" x="511.5" y="323.5"/>
         </tableViewCell>
