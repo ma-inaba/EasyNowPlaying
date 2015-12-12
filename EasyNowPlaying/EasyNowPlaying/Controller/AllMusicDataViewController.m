@@ -41,7 +41,11 @@
         case TableViewModeMusic:{
             [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity addObserver:self forKeyPath:kSongsDataArray options:0 context:nil];
             NSString *albumName = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.selectedAlbumName;
-            [[ModelLocator sharedInstance].playbackViewModel acquisitionMusicDataWithAlbumName:albumName];
+            NSString *artistName = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.selectedArtistName;
+            if ([albumName isEqualToString:kUnknownAlbum]) {
+                albumName = @"";
+            }
+            [[ModelLocator sharedInstance].playbackViewModel acquisitionMusicDataWithAlbumName:albumName artistName:artistName];
             break;
         }
         default:

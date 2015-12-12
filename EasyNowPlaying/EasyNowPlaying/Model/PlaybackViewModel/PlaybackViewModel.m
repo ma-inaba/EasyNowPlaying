@@ -129,7 +129,7 @@
         MPMediaItemCollection *albumCollection = [self.musicDataEntity.albumDataArray objectAtIndex:row];
         albumName = [[albumCollection representativeItem] valueForProperty:MPMediaItemPropertyAlbumTitle];
         if ([albumName isEqualToString:@""]) {
-            albumName = kUnknownArtist;
+            albumName = kUnknownAlbum;
         }
     }
     return albumName;
@@ -159,11 +159,12 @@
 }
 
 #pragma mark - 曲データの取得
-- (void)acquisitionMusicDataWithAlbumName:(NSString *)albumName {
+- (void)acquisitionMusicDataWithAlbumName:(NSString *)albumName artistName:(NSString *)artistName {
     
     MPMediaQuery *songsQuery = [MPMediaQuery songsQuery];
     // アルバム名を指定
     [songsQuery addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:albumName forProperty:MPMediaItemPropertyAlbumTitle]];
+    [songsQuery addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:artistName forProperty:MPMediaItemPropertyArtist]];
     self.musicDataEntity.songsDataArray = [songsQuery items];
 }
 

@@ -28,7 +28,7 @@ typedef enum {
 // アルバムデータの取得
 - (void)acquisitionAlbumDataWithArtistName:(NSString *)artistName;
 // 曲データの取得
-- (void)acquisitionMusicDataWithAlbumName:(NSString *)albumName;
+- (void)acquisitionMusicDataWithAlbumName:(NSString *)albumName artistName:(NSString *)artistName;
 
 // アーティスト一覧配列からアーティスト名を取り出す
 - (NSString *)loadArtistNameForArtistDataArraywithIndex:(NSInteger)row;
