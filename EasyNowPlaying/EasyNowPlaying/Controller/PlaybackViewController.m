@@ -78,10 +78,18 @@
         
         NSString *musicTitle = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.musicTitle;
         NSString *artistName = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artistName;
-        NSString *postString = [NSString stringWithFormat:@"#nowplaying %@ - %@",musicTitle, artistName];
+        NSString *tagString = [Utility loadUserDefaults:kPostTagKey];
+        if (!tagString) {
+            tagString = kPostDefaultTag;
+        }
+        NSString *postString = [NSString stringWithFormat:@"%@ %@ - %@",tagString, musicTitle, artistName];
         UIImage *postImage = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artworkImage;
         [controller setInitialText:postString];
-        [controller addImage:postImage];
+        
+        BOOL isPostImage = [[Utility loadUserDefaults:kPostImageKey] boolValue];
+        if (isPostImage) {
+            [controller addImage:postImage];
+        }
         
         [self presentViewController:controller
                            animated:NO

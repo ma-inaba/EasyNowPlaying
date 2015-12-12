@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SettingTableView.h"
 
 @interface SettingViewController : UIViewController
+<
+UITableViewDelegate
+>
 
 @end

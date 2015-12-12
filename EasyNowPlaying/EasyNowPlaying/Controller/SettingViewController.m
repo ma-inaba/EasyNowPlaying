@@ -13,6 +13,7 @@ static const NSTimeInterval kOriginalFrameAnimationSpeed = 0.1f;    // 上に戻
 static const NSTimeInterval kDismissAnimationSpeed = 0.3f;      // 下に下げてDismissする時のアニメーションスピード
 @interface SettingViewController ()
 @property (weak, nonatomic) IBOutlet UIView *mainView;
+@property (weak, nonatomic) IBOutlet SettingTableView *settingTableView;
 
 @end
 
@@ -22,6 +23,8 @@ static const NSTimeInterval kDismissAnimationSpeed = 0.3f;      // 下に下げ�
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    self.settingTableView.delegate = self;
+    
     // パンジェスチャーを生成してaddする
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureAction:)];
     [self.mainView addGestureRecognizer:panGesture];
@@ -92,4 +95,43 @@ static const NSTimeInterval kDismissAnimationSpeed = 0.3f;      // 下に下げ�
     return UIModalPresentationOverCurrentContext;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 0) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:kSettingTableViewAlertTitle message:kSettingTableViewAlertMessage preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:kOK
+                                                  style:UIAlertActionStyleDefault
+                                                handler:^(UIAlertAction *action) {
+                                                    NSString *text = ((UITextField *)[alert.textFields objectAtIndex:0]).text;
+                                                    [Utility saveUserDefaults:text key:kPostTagKey];
+                                                    [self.settingTableView reloadData];
+                                                }]];
+        [alert addAction:[UIAlertAction actionWithTitle:kCancel
+                                                  style:UIAlertActionStyleCancel
+                                                handler:^(UIAlertAction *action) {
+                                                }]];
+
+        
+        [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+            textField.placeholder = kSettingTableViewAlertPlaceholder;
+            NSString *text = [Utility loadUserDefaults:kPostTagKey];
+            if (!text) {
+                text = kPostDefaultTag;
+            }
+            textField.text = text;
+        }];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.section == 2) {
+        return 100;
+    }
+    return 44;
+}
 @end

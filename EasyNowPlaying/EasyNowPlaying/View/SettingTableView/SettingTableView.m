@@ -15,7 +15,6 @@
 
 - (void)awakeFromNib {
     
-    self.delegate = self;
     self.dataSource = self;
     
     UINib *tagNib = [UINib nibWithNibName:kSettingTableViewTagCell bundle:nil];
@@ -24,19 +23,6 @@
     [self registerNib:imageNib forCellReuseIdentifier:kSettingTableViewImageCell];
     UINib *profileNib = [UINib nibWithNibName:kSettingTableViewProfileCell bundle:nil];
     [self registerNib:profileNib forCellReuseIdentifier:kSettingTableViewProfileCell];
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (indexPath.section == 2) {
-        return 100;
-    }
-    return 44;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -62,10 +48,18 @@
     
     if (indexPath.section == 0) {
         SettingTableViewTagCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewTagCell];
+        NSString *tagStr = [Utility loadUserDefaults:kPostTagKey];
+        if (!tagStr) {
+            tagStr = kPostDefaultTag;
+        }
+        cell.tagLabel.text =tagStr;
         
         return cell;
     } else if (indexPath.section == 1) {
         SettingTableViewImageCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewImageCell];
+        BOOL isPostImage = [[Utility loadUserDefaults:kPostImageKey] boolValue];
+        cell.addImageSwitch.on = isPostImage;
+        [cell.addImageSwitch addTarget:self action:@selector(changeSwitchState:) forControlEvents:UIControlEventValueChanged];
         
         return cell;
     } else {
@@ -73,6 +67,12 @@
         
         return cell;
     }
+}
+
+- (void)changeSwitchState:(id)sender {
+    
+    BOOL state = [sender isOn];
+    [Utility saveUserDefaults:[NSNumber numberWithBool:state] key:kPostImageKey];
 }
 
 @end

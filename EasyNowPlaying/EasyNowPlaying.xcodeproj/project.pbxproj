@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A22A9A0D1C1BBF43009553D2 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = A22A9A0C1C1BBF43009553D2 /* Utility.m */; };
 		A22C84EF1C11F28400229DC6 /* AllMusicDataTableViewAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A22C84ED1C11F28400229DC6 /* AllMusicDataTableViewAlbumCell.m */; };
 		A22C84F01C11F28400229DC6 /* AllMusicDataTableViewAlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A22C84EE1C11F28400229DC6 /* AllMusicDataTableViewAlbumCell.xib */; };
 		A254BBB61C0C61AD006AB8D9 /* MusicDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = A254BBB51C0C61AD006AB8D9 /* MusicDataView.m */; };
@@ -39,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A22A9A0B1C1BBF43009553D2 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		A22A9A0C1C1BBF43009553D2 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		A22C84EC1C11F28400229DC6 /* AllMusicDataTableViewAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllMusicDataTableViewAlbumCell.h; sourceTree = "<group>"; };
 		A22C84ED1C11F28400229DC6 /* AllMusicDataTableViewAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllMusicDataTableViewAlbumCell.m; sourceTree = "<group>"; };
 		A22C84EE1C11F28400229DC6 /* AllMusicDataTableViewAlbumCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllMusicDataTableViewAlbumCell.xib; sourceTree = "<group>"; };
@@ -241,6 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				A2E7E97E1C12ED82008ED5A9 /* Define.h */,
+				A22A9A0B1C1BBF43009553D2 /* Utility.h */,
+				A22A9A0C1C1BBF43009553D2 /* Utility.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -425,6 +430,7 @@
 				A29F58B61C08A18300233ADA /* main.m in Sources */,
 				A22C84EF1C11F28400229DC6 /* AllMusicDataTableViewAlbumCell.m in Sources */,
 				A2788CA91C11C2AA0033CD76 /* AllMusicDataTableViewArtistCell.m in Sources */,
+				A22A9A0D1C1BBF43009553D2 /* Utility.m in Sources */,
 				A2788C971C11A3170033CD76 /* AllMusicDataTableView.m in Sources */,
 				A2788CA31C11AA930033CD76 /* AllMusicDataViewController.m in Sources */,
 				A2AE98411C0F01190064FFEB /* SettingTableViewTagCell.m in Sources */,

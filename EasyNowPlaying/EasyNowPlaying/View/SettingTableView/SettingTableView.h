@@ -10,7 +10,6 @@
 
 @interface SettingTableView : UITableView
 <
-UITableViewDelegate,
 UITableViewDataSource
 >
 
