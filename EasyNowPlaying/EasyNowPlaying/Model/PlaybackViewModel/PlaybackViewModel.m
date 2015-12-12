@@ -164,7 +164,7 @@
     MPMediaQuery *songsQuery = [MPMediaQuery songsQuery];
     // アルバム名を指定
     [songsQuery addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:albumName forProperty:MPMediaItemPropertyAlbumTitle]];
-    [songsQuery addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:artistName forProperty:MPMediaItemPropertyArtist]];
+    [songsQuery addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:artistName forProperty:MPMediaItemPropertyAlbumArtist]];
     self.musicDataEntity.songsDataArray = [songsQuery items];
 }
 
