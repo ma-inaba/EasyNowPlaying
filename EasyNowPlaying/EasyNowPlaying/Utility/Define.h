@@ -14,7 +14,7 @@
 
 // 汎用
 #define kOK @"OK"
-#define kCancel @"Cancel"
+#define kCancel @"キャンセル"
 #define kArtist @"アーティスト"
 #define kAlbum @"アルバム"
 #define kMusic @"ミュージック"
@@ -53,7 +53,7 @@
 
 // 設定テーブルのアラート
 #define kSettingTableViewAlertTitle @"タグ"
-#define kSettingTableViewAlertMessage @"タグの定型文を入力できます"
+#define kSettingTableViewAlertMessage @"タグの定型文を登録できます"
 #define kSettingTableViewAlertPlaceholder @"タグを入力"
 
 // 音楽データテーブルのセル

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -22,7 +22,6 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Music!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4EW-5e-511">
                                         <rect key="frame" x="8" y="229" width="304" height="21"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="HPF-RY-L42"/>
                                         </constraints>
@@ -32,7 +31,6 @@
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rbU-WL-Cnw">
                                         <rect key="frame" x="0.0" y="80" width="320" height="320"/>
-                                        <animations/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="rbU-WL-Cnw" secondAttribute="height" multiplier="1:1" id="Ngz-Pg-Ubi"/>
@@ -43,7 +41,6 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahJ-gi-eKT">
                                                 <rect key="frame" x="0.0" y="0.0" width="55" height="64"/>
-                                                <animations/>
                                                 <color key="backgroundColor" red="0.36470588235294116" green="0.22352941176470587" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                                 <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
                                                 <state key="normal">
@@ -55,7 +52,6 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJ6-WQ-fkx">
                                                 <rect key="frame" x="0.0" y="64" width="55" height="64"/>
-                                                <animations/>
                                                 <color key="backgroundColor" red="0.49411764705882355" green="0.30196078431372547" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                 <state key="normal">
@@ -67,11 +63,9 @@
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Play" translatesAutoresizingMaskIntoConstraints="NO" id="L9A-6m-Xe0">
                                                 <rect key="frame" x="15" y="84" width="25" height="25"/>
-                                                <animations/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hN6-2s-cZ0">
                                                 <rect key="frame" x="0.0" y="128" width="55" height="64"/>
-                                                <animations/>
                                                 <color key="backgroundColor" red="0.36470588240000001" green="0.22352941179999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                 <state key="normal">
@@ -83,11 +77,9 @@
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Fast Forward" translatesAutoresizingMaskIntoConstraints="NO" id="bqE-dh-Za1">
                                                 <rect key="frame" x="15" y="147" width="25" height="25"/>
-                                                <animations/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcD-O0-6nO">
                                                 <rect key="frame" x="0.0" y="192" width="55" height="64"/>
-                                                <animations/>
                                                 <color key="backgroundColor" red="0.4941176471" green="0.30196078430000001" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                 <state key="normal">
@@ -99,11 +91,9 @@
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rewind" translatesAutoresizingMaskIntoConstraints="NO" id="K2d-My-XvD">
                                                 <rect key="frame" x="15" y="211" width="25" height="25"/>
-                                                <animations/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7f-gb-Cqm">
                                                 <rect key="frame" x="0.0" y="256" width="55" height="64"/>
-                                                <animations/>
                                                 <color key="backgroundColor" red="0.36470588240000001" green="0.22352941179999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                 <state key="normal">
@@ -116,14 +106,11 @@
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Settings" translatesAutoresizingMaskIntoConstraints="NO" id="B0V-i3-2So">
                                                 <rect key="frame" x="15" y="275" width="25" height="25"/>
-                                                <animations/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Twitter" translatesAutoresizingMaskIntoConstraints="NO" id="ZjR-k0-LhS">
                                                 <rect key="frame" x="15" y="19" width="25" height="25"/>
-                                                <animations/>
                                             </imageView>
                                         </subviews>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstItem="O7f-gb-Cqm" firstAttribute="width" secondItem="ahJ-gi-eKT" secondAttribute="width" id="1Rv-nP-n9g"/>
                                             <constraint firstItem="ZcD-O0-6nO" firstAttribute="top" secondItem="hN6-2s-cZ0" secondAttribute="bottom" id="553-b6-4OX"/>
@@ -165,14 +152,12 @@
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOH-vX-Z7T">
                                                 <rect key="frame" x="3" y="0.0" width="375" height="265"/>
-                                                <animations/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <connections>
                                                     <segue destination="Erq-T1-zaw" kind="embed" id="UOm-iF-sAd"/>
                                                 </connections>
                                             </containerView>
                                         </subviews>
-                                        <animations/>
                                         <color key="backgroundColor" red="0.1647058824" green="0.1843137255" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="hOH-vX-Z7T" firstAttribute="top" secondItem="jgh-Qz-dTE" secondAttribute="top" id="PWS-2p-8u9"/>
@@ -186,7 +171,6 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アーティスト - アルバム" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFI-QQ-gwg">
                                                 <rect key="frame" x="8" y="12" width="359" height="21"/>
-                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="acQ-7f-vlI"/>
                                                 </constraints>
@@ -194,18 +178,8 @@
                                                 <color key="textColor" red="0.98039215690000003" green="0.98823529409999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ijs-Nm-3QD">
-                                                <rect key="frame" x="-2" y="63" width="379" height="31"/>
-                                                <animations/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="Rpx-kg-VyM"/>
-                                                </constraints>
-                                                <color key="minimumTrackTintColor" red="0.98039215690000003" green="0.98823529409999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            </slider>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="曲名" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aE-qa-anr">
                                                 <rect key="frame" x="37" y="41" width="300" height="21"/>
-                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="3Dl-xH-m1j"/>
                                                 </constraints>
@@ -215,7 +189,6 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99:99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxP-OE-q4I">
                                                 <rect key="frame" x="345" y="57" width="30" height="21"/>
-                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="2Qq-Rs-QDE"/>
                                                     <constraint firstAttribute="width" constant="30" id="NfW-Hy-7el"/>
@@ -226,7 +199,6 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3EY-8V-qqM">
                                                 <rect key="frame" x="0.0" y="57" width="30" height="21"/>
-                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="1fk-Yq-PjN"/>
                                                     <constraint firstAttribute="width" constant="30" id="t3i-T5-XRi"/>
@@ -235,8 +207,15 @@
                                                 <color key="textColor" red="0.98039215690000003" green="0.98823529409999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ijs-Nm-3QD">
+                                                <rect key="frame" x="-2" y="63" width="379" height="31"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="Rpx-kg-VyM"/>
+                                                </constraints>
+                                                <color key="minimumTrackTintColor" red="0.98039215690000003" green="0.98823529409999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </slider>
                                         </subviews>
-                                        <animations/>
                                         <color key="backgroundColor" red="0.17749703667455716" green="0.19866933512476745" blue="0.2486150015248676" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="MFI-QQ-gwg" secondAttribute="trailing" constant="8" id="5ij-7N-6J2"/>
@@ -263,7 +242,6 @@
                                         </connections>
                                     </view>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.98823529409999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="4UK-Xw-FzG" firstAttribute="top" secondItem="gwm-Tm-LLZ" secondAttribute="bottom" id="1jm-DU-XMq"/>
@@ -284,7 +262,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="NJg-a9-EQg" secondAttribute="trailing" id="Dei-j2-b4f"/>
@@ -302,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="145.5" y="430.5"/>
+            <point key="canvasLocation" x="-592.5" y="426.5"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="Zec-vd-0uS">
@@ -321,7 +298,6 @@
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gxE-kv-8Gm" customClass="SettingTableView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="491"/>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="fNM-SZ-m9X">
@@ -330,15 +306,12 @@
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fNM-SZ-m9X" id="any-a9-5eb">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <animations/>
                                                 </tableViewCellContentView>
-                                                <animations/>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cwh-YM-Fwx">
                                         <rect key="frame" x="157" y="575" width="60" height="1"/>
-                                        <animations/>
                                         <color key="backgroundColor" red="0.98039215690000003" green="0.98823529409999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="Mk5-ru-Or5"/>
@@ -347,7 +320,6 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cqn-Lj-gbg">
                                         <rect key="frame" x="167" y="584" width="40" height="1"/>
-                                        <animations/>
                                         <color key="backgroundColor" red="0.98039215690000003" green="0.98823529409999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="UyE-0z-Jxb"/>
@@ -356,7 +328,6 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S7C-jW-D4b">
                                         <rect key="frame" x="177" y="593" width="20" height="1"/>
-                                        <animations/>
                                         <color key="backgroundColor" red="0.98039215690000003" green="0.98823529409999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="FCE-YR-Wto"/>
@@ -365,7 +336,6 @@
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="画面を下げて設定を保存" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lkb-aq-FZn">
                                         <rect key="frame" x="8" y="499" width="359" height="68"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="68" id="6TD-Kf-6nY"/>
                                         </constraints>
@@ -374,7 +344,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.1843137255" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Lkb-aq-FZn" secondAttribute="bottom" constant="100" id="3yZ-Qb-H9C"/>
@@ -389,7 +358,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="05I-gK-efR" firstAttribute="top" secondItem="6Kb-zB-1XU" secondAttribute="bottom" id="43i-sK-t06"/>
@@ -406,12 +374,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u3f-oo-GOQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1027.5" y="456.5"/>
+            <point key="canvasLocation" x="-592.5" y="1382.5"/>
         </scene>
-        <!--All Music Data View Controller-->
+        <!--Artist Data View Controller-->
         <scene sceneID="BSO-JD-Yul">
             <objects>
-                <viewController storyboardIdentifier="AllMusicDataViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8kv-Zi-ncH" customClass="AllMusicDataViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArtistDataViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8kv-Zi-ncH" customClass="ArtistDataViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rdS-Ft-j5I"/>
                         <viewControllerLayoutGuide type="bottom" id="t9m-L6-qp9"/>
@@ -420,14 +388,12 @@
                         <rect key="frame" x="0.0" y="44" width="375" height="221"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o2s-Lz-taa" customClass="AllMusicDataTableView">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o2s-Lz-taa" customClass="ArtistDataTableView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="221"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.1843137255" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="43" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="o2s-Lz-taa" secondAttribute="bottom" id="4yP-ys-wyM"/>
@@ -437,13 +403,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ela-Qm-mrw"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="265"/>
                     <connections>
-                        <outlet property="allMusicDataTableView" destination="o2s-Lz-taa" id="SLh-gf-wbg"/>
+                        <outlet property="artistDataTableView" destination="o2s-Lz-taa" id="phc-3a-aET"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UUR-WW-pBd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="606.5" y="648.5"/>
+            <point key="canvasLocation" x="472.5" y="426.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="p21-vq-OPW">
@@ -453,7 +421,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="KKK-ow-fJB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                         <color key="tintColor" red="0.98039215690000003" green="0.98823529409999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.1647058824" green="0.1843137255" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -467,7 +434,81 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3JW-Yo-cWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="606.5" y="229.5"/>
+            <point key="canvasLocation" x="-31.5" y="426.5"/>
+        </scene>
+        <!--Album Data View Controller-->
+        <scene sceneID="Sow-Xv-57Q">
+            <objects>
+                <viewController storyboardIdentifier="AlbumDataViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CdM-IM-tpe" customClass="AlbumDataViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jwz-Q7-AEn"/>
+                        <viewControllerLayoutGuide type="bottom" id="18s-rP-1XA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zKW-JG-vwT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="265"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aEd-Wr-uZi" customClass="AlbumDataTableView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="265"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.1843137255" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="43" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="aEd-Wr-uZi" secondAttribute="bottom" id="0N4-mJ-3ST"/>
+                            <constraint firstItem="aEd-Wr-uZi" firstAttribute="top" secondItem="zKW-JG-vwT" secondAttribute="top" id="Y7o-Od-aCN"/>
+                            <constraint firstAttribute="trailing" secondItem="aEd-Wr-uZi" secondAttribute="trailing" id="u1J-SI-GMQ"/>
+                            <constraint firstItem="aEd-Wr-uZi" firstAttribute="leading" secondItem="zKW-JG-vwT" secondAttribute="leading" id="y59-n5-AtA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6N9-I3-Von"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="265"/>
+                    <connections>
+                        <outlet property="albumDataTableView" destination="aEd-Wr-uZi" id="n1Z-wW-Lgu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EX0-bF-zFY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="472.5" y="758.5"/>
+        </scene>
+        <!--Music Data View Controller-->
+        <scene sceneID="85D-aO-g13">
+            <objects>
+                <viewController storyboardIdentifier="MusicDataViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2TQ-tP-pSp" customClass="MusicDataViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QB2-Tc-hVY"/>
+                        <viewControllerLayoutGuide type="bottom" id="gyH-6x-Evx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hXP-eu-129">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="265"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bXq-IV-NUH" customClass="MusicDataTableView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="265"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.1843137255" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="43" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="bXq-IV-NUH" secondAttribute="bottom" id="Nat-8C-V12"/>
+                            <constraint firstAttribute="trailing" secondItem="bXq-IV-NUH" secondAttribute="trailing" id="PGN-zp-Q8I"/>
+                            <constraint firstItem="bXq-IV-NUH" firstAttribute="leading" secondItem="hXP-eu-129" secondAttribute="leading" id="rEm-RG-xwi"/>
+                            <constraint firstItem="bXq-IV-NUH" firstAttribute="top" secondItem="hXP-eu-129" secondAttribute="top" id="sKc-56-bEA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="aOf-IC-fOr"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="265"/>
+                    <connections>
+                        <outlet property="musicDataTableView" destination="bXq-IV-NUH" id="T5L-hx-2Lw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DQ8-7s-MgO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="472.5" y="1094.5"/>
         </scene>
     </scenes>
     <resources>

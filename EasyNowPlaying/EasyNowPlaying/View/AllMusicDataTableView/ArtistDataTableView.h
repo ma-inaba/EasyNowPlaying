@@ -1,5 +1,5 @@
 //
-//  AlbumTableView.h
+//  ArtistDataTableView.h
 //  EasyNowPlaying
 //
 //  Created by inaba masaya on 2015/11/30.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AllMusicDataTableView : UITableView
+@interface ArtistDataTableView : UITableView
 <
 UITableViewDataSource
 >

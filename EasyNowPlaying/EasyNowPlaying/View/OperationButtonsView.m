@@ -10,7 +10,6 @@
 
 @interface OperationButtonsView()
 @property (weak, nonatomic) IBOutlet UIImageView *tweetImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *playImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *nextImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *backImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *settingImageView;
@@ -26,9 +25,11 @@
     MPMusicPlaybackState state = [[ModelLocator sharedInstance].playbackViewModel nowPlaybackState];
     switch (state) {
         case MPMusicPlaybackStatePlaying:
+            NSLog(@"Play");
             self.playImageView.image = [UIImage imageNamed:kPause];
             break;
         case MPMusicPlaybackStatePaused:
+            NSLog(@"Pause");
             self.playImageView.image = [UIImage imageNamed:kPlay];
             break;
         default:
@@ -37,9 +38,11 @@
     
     self.playImageView.image = [self.playImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     if (state == MPMusicPlaybackStateStopped) {
+//        NSLog(@"Pause");
         self.playImageView.tintColor = [UIColor lightGrayColor];
         self.playImageView.userInteractionEnabled = YES;
     } else {
+//        NSLog(@"Play");
         self.playImageView.tintColor = kDefaultTextColor;
         self.playImageView.userInteractionEnabled = NO;
     }

@@ -1,5 +1,5 @@
 //
-//  AllMusicDataViewController.h
+//  ArtistDataViewController.h
 //  EasyNowPlaying
 //
 //  Created by inaba masaya on 2015/12/04.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AllMusicDataViewController : UIViewController
+@interface ArtistDataViewController : UIViewController
 <
 UITableViewDelegate
 >

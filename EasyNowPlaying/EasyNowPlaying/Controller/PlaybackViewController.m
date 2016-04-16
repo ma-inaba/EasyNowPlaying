@@ -53,11 +53,19 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     
-    if ([keyPath isEqualToString:kCompleteLoadData]) {
-        self.artworkImageView.image = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artworkImage;
-        [self.musicDataView setNeedsDisplay];
-        [self.operationButtonsView setNeedsDisplay];
-    }
+    
+    double delayInSeconds = 0.1;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        if ([keyPath isEqualToString:kCompleteLoadData]) {
+            BOOL complete = [[object valueForKey:keyPath] boolValue];
+            if (complete) {
+                self.artworkImageView.image = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artworkImage;
+                [self.musicDataView setNeedsDisplay];
+                [self.operationButtonsView setNeedsDisplay];
+            }
+        }
+    });
 }
 
 - (void)didReceiveMemoryWarning {

@@ -125,7 +125,6 @@
     
     NSString *albumName;
     if (self.musicDataEntity.artistDataArray) {
-        // TODO: 曲一覧をスクロールしながら画面を戻るとここでクラッシュ(rowの値が配列のindexpathを超えてる)
         MPMediaItemCollection *albumCollection = [self.musicDataEntity.albumDataArray objectAtIndex:row];
         albumName = [[albumCollection representativeItem] valueForProperty:MPMediaItemPropertyAlbumTitle];
         if ([albumName isEqualToString:@""]) {
