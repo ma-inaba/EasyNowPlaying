@@ -25,11 +25,9 @@
     MPMusicPlaybackState state = [[ModelLocator sharedInstance].playbackViewModel nowPlaybackState];
     switch (state) {
         case MPMusicPlaybackStatePlaying:
-            NSLog(@"Play");
             self.playImageView.image = [UIImage imageNamed:kPause];
             break;
         case MPMusicPlaybackStatePaused:
-            NSLog(@"Pause");
             self.playImageView.image = [UIImage imageNamed:kPlay];
             break;
         default:
@@ -38,11 +36,9 @@
     
     self.playImageView.image = [self.playImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     if (state == MPMusicPlaybackStateStopped) {
-//        NSLog(@"Pause");
         self.playImageView.tintColor = [UIColor lightGrayColor];
         self.playImageView.userInteractionEnabled = YES;
     } else {
-//        NSLog(@"Play");
         self.playImageView.tintColor = kDefaultTextColor;
         self.playImageView.userInteractionEnabled = NO;
     }
@@ -89,11 +85,23 @@
 - (IBAction)nextAction:(id)sender {
     
     [[ModelLocator sharedInstance].playbackViewModel skipToNextMusic];
+    
+    double delayInSeconds = 0.1;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self setNeedsDisplay];
+    });
 }
 
 - (IBAction)backAction:(id)sender {
     
     [[ModelLocator sharedInstance].playbackViewModel skipToPreviousMusic];
+    
+    double delayInSeconds = 0.1;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self setNeedsDisplay];
+    });
 }
 
 - (IBAction)settingAction:(id)sender {

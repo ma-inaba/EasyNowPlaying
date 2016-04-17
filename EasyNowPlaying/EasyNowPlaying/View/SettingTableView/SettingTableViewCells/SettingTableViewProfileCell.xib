@@ -16,6 +16,9 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please follow me on Twitter!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qp-C4-qUj">
                         <rect key="frame" x="78" y="60" width="234" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="9Ig-p1-4XY"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                         <color key="textColor" red="0.98039215690000003" green="0.98823529409999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -42,9 +45,9 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mail : ma.inaba0506@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzu-fb-1d1">
-                        <rect key="frame" x="78" y="39" width="234" height="21"/>
+                        <rect key="frame" x="78" y="42" width="234" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="xNj-IS-CI2"/>
+                            <constraint firstAttribute="height" constant="21" id="Djg-Gl-B2D"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                         <color key="textColor" red="0.98039215690000003" green="0.98823529409999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -53,17 +56,16 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="yac-Fb-qqL" firstAttribute="leading" secondItem="D5h-hI-Shv" secondAttribute="trailing" constant="8" id="2VI-Tc-hW9"/>
-                    <constraint firstItem="Mzu-fb-1d1" firstAttribute="top" secondItem="yac-Fb-qqL" secondAttribute="bottom" id="FCQ-Ve-llg"/>
-                    <constraint firstItem="8qp-C4-qUj" firstAttribute="leading" secondItem="D5h-hI-Shv" secondAttribute="trailing" constant="8" id="GXk-9O-aeO"/>
-                    <constraint firstItem="8qp-C4-qUj" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="QmT-Yn-2rk"/>
+                    <constraint firstItem="8qp-C4-qUj" firstAttribute="leading" secondItem="D5h-hI-Shv" secondAttribute="trailing" constant="8" id="8jw-eq-1Iw"/>
+                    <constraint firstItem="8qp-C4-qUj" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="8so-wP-nBY"/>
                     <constraint firstAttribute="bottomMargin" secondItem="D5h-hI-Shv" secondAttribute="bottom" constant="10" id="R8t-RT-5KQ"/>
-                    <constraint firstItem="8qp-C4-qUj" firstAttribute="top" secondItem="Mzu-fb-1d1" secondAttribute="bottom" id="XUJ-zs-9KY"/>
                     <constraint firstItem="yac-Fb-qqL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="aA4-CI-Otj"/>
-                    <constraint firstItem="8qp-C4-qUj" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="aga-B5-nrw"/>
-                    <constraint firstItem="Mzu-fb-1d1" firstAttribute="leading" secondItem="D5h-hI-Shv" secondAttribute="trailing" constant="8" id="ds2-VZ-O6N"/>
+                    <constraint firstItem="Mzu-fb-1d1" firstAttribute="leading" secondItem="D5h-hI-Shv" secondAttribute="trailing" constant="8" id="fNh-hW-WgI"/>
                     <constraint firstItem="D5h-hI-Shv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="jWI-qk-MAv"/>
-                    <constraint firstItem="Mzu-fb-1d1" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="qd7-Kf-bPE"/>
+                    <constraint firstItem="Mzu-fb-1d1" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="jYq-ea-QU7"/>
+                    <constraint firstItem="Mzu-fb-1d1" firstAttribute="top" secondItem="yac-Fb-qqL" secondAttribute="bottom" constant="3" id="rXs-7O-8dp"/>
                     <constraint firstItem="D5h-hI-Shv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="trN-m0-z1T"/>
+                    <constraint firstItem="8qp-C4-qUj" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="wx0-Fx-c6j"/>
                     <constraint firstItem="yac-Fb-qqL" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="zDk-VD-nJl"/>
                 </constraints>
             </tableViewCellContentView>

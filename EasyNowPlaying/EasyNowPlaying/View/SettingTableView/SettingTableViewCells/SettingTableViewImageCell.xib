@@ -25,13 +25,12 @@
                     </switch>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="5tl-qd-dow" firstAttribute="leading" secondItem="j5m-ij-Iz4" secondAttribute="trailing" constant="8" id="2bF-Ce-C0M"/>
-                    <constraint firstItem="5tl-qd-dow" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-2" id="2el-Eh-scu"/>
-                    <constraint firstItem="j5m-ij-Iz4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="GMD-WS-lkH"/>
-                    <constraint firstItem="5tl-qd-dow" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="HfD-dS-Xva"/>
-                    <constraint firstItem="j5m-ij-Iz4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="at3-qz-WyR"/>
-                    <constraint firstItem="j5m-ij-Iz4" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="djK-Js-IL7"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="5tl-qd-dow" secondAttribute="bottom" constant="-2" id="fqF-nN-3G9"/>
+                    <constraint firstItem="j5m-ij-Iz4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="ERe-Gc-u1h"/>
+                    <constraint firstItem="5tl-qd-dow" firstAttribute="leading" secondItem="j5m-ij-Iz4" secondAttribute="trailing" constant="8" id="F1S-50-FmB"/>
+                    <constraint firstItem="j5m-ij-Iz4" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="ISR-FG-lz4"/>
+                    <constraint firstItem="5tl-qd-dow" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="hrC-LS-OnN"/>
+                    <constraint firstItem="5tl-qd-dow" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="v02-gl-beO"/>
+                    <constraint firstItem="j5m-ij-Iz4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="wGi-1q-J2g"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.27193399289999998" green="0.30437097190000001" blue="0.38089013379999997" alpha="1" colorSpace="calibratedRGB"/>
