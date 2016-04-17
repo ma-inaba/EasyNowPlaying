@@ -47,7 +47,11 @@
         self.musicDataEntity.albumTitle = [mediaItem valueForProperty:MPMediaItemPropertyAlbumTitle];
         // アーティスト名
         // アルバムアーティストにするとコンピレーションと違うやつを混合できる
-        self.musicDataEntity.artistName = [mediaItem valueForProperty:MPMediaItemPropertyAlbumArtist];
+        NSString *artistName = [mediaItem valueForProperty:MPMediaItemPropertyAlbumArtist];
+        if (artistName == nil) {
+            artistName = [mediaItem valueForProperty:MPMediaItemPropertyArtist];
+        }
+        self.musicDataEntity.artistName = artistName;
         // トラックナンバー
         self.musicDataEntity.nowTrackNumber = [[mediaItem valueForProperty:MPMediaItemPropertyAlbumTrackNumber] unsignedIntegerValue];
 
