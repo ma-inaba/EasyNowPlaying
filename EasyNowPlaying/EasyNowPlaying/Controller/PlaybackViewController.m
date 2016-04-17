@@ -53,7 +53,6 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     
-    
     double delayInSeconds = 0.1;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
@@ -87,11 +86,19 @@
         NSString *musicTitle = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.musicTitle;
         NSString *artistName = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artistName;
         NSString *tagString = [Utility loadUserDefaults:kPostTagKey];
+        
+        MPMusicPlaybackState state = [[ModelLocator sharedInstance].playbackViewModel nowPlaybackState];
+        if (state == MPMusicPlaybackStateStopped) {
+            musicTitle = @"";
+            artistName = @"";
+        }
+        
         if (!tagString) {
             tagString = kPostDefaultTag;
         }
         NSString *postString = [NSString stringWithFormat:@"%@ %@ - %@",tagString, musicTitle, artistName];
         UIImage *postImage = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artworkImage;
+        
         [controller setInitialText:postString];
         
         BOOL isPostImage = [[Utility loadUserDefaults:kPostImageKey] boolValue];

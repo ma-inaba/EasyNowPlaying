@@ -38,9 +38,13 @@
     if (state == MPMusicPlaybackStateStopped) {
         self.playImageView.tintColor = [UIColor lightGrayColor];
         self.playImageView.userInteractionEnabled = YES;
+        self.tweetImageView.tintColor = [UIColor lightGrayColor];
+        self.tweetImageView.userInteractionEnabled = YES;
     } else {
         self.playImageView.tintColor = kDefaultTextColor;
         self.playImageView.userInteractionEnabled = NO;
+        self.tweetImageView.tintColor = kDefaultTextColor;
+        self.tweetImageView.userInteractionEnabled = NO;
     }
     
     self.nextImageView.image = [self.nextImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -53,12 +57,18 @@
 
 - (IBAction)tweetAction:(id)sender {
     
+    [self invalidationWhenStopped];
+    [self buttonPushAnimation:self.tweetImageView];
+    
     if ([self.operationButtonsViewDelegate respondsToSelector:@selector(onTweetButton)]) {
         [self.operationButtonsViewDelegate onTweetButton];
     }
 }
 
 - (IBAction)playAction:(id)sender {
+    
+    [self invalidationWhenStopped];
+    [self buttonPushAnimation:self.playImageView];
     
     [[ModelLocator sharedInstance].playbackViewModel switchPlayStatus];
     
@@ -84,6 +94,9 @@
 
 - (IBAction)nextAction:(id)sender {
     
+    [self invalidationWhenStopped];
+    [self buttonPushAnimation:self.nextImageView];
+
     [[ModelLocator sharedInstance].playbackViewModel skipToNextMusic];
     
     double delayInSeconds = 0.1;
@@ -95,6 +108,9 @@
 
 - (IBAction)backAction:(id)sender {
     
+    [self invalidationWhenStopped];
+    [self buttonPushAnimation:self.backImageView];
+
     [[ModelLocator sharedInstance].playbackViewModel skipToPreviousMusic];
     
     double delayInSeconds = 0.1;
@@ -106,6 +122,27 @@
 
 - (IBAction)settingAction:(id)sender {
     
+    [self buttonPushAnimation:self.settingImageView];
+}
+
+- (void)invalidationWhenStopped {
+    
+    MPMusicPlaybackState state = [[ModelLocator sharedInstance].playbackViewModel nowPlaybackState];
+    if (state == MPMusicPlaybackStateStopped) {
+        return;
+    }
+}
+
+- (void)buttonPushAnimation:(UIImageView *)imageView {
+    
+    [UIView animateWithDuration:0.15 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^ {
+        imageView.transform = CGAffineTransformMakeScale(0.8, 0.8);
+    } completion:^(BOOL compilation) {
+        [UIView animateWithDuration:0.15 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^ {
+            imageView.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL compilation) {
+        }];
+    }];
 }
 
 @end
