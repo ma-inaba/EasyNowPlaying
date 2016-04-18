@@ -12,8 +12,6 @@
 
 - (void)drawRect:(CGRect)rect {
     
-    self.layer.shadowOffset = CGSizeMake(0, -5);
-    self.layer.shadowOpacity = 0.5;
 }
 
 @end

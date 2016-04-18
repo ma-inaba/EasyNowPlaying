@@ -99,11 +99,9 @@
 
     [[ModelLocator sharedInstance].playbackViewModel skipToNextMusic];
     
-    double delayInSeconds = 0.1;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [self setNeedsDisplay];
-    });
+    if ([self.operationButtonsViewDelegate respondsToSelector:@selector(onNextButton)]) {
+        [self.operationButtonsViewDelegate onNextButton];
+    }
 }
 
 - (IBAction)backAction:(id)sender {
@@ -113,11 +111,9 @@
 
     [[ModelLocator sharedInstance].playbackViewModel skipToPreviousMusic];
     
-    double delayInSeconds = 0.1;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [self setNeedsDisplay];
-    });
+    if ([self.operationButtonsViewDelegate respondsToSelector:@selector(onBackButton)]) {
+        [self.operationButtonsViewDelegate onBackButton];
+    }
 }
 
 - (IBAction)settingAction:(id)sender {

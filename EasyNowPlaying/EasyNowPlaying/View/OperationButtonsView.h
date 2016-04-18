@@ -11,6 +11,8 @@
 @protocol OperationButtonsViewDelegate <NSObject>
 
 - (void)onTweetButton;
+- (void)onBackButton;
+- (void)onNextButton;
 
 @end
 

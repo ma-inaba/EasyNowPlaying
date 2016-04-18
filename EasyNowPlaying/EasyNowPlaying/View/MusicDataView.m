@@ -37,12 +37,13 @@
         albumTitle = kUnknownAlbum;
     }
     
+    MPMusicPlaybackState state = [[ModelLocator sharedInstance].playbackViewModel nowPlaybackState];
     NSString *artistAlbumStr = [NSString stringWithFormat:@"%@ - %@",artistName, albumTitle];
-    if (!artistName && !albumTitle) {
+    if ((!artistName && !albumTitle) || state == MPMusicPlaybackStateStopped) {
         artistAlbumStr = kNotPlayMusicNow;
+        musicTitle = @"";
     }
 
-    
     int duration = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.duration;
     int secondTime = duration%60; //秒
     int minutTime = (duration/60)%60;  //分
@@ -53,9 +54,6 @@
 
     [self.durationSlider setThumbImage:[UIImage imageNamed:@"PlayLine"] forState:UIControlStateNormal];
     [self reloaddurationSlider];
-    
-    self.layer.shadowOffset = CGSizeMake(0, 5);
-    self.layer.shadowOpacity = 0.5;    
 }
 
 - (void)reloaddurationSlider {

@@ -44,9 +44,10 @@
     
     UIImage *artwork = [[ModelLocator sharedInstance].playbackViewModel loadAlbumArtworkForArtistDataArraywithIndex:indexPath.row];
     if (artwork == nil) {
-            // TODO: artworkに画像ない人用の画像をいれる
+        // TODO: artworkに画像ない人用の画像をいれる
+        artwork = [UIImage imageNamed:@"NonArtwork"];
     }
-    cell.albumImageView.image = [[ModelLocator sharedInstance].playbackViewModel loadAlbumArtworkForArtistDataArraywithIndex:indexPath.row];
+    cell.albumImageView.image = artwork;
     
     NSString *songsTrack = [[ModelLocator sharedInstance].playbackViewModel loadSongsTrackCountForArtistDataArraywithIndex:indexPath.row];
     cell.songsTrackLabel.text = [NSString stringWithFormat:@"%@曲",songsTrack];

@@ -10,7 +10,10 @@
 #import "MusicDataView.h"
 #import <Social/Social.h>
 
-@interface PlaybackViewController ()
+@interface PlaybackViewController () {
+    
+    NSTimer *sliderTimer;
+}
 @property (weak, nonatomic) IBOutlet UIImageView *artworkImageView;
 @property (weak, nonatomic) IBOutlet MusicDataView *musicDataView;
 @property (weak, nonatomic) IBOutlet OperationButtonsView *operationButtonsView;
@@ -23,6 +26,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.operationButtonsView.operationButtonsViewDelegate = self;
+    
+    // 受け取る処理（オブザーバの登録）と受け取った後の処理
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationDidBecomeActive)
+                                                 name:UIApplicationDidBecomeActiveNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationDidEnterBackground)
+                                                 name:UIApplicationDidEnterBackgroundNotification
+                                               object:nil];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -33,8 +47,30 @@
     [[ModelLocator sharedInstance].playbackViewModel addObserver:self forKeyPath:kCompleteLoadData options:0 context:nil];
     [[ModelLocator sharedInstance].playbackViewModel loadMusicPlayerData];
     
-    NSTimer *timer =[NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(reloadSlider) userInfo:nil repeats:YES];
-    [timer fire];
+    sliderTimer =[NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(reloadSlider) userInfo:nil repeats:YES];
+    [sliderTimer fire];
+}
+
+- (void)dealloc{
+    // 通知センターを削除する
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIApplicationDidBecomeActiveNotification
+                                                  object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIApplicationDidEnterBackgroundNotification
+                                                  object:nil];
+}
+
+- (void)applicationDidBecomeActive{
+    
+    [self reloadViews];
+}
+
+- (void)applicationDidEnterBackground {
+    
+    if ([sliderTimer isValid]) {
+        [sliderTimer invalidate];
+    }
 }
 
 - (void)reloadSlider {
@@ -59,7 +95,11 @@
         if ([keyPath isEqualToString:kCompleteLoadData]) {
             BOOL complete = [[object valueForKey:keyPath] boolValue];
             if (complete) {
-                self.artworkImageView.image = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artworkImage;
+                UIImage *artwork = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artworkImage;
+                if (artwork == nil) {
+                    artwork = [UIImage imageNamed:@"NonArtwork"];
+                }
+                self.artworkImageView.image = artwork;
                 [self.musicDataView setNeedsDisplay];
                 [self.operationButtonsView setNeedsDisplay];
             }
@@ -110,6 +150,30 @@
                            animated:NO
                          completion:NULL];
     }
+}
+
+- (void)onBackButton {
+    
+    [self reloadViews];
+}
+
+- (void)onNextButton {
+    
+    [self reloadViews];
+}
+
+- (void)reloadViews {
+    
+    double delayInSeconds = 0.1;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        MPMusicPlaybackState state = [[ModelLocator sharedInstance].playbackViewModel nowPlaybackState];
+        if (state == MPMusicPlaybackStateStopped) {
+            self.artworkImageView.image = [UIImage imageNamed:@"NonArtwork"];
+            [self.musicDataView setNeedsDisplay];
+            [self.operationButtonsView setNeedsDisplay];
+        }
+    });
 }
 
 @end
