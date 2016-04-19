@@ -93,7 +93,6 @@
 - (UIImage *)loadArtistArtworkForArtistDataArraywithIndex:(NSInteger)row {
     
     // アートワークについてはアルバムのアートワークを取得する。
-    // TODO: 実装見込み次第アーティストのアートワークを取得する
     UIImage *albumArtwork = [UIImage alloc];
     if (self.musicDataEntity.artistDataArray) {
         MPMediaItemCollection *albumCollection = [self.musicDataEntity.artistDataArray objectAtIndex:row];

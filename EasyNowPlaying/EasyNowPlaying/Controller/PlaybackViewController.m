@@ -64,6 +64,10 @@
 - (void)applicationDidBecomeActive{
     
     [self reloadViews];
+    if (![sliderTimer isValid]) {
+        sliderTimer =[NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(reloadSlider) userInfo:nil repeats:YES];
+        [sliderTimer fire];
+    }
 }
 
 - (void)applicationDidEnterBackground {

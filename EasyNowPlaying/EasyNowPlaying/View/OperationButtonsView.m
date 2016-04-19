@@ -10,8 +10,11 @@
 
 @interface OperationButtonsView()
 @property (weak, nonatomic) IBOutlet UIImageView *tweetImageView;
+@property (weak, nonatomic) IBOutlet UIButton *tweetButton;
 @property (weak, nonatomic) IBOutlet UIImageView *nextImageView;
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
 @property (weak, nonatomic) IBOutlet UIImageView *backImageView;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UIImageView *settingImageView;
 @end
 
@@ -37,20 +40,26 @@
     self.playImageView.image = [self.playImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     if (state == MPMusicPlaybackStateStopped) {
         self.playImageView.tintColor = [UIColor lightGrayColor];
-        self.playImageView.userInteractionEnabled = YES;
+        self.playButton.userInteractionEnabled = NO;
         self.tweetImageView.tintColor = [UIColor lightGrayColor];
-        self.tweetImageView.userInteractionEnabled = YES;
+        self.tweetButton.userInteractionEnabled = NO;
+        self.nextImageView.tintColor = [UIColor lightGrayColor];
+        self.nextButton.userInteractionEnabled = NO;
+        self.backImageView.tintColor = [UIColor lightGrayColor];
+        self.backButton.userInteractionEnabled = NO;
     } else {
         self.playImageView.tintColor = kDefaultTextColor;
-        self.playImageView.userInteractionEnabled = NO;
+        self.playButton.userInteractionEnabled = YES;
         self.tweetImageView.tintColor = kDefaultTextColor;
-        self.tweetImageView.userInteractionEnabled = NO;
+        self.tweetButton.userInteractionEnabled = YES;
+        self.nextImageView.tintColor = kDefaultTextColor;
+        self.nextButton.userInteractionEnabled = YES;
+        self.backImageView.tintColor = kDefaultTextColor;
+        self.backButton.userInteractionEnabled = YES;
     }
     
     self.nextImageView.image = [self.nextImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.nextImageView.tintColor = kDefaultTextColor;
     self.backImageView.image = [self.backImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.backImageView.tintColor = kDefaultTextColor;
     self.settingImageView.image = [self.settingImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.settingImageView.tintColor = kDefaultTextColor;
 }

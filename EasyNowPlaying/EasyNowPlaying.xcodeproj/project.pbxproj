@@ -579,7 +579,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/Application/PrefixHeader.pch";
 				INFOPLIST_FILE = EasyNowPlaying/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = masaya.inaba.EasyNowPlaying;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.masaya-inaba.EasyNowPlaying";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -594,7 +594,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/Application/PrefixHeader.pch";
 				INFOPLIST_FILE = EasyNowPlaying/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = masaya.inaba.EasyNowPlaying;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.masaya-inaba.EasyNowPlaying";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

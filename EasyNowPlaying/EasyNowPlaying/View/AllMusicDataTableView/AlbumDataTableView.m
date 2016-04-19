@@ -44,7 +44,6 @@
     
     UIImage *artwork = [[ModelLocator sharedInstance].playbackViewModel loadAlbumArtworkForArtistDataArraywithIndex:indexPath.row];
     if (artwork == nil) {
-        // TODO: artworkに画像ない人用の画像をいれる
         artwork = [UIImage imageNamed:@"NonArtwork"];
     }
     cell.albumImageView.image = artwork;

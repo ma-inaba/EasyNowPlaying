@@ -20,5 +20,6 @@
 
 @property (weak, nonatomic) id<OperationButtonsViewDelegate>operationButtonsViewDelegate;
 @property (weak, nonatomic) IBOutlet UIImageView *playImageView;
+@property (weak, nonatomic) IBOutlet UIButton *playButton;
 
 @end

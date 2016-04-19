@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJg-a9-EQg">
+                            <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="NJg-a9-EQg">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgh-Qz-dTE" customClass="AllMusicDataTableBaseView">
@@ -232,21 +232,17 @@
                                             <constraint firstItem="mn5-d4-P3z" firstAttribute="width" secondItem="Sg9-lt-FTE" secondAttribute="width" id="zZO-Qp-3Bi"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="backButton" destination="ZcD-O0-6nO" id="ad3-xv-iHm"/>
                                             <outlet property="backImageView" destination="K2d-My-XvD" id="9gw-t3-sn4"/>
+                                            <outlet property="nextButton" destination="hN6-2s-cZ0" id="Wkj-rx-4GN"/>
                                             <outlet property="nextImageView" destination="bqE-dh-Za1" id="raD-cT-aWL"/>
+                                            <outlet property="playButton" destination="fJ6-WQ-fkx" id="lQN-uL-jlQ"/>
                                             <outlet property="playImageView" destination="L9A-6m-Xe0" id="sF2-gd-XS0"/>
                                             <outlet property="settingImageView" destination="B0V-i3-2So" id="bLN-2S-i0x"/>
+                                            <outlet property="tweetButton" destination="ahJ-gi-eKT" id="11F-Id-J27"/>
                                             <outlet property="tweetImageView" destination="ZjR-k0-LhS" id="Uba-U9-1pO"/>
                                         </connections>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NonArtwork" translatesAutoresizingMaskIntoConstraints="NO" id="rbU-WL-Cnw">
-                                        <rect key="frame" x="0.0" y="80" width="320" height="320"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="rbU-WL-Cnw" secondAttribute="height" multiplier="1:1" id="Er6-EM-umX"/>
-                                        </constraints>
-                                    </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwm-Tm-LLZ" customClass="MusicDataView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                         <subviews>
@@ -322,6 +318,14 @@
                                             <outlet property="musicTitleLabel" destination="3aE-qa-anr" id="UPa-9p-Ptk"/>
                                         </connections>
                                     </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NonArtwork" translatesAutoresizingMaskIntoConstraints="NO" id="rbU-WL-Cnw">
+                                        <rect key="frame" x="0.0" y="80" width="320" height="320"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="rbU-WL-Cnw" secondAttribute="height" multiplier="1:1" id="Er6-EM-umX"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.98823529409999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
