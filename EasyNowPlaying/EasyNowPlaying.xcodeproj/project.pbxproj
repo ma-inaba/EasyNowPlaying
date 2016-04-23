@@ -37,6 +37,8 @@
 		A2B8C5F01C0984940094F14C /* MusicDataEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B8C5EF1C0984940094F14C /* MusicDataEntity.m */; };
 		C52395931CC2812B00A729EC /* AlbumDataTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C52395921CC2812B00A729EC /* AlbumDataTableView.m */; };
 		C52395961CC2818C00A729EC /* MusicDataTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C52395951CC2818C00A729EC /* MusicDataTableView.m */; };
+		C57516A21CCB34BF0022618A /* SettingTableViewAppNameTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C57516A01CCB34BF0022618A /* SettingTableViewAppNameTagCell.m */; };
+		C57516A31CCB34BF0022618A /* SettingTableViewAppNameTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C57516A11CCB34BF0022618A /* SettingTableViewAppNameTagCell.xib */; };
 		C5E609471CC279A000543655 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5E609431CC279A000543655 /* LaunchScreen.storyboard */; };
 		C5E609481CC279A000543655 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5E609451CC279A000543655 /* Main.storyboard */; };
 		C5E6094B1CC27AF100543655 /* AlbumDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E6094A1CC27AF100543655 /* AlbumDataViewController.m */; };
@@ -99,6 +101,9 @@
 		C52395921CC2812B00A729EC /* AlbumDataTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumDataTableView.m; sourceTree = "<group>"; };
 		C52395941CC2818C00A729EC /* MusicDataTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicDataTableView.h; sourceTree = "<group>"; };
 		C52395951CC2818C00A729EC /* MusicDataTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDataTableView.m; sourceTree = "<group>"; };
+		C575169F1CCB34BF0022618A /* SettingTableViewAppNameTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewAppNameTagCell.h; sourceTree = "<group>"; };
+		C57516A01CCB34BF0022618A /* SettingTableViewAppNameTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewAppNameTagCell.m; sourceTree = "<group>"; };
+		C57516A11CCB34BF0022618A /* SettingTableViewAppNameTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewAppNameTagCell.xib; sourceTree = "<group>"; };
 		C5E609441CC279A000543655 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = EasyNowPlaying/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		C5E609461CC279A000543655 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = EasyNowPlaying/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		C5E609491CC27AF100543655 /* AlbumDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumDataViewController.h; sourceTree = "<group>"; };
@@ -325,6 +330,9 @@
 				A2AE983E1C0F01190064FFEB /* SettingTableViewTagCell.h */,
 				A2AE983F1C0F01190064FFEB /* SettingTableViewTagCell.m */,
 				A2AE98401C0F01190064FFEB /* SettingTableViewTagCell.xib */,
+				C575169F1CCB34BF0022618A /* SettingTableViewAppNameTagCell.h */,
+				C57516A01CCB34BF0022618A /* SettingTableViewAppNameTagCell.m */,
+				C57516A11CCB34BF0022618A /* SettingTableViewAppNameTagCell.xib */,
 				A2AE98431C0F01300064FFEB /* SettingTableViewImageCell.h */,
 				A2AE98441C0F01300064FFEB /* SettingTableViewImageCell.m */,
 				A2AE98451C0F01300064FFEB /* SettingTableViewImageCell.xib */,
@@ -426,6 +434,7 @@
 				A2AE98421C0F01190064FFEB /* SettingTableViewTagCell.xib in Resources */,
 				A2AE98471C0F01300064FFEB /* SettingTableViewImageCell.xib in Resources */,
 				A22C84F01C11F28400229DC6 /* AllMusicDataTableViewAlbumCell.xib in Resources */,
+				C57516A31CCB34BF0022618A /* SettingTableViewAppNameTagCell.xib in Resources */,
 				C5E609481CC279A000543655 /* Main.storyboard in Resources */,
 				A2AE984C1C0F01560064FFEB /* SettingTableViewProfileCell.xib in Resources */,
 				A2788C9D1C11A3E50033CD76 /* AllMusicDataTableViewMusicCell.xib in Resources */,
@@ -447,6 +456,7 @@
 				C5E6094E1CC27CB600543655 /* MusicDataViewController.m in Sources */,
 				A2B8C5EB1C0981C00094F14C /* PlaybackViewModel.m in Sources */,
 				A254BBB91C0C6282006AB8D9 /* OperationButtonsView.m in Sources */,
+				C57516A21CCB34BF0022618A /* SettingTableViewAppNameTagCell.m in Sources */,
 				A2788C9C1C11A3E50033CD76 /* AllMusicDataTableViewMusicCell.m in Sources */,
 				A254BBB61C0C61AD006AB8D9 /* MusicDataView.m in Sources */,
 				A2788CA01C11A7D80033CD76 /* AllMusicDataTableBaseView.m in Sources */,

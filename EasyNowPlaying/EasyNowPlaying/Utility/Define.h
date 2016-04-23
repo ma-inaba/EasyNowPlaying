@@ -22,11 +22,13 @@
 #define kUnknownArtist @"不明なアーティスト"
 #define kUnknownAlbum @"不明なアルバム"
 #define kPostDefaultTag @"#nowplaying"
+#define kPostNPbotTag @"#NPbot"
 #define kDefaultTextColor [UIColor colorWithRed:0.98 green:0.99 blue:0.91 alpha:1.0];
 
 // ユーザーデフォルト
 #define kPostTagKey @"PostTagKey"
 #define kPostImageKey @"PostImageKey"
+#define kAddAppTag @"AddAppTag"
 
 // 音楽表示ビュー
 #define kNotPlayMusicNow @"ミュージックを再生したらここに表示されます"
@@ -48,6 +50,7 @@
 
 // 設定テーブルのセル
 #define kSettingTableViewTagCell @"SettingTableViewTagCell"
+#define kSettingTableViewAppNameTagCell @"SettingTableViewAppNameTagCell"
 #define kSettingTableViewImageCell @"SettingTableViewImageCell"
 #define kSettingTableViewProfileCell @"SettingTableViewProfileCell"
 

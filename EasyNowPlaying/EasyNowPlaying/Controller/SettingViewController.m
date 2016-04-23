@@ -99,37 +99,45 @@ static const NSTimeInterval kDismissAnimationSpeed = 0.3f;      // 下に下げ�
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 0) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:kSettingTableViewAlertTitle message:kSettingTableViewAlertMessage preferredStyle:UIAlertControllerStyleAlert];
-        
-        [alert addAction:[UIAlertAction actionWithTitle:kOK
-                                                  style:UIAlertActionStyleDefault
-                                                handler:^(UIAlertAction *action) {
-                                                    NSString *text = ((UITextField *)[alert.textFields objectAtIndex:0]).text;
-                                                    [Utility saveUserDefaults:text key:kPostTagKey];
-                                                    [self.settingTableView reloadData];
-                                                }]];
-        [alert addAction:[UIAlertAction actionWithTitle:kCancel
-                                                  style:UIAlertActionStyleCancel
-                                                handler:^(UIAlertAction *action) {
-                                                }]];
-
-        
-        [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-            textField.placeholder = kSettingTableViewAlertPlaceholder;
-            NSString *text = [Utility loadUserDefaults:kPostTagKey];
-            if (!text) {
-                text = kPostDefaultTag;
-            }
-            textField.text = text;
-        }];
-        
-        [self presentViewController:alert animated:YES completion:nil];
+        if (indexPath.row == 0) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:kSettingTableViewAlertTitle message:kSettingTableViewAlertMessage preferredStyle:UIAlertControllerStyleAlert];
+            
+            [alert addAction:[UIAlertAction actionWithTitle:kOK
+                                                      style:UIAlertActionStyleDefault
+                                                    handler:^(UIAlertAction *action) {
+                                                        NSString *text = ((UITextField *)[alert.textFields objectAtIndex:0]).text;
+                                                        [Utility saveUserDefaults:text key:kPostTagKey];
+                                                        [self.settingTableView reloadData];
+                                                    }]];
+            [alert addAction:[UIAlertAction actionWithTitle:kCancel
+                                                      style:UIAlertActionStyleCancel
+                                                    handler:^(UIAlertAction *action) {
+                                                    }]];
+            
+            
+            [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+                textField.placeholder = kSettingTableViewAlertPlaceholder;
+                NSString *text = [Utility loadUserDefaults:kPostTagKey];
+                if (!text) {
+                    text = kPostDefaultTag;
+                }
+                textField.text = text;
+            }];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+        }
     } else if (indexPath.section == 2) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/ragarito"]];
     }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.section == 0) {
+        if (indexPath.row == 1) {
+            return 75;
+        }
+    }
     
     if (indexPath.section == 2) {
         return 100;

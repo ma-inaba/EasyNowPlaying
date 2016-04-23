@@ -36,7 +36,7 @@
                                              selector:@selector(applicationDidEnterBackground)
                                                  name:UIApplicationDidEnterBackgroundNotification
                                                object:nil];
-
+    [self firstSetting];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -59,6 +59,19 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIApplicationDidEnterBackgroundNotification
                                                   object:nil];
+}
+
+- (void)firstSetting {
+    
+    // 初期設定
+    id addAppTag = [Utility loadUserDefaults:kAddAppTag];
+    if (addAppTag == nil) {
+        [Utility saveUserDefaults:[NSNumber numberWithBool:YES] key:kAddAppTag];
+    }
+    id postImage= [Utility loadUserDefaults:kPostImageKey];
+    if (postImage == nil) {
+        [Utility saveUserDefaults:[NSNumber numberWithBool:YES] key:kPostImageKey];
+    }
 }
 
 - (void)applicationDidBecomeActive{
@@ -130,6 +143,7 @@
         NSString *musicTitle = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.musicTitle;
         NSString *artistName = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artistName;
         NSString *tagString = [Utility loadUserDefaults:kPostTagKey];
+        NSString *tagNPBot = kPostNPbotTag;
         
         MPMusicPlaybackState state = [[ModelLocator sharedInstance].playbackViewModel nowPlaybackState];
         if (state == MPMusicPlaybackStateStopped) {
@@ -140,7 +154,16 @@
         if (!tagString) {
             tagString = kPostDefaultTag;
         }
-        NSString *postString = [NSString stringWithFormat:@"%@ %@ - %@",tagString, musicTitle, artistName];
+        
+        BOOL isAddAppTag = [[Utility loadUserDefaults:kAddAppTag] boolValue];
+
+        NSString *postString;
+        if (isAddAppTag) {
+            postString = [NSString stringWithFormat:@"%@ %@ %@ - %@",tagString, tagNPBot, musicTitle, artistName];
+        } else {
+            postString = [NSString stringWithFormat:@"%@ %@ - %@",tagString, musicTitle, artistName];
+        }
+        
         UIImage *postImage = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artworkImage;
         
         [controller setInitialText:postString];
