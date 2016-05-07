@@ -50,6 +50,9 @@
         NSString *artistName = [mediaItem valueForProperty:MPMediaItemPropertyAlbumArtist];
         if (artistName == nil) {
             artistName = [mediaItem valueForProperty:MPMediaItemPropertyArtist];
+            if (artistName == nil) {
+                artistName = kUnknownArtist;
+            }
         }
         self.musicDataEntity.artistName = artistName;
         // トラックナンバー
@@ -178,6 +181,9 @@
     if (self.musicDataEntity.songsDataArray) {
         MPMediaItemCollection *musicCollection = [self.musicDataEntity.songsDataArray objectAtIndex:row];
         musicName = [[musicCollection representativeItem] valueForProperty:MPMediaItemPropertyTitle];
+        if ([musicName isEqualToString:@""]) {
+            musicName = kUnknownTitle;
+        }
     }
     return musicName;
 }
