@@ -46,10 +46,10 @@
         // アルバム名
         self.musicDataEntity.albumTitle = [mediaItem valueForProperty:MPMediaItemPropertyAlbumTitle];
         // アーティスト名
-        // アルバムアーティストにするとコンピレーションと違うやつを混合できる
-        NSString *artistName = [mediaItem valueForProperty:MPMediaItemPropertyAlbumArtist];
+        // コンピレーションアルバムの対策で先にアーティストを見てからnilの場合はアルバムアーティストを見に行く。(実際に歌っているアーティスト名を取得したいため)
+        NSString *artistName = [mediaItem valueForProperty:MPMediaItemPropertyArtist];
         if (artistName == nil) {
-            artistName = [mediaItem valueForProperty:MPMediaItemPropertyArtist];
+            artistName = [mediaItem valueForProperty:MPMediaItemPropertyAlbumArtist];
             if (artistName == nil) {
                 artistName = kUnknownArtist;
             }
