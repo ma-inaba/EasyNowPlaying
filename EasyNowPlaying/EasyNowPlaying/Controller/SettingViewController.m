@@ -162,6 +162,10 @@ static const NSTimeInterval kDismissAnimationSpeed = 0.3f;      // 下に下げ�
         }
     }
     
+    if (indexPath.section == 1) {
+        return 66;
+    }
+    
     if (indexPath.section == 3) {
         if (indexPath.row == 0) {
             return 100;

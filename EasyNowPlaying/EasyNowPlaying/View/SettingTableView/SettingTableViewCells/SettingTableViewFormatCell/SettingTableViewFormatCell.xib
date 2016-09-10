@@ -8,14 +8,23 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SettingTableViewFormatCell" id="KGk-i7-Jjw" customClass="SettingTableViewFormatCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ドラッグ&amp;ドロップして移動" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPi-Gi-fLX">
+                        <rect key="frame" x="8" y="8" width="304" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="GUL-Bk-mb9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <color key="textColor" red="0.98039215690000003" green="0.98823529409999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="kND-lO-5ii">
-                        <rect key="frame" x="8" y="0.0" width="304" height="43"/>
+                        <rect key="frame" x="8" y="22" width="304" height="43"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0yU-Pr-Kq7">
                             <size key="itemSize" width="50" height="50"/>
@@ -27,10 +36,13 @@
                 </subviews>
                 <color key="backgroundColor" red="0.27193399289999998" green="0.30437097190000001" blue="0.38089013379999997" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="kND-lO-5ii" secondAttribute="bottom" constant="-8" id="5Ay-JL-rcd"/>
-                    <constraint firstItem="kND-lO-5ii" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="FgH-ZS-cDw"/>
-                    <constraint firstItem="kND-lO-5ii" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="TSH-P9-GQD"/>
-                    <constraint firstItem="kND-lO-5ii" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="orG-h8-Epc"/>
+                    <constraint firstItem="cPi-Gi-fLX" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="2bf-ZY-YTq"/>
+                    <constraint firstItem="kND-lO-5ii" firstAttribute="top" secondItem="cPi-Gi-fLX" secondAttribute="bottom" id="Fah-5d-VES"/>
+                    <constraint firstAttribute="bottom" secondItem="kND-lO-5ii" secondAttribute="bottom" id="Miu-1d-gjK"/>
+                    <constraint firstItem="cPi-Gi-fLX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="VCG-YV-Pd9"/>
+                    <constraint firstItem="cPi-Gi-fLX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="efJ-gg-rnx"/>
+                    <constraint firstItem="kND-lO-5ii" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="fuP-Lu-aI9"/>
+                    <constraint firstAttribute="trailing" secondItem="kND-lO-5ii" secondAttribute="trailing" constant="8" id="szS-er-l87"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.27193399289999998" green="0.30437097190000001" blue="0.38089013379999997" alpha="1" colorSpace="calibratedRGB"/>

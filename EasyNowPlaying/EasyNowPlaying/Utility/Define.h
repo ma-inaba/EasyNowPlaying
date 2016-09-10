@@ -58,6 +58,10 @@
 #define kSettingTableViewProfileCell @"SettingTableViewProfileCell"
 #define kSettingTableViewMessageCell @"SettingTableViewMessageCell"
 
+// 設定テーブルの文言
+#define kSettingTableViewOnAppTag @"アプリ名のタグを追加 (オンで開発者が喜びます)"
+#define kSettingTableViewPostImage @"ツイートに画像を添付"
+
 // 設定テーブル内のフォーマットコレクションビューのセル
 #define kFormatCollectionViewCell @"FormatCollectionViewCell"
 

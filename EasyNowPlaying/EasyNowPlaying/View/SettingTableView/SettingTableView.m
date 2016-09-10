@@ -64,6 +64,8 @@
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             SettingTableViewTagCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewTagCell];
+            cell.layoutMargins = UIEdgeInsetsZero;
+
             NSString *tagStr = [Utility loadUserDefaults:kPostTagKey];
             if (!tagStr) {
                 tagStr = kPostDefaultTag;
@@ -74,7 +76,7 @@
         } else {
             SettingTableViewAppNameTagCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewAppNameTagCell];
             cell.tagLabel.text =kPostNPbotTag;
-            cell.descriptionLabel.text = @"アプリ名のタグを追加 (オンで開発者が喜びます)";
+            cell.descriptionLabel.text = kSettingTableViewOnAppTag;
             
             BOOL isAddAppTag = [[Utility loadUserDefaults:kAddAppTag] boolValue];
             cell.addTagSwitch.on = isAddAppTag;
@@ -92,11 +94,13 @@
         BOOL isPostImage = [[Utility loadUserDefaults:kPostImageKey] boolValue];
         cell.addImageSwitch.on = isPostImage;
         [cell.addImageSwitch addTarget:self action:@selector(changeAddImageSwitchState:) forControlEvents:UIControlEventValueChanged];
-        cell.messageLabel.text = @"ツイートに画像を添付";
+        cell.messageLabel.text = kSettingTableViewPostImage;
         return cell;
     } else {
         if (indexPath.row == 0) {
             SettingTableViewProfileCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewProfileCell];
+            cell.layoutMargins = UIEdgeInsetsZero;
+
             return cell;
         } else {
             SettingTableViewMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewMessageCell];
