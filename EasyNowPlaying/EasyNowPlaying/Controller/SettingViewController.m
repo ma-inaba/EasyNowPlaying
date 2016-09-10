@@ -150,7 +150,9 @@ static const NSTimeInterval kDismissAnimationSpeed = 0.3f;      // 下に下げ�
             [self presentViewController:alert animated:YES completion:nil];
         }
     } else if (indexPath.section == 3) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/ragarito"]];
+        if (indexPath.row == 0) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/ragarito"]];
+        }
     }
 }
 

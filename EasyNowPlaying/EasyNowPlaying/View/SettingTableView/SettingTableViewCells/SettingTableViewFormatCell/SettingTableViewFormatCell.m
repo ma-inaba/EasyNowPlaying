@@ -68,12 +68,24 @@
         tagStr = kPostDefaultTag;
     }
     NSString *str = [[ModelLocator sharedInstance].settingViewModel.settingDataEntity.formatStrArray objectAtIndex:indexPath.row];
-    if ([str isEqualToString:tagStr]) {
-        return CGSizeMake(90, 44);
-    } else if ([str isEqualToString:kPostNPbotTag]) {
-        return CGSizeMake(60, 44);
+    
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    if(screenSize.width == 320.0 && screenSize.height == 568.0) {
+        if ([str isEqualToString:tagStr]) {
+            return CGSizeMake(87, 44);
+        } else if ([str isEqualToString:kPostNPbotTag]) {
+            return CGSizeMake(50, 44);
+        } else {
+            return CGSizeMake(42, 44);
+        }
     } else {
-        return CGSizeMake(50, 44);
+        if ([str isEqualToString:tagStr]) {
+            return CGSizeMake(90, 44);
+        } else if ([str isEqualToString:kPostNPbotTag]) {
+            return CGSizeMake(60, 44);
+        } else {
+            return CGSizeMake(50, 44);
+        }
     }
 }
 

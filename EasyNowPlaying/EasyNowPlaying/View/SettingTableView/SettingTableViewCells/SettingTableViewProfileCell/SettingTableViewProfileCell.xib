@@ -14,15 +14,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="98"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please follow me on Twitter!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qp-C4-qUj">
-                        <rect key="frame" x="78" y="60" width="234" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="9Ig-p1-4XY"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                        <color key="textColor" red="0.98039215690000003" green="0.98823529409999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitter : @ragarito" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yac-Fb-qqL">
                         <rect key="frame" x="78" y="18" width="234" height="21"/>
                         <constraints>
@@ -32,7 +23,7 @@
                         <color key="textColor" red="0.98039215690000003" green="0.98823529409999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Thumbnail" translatesAutoresizingMaskIntoConstraints="NO" id="D5h-hI-Shv">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Thumbnail2" translatesAutoresizingMaskIntoConstraints="NO" id="D5h-hI-Shv">
                         <rect key="frame" x="8" y="18" width="62" height="62"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="62" id="7YC-uP-VJf"/>
@@ -45,10 +36,21 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mail : ma.inaba0506@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzu-fb-1d1">
-                        <rect key="frame" x="78" y="42" width="234" height="21"/>
+                        <rect key="frame" x="78" y="37" width="234" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="Djg-Gl-B2D"/>
                         </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                        <color key="textColor" red="0.98039215690000003" green="0.98823529409999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qp-C4-qUj">
+                        <rect key="frame" x="78" y="60" width="234" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="9Ig-p1-4XY"/>
+                        </constraints>
+                        <string key="text">このアプリは無料で広告も無いです
+なのでお代はレビューでお願いします</string>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                         <color key="textColor" red="0.98039215690000003" green="0.98823529409999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -63,7 +65,7 @@
                     <constraint firstItem="Mzu-fb-1d1" firstAttribute="leading" secondItem="D5h-hI-Shv" secondAttribute="trailing" constant="8" id="fNh-hW-WgI"/>
                     <constraint firstItem="D5h-hI-Shv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="jWI-qk-MAv"/>
                     <constraint firstItem="Mzu-fb-1d1" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="jYq-ea-QU7"/>
-                    <constraint firstItem="Mzu-fb-1d1" firstAttribute="top" secondItem="yac-Fb-qqL" secondAttribute="bottom" constant="3" id="rXs-7O-8dp"/>
+                    <constraint firstItem="Mzu-fb-1d1" firstAttribute="top" secondItem="yac-Fb-qqL" secondAttribute="bottom" constant="-2" id="rXs-7O-8dp"/>
                     <constraint firstItem="D5h-hI-Shv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="trN-m0-z1T"/>
                     <constraint firstItem="8qp-C4-qUj" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="wx0-Fx-c6j"/>
                     <constraint firstItem="yac-Fb-qqL" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="zDk-VD-nJl"/>
@@ -74,6 +76,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Thumbnail" width="400" height="400"/>
+        <image name="Thumbnail2" width="400" height="400"/>
     </resources>
 </document>

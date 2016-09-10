@@ -12,5 +12,6 @@
 
 + (BOOL)saveUserDefaults:(id)object key:(NSString *)key;
 + (id)loadUserDefaults:(NSString *)key;
++ (NSString *)getDeviceName;
 
 @end
