@@ -115,18 +115,24 @@
     
     BOOL state = [sender isOn];
     [Utility saveUserDefaults:[NSNumber numberWithBool:state] key:kAddAppTag];
-        
-    // UserDefaultにタグを含めたarrayを保存する(上書きも含む)
-//    NSString *tagStr = [Utility loadUserDefaults:kPostTagKey];
-//    if (!tagStr) {
-//        tagStr = kPostDefaultTag;
-//    }
-//    if (state) {
-//        NSArray *formatStrArray = [NSArray arrayWithObjects:tagStr, kPostNPbotTag, @"Title", @"Artist", @"Album", nil];
-//    } else {
-//        NSArray *formatStrArray = [NSArray arrayWithObjects:tagStr, kPostNPbotTag, @"Title", @"Artist", @"Album", nil];
-//    }
-//    NSArray *formatStrArray = [NSArray arrayWithObjects:text, kPostNPbotTag, @"Title", @"Artist", @"Album", nil];
-//    [Utility saveUserDefaults:formatStrArray key:kFormatStrArrayKey];
+    
+    NSMutableArray *array = [[NSMutableArray alloc] initWithArray:[Utility loadUserDefaults:kFormatStrArrayKey]];
+
+    if (state) {
+        // #NPbotを追加
+        [array insertObject:kPostNPbotTag atIndex:1];
+    } else {
+        // #NPbotを削除
+        NSUInteger row =[array indexOfObject:kPostNPbotTag];
+        if (row != NSNotFound) {
+            [array removeObjectAtIndex:row];
+        }
+    }
+    
+    [Utility saveUserDefaults:array key:kFormatStrArrayKey];
+    [ModelLocator sharedInstance].settingViewModel.settingDataEntity.formatStrArray = array;
+
+    SettingTableViewFormatCell *cell = [self cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+    [cell reloadFormatTags];
 }
 @end

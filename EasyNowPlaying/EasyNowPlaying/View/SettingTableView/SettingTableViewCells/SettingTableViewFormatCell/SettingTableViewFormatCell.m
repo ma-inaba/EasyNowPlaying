@@ -84,7 +84,12 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return 5;
+    BOOL isAddAppTag = [[Utility loadUserDefaults:kAddAppTag] boolValue];
+    if (isAddAppTag) {
+        return 5;
+    } else {
+        return 4;
+    }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
