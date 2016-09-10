@@ -46,13 +46,16 @@
 // 設定テーブルのヘッダー
 #define kSettingTableHeaderTag @"Tag"
 #define kSettingTableHeaderArtwork @"Artwork"
+#define kSettingTableHeaderFormat @"Format"
 #define kSettingTableHeaderCreator @"Creator"
 
 // 設定テーブルのセル
 #define kSettingTableViewTagCell @"SettingTableViewTagCell"
 #define kSettingTableViewAppNameTagCell @"SettingTableViewAppNameTagCell"
+#define kSettingTableViewFormatCell @"SettingTableViewFormatCell"
 #define kSettingTableViewImageCell @"SettingTableViewImageCell"
 #define kSettingTableViewProfileCell @"SettingTableViewProfileCell"
+#define kSettingTableViewMessageCell @"SettingTableViewMessageCell"
 
 // 設定テーブルのアラート
 #define kSettingTableViewAlertTitle @"タグ"

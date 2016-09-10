@@ -11,6 +11,7 @@
 @implementation SettingTableViewTagCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
 }
 

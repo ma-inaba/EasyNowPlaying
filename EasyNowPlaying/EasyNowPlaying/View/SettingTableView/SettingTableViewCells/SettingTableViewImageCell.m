@@ -11,6 +11,7 @@
 @implementation SettingTableViewImageCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
 }
 

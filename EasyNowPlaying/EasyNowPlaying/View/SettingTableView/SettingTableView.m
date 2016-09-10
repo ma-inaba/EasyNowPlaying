@@ -9,8 +9,10 @@
 #import "SettingTableView.h"
 #import "SettingTableViewTagCell.h"
 #import "SettingTableViewAppNameTagCell.h"
+#import "settingtableviewFormatCell.h"
 #import "SettingTableViewImageCell.h"
 #import "SettingTableViewProfileCell.h"
+#import "SettingTableViewMessageCell.h"
 
 @implementation SettingTableView
 
@@ -22,18 +24,22 @@
     [self registerNib:tagNib forCellReuseIdentifier:kSettingTableViewTagCell];
     UINib *appNameTagNib = [UINib nibWithNibName:kSettingTableViewAppNameTagCell bundle:nil];
     [self registerNib:appNameTagNib forCellReuseIdentifier:kSettingTableViewAppNameTagCell];
+    UINib *formatNib = [UINib nibWithNibName:kSettingTableViewFormatCell bundle:nil];
+    [self registerNib:formatNib forCellReuseIdentifier:kSettingTableViewFormatCell];
     UINib *imageNib = [UINib nibWithNibName:kSettingTableViewImageCell bundle:nil];
     [self registerNib:imageNib forCellReuseIdentifier:kSettingTableViewImageCell];
     UINib *profileNib = [UINib nibWithNibName:kSettingTableViewProfileCell bundle:nil];
     [self registerNib:profileNib forCellReuseIdentifier:kSettingTableViewProfileCell];
+    UINib *messageNib = [UINib nibWithNibName:kSettingTableViewMessageCell bundle:nil];
+    [self registerNib:messageNib forCellReuseIdentifier:kSettingTableViewMessageCell];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
+    if (section == 0 || section == 3) {
         return 2;
     }
     return 1;
@@ -43,9 +49,13 @@
     if (section == 0) {
         return kSettingTableHeaderTag;
     } else if (section == 1) {
+        return kSettingTableHeaderFormat;
+    } else if (section == 2) {
         return kSettingTableHeaderArtwork;
-    } else {
+    } else if (section == 3) {
         return kSettingTableHeaderCreator;
+    } else {
+        return nil;
     }
 }
 
@@ -73,16 +83,26 @@
         }
         
     } else if (indexPath.section == 1) {
+        SettingTableViewFormatCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewFormatCell];
+        
+        return cell;
+        
+    } else if (indexPath.section == 2) {
         SettingTableViewImageCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewImageCell];
         BOOL isPostImage = [[Utility loadUserDefaults:kPostImageKey] boolValue];
         cell.addImageSwitch.on = isPostImage;
         [cell.addImageSwitch addTarget:self action:@selector(changeAddImageSwitchState:) forControlEvents:UIControlEventValueChanged];
-        
+        cell.messageLabel.text = @"ツイートに画像を添付";
         return cell;
     } else {
-        SettingTableViewProfileCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewProfileCell];
-        
-        return cell;
+        if (indexPath.row == 0) {
+            SettingTableViewProfileCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewProfileCell];
+            return cell;
+        } else {
+            SettingTableViewMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewMessageCell];
+//        tableView.separatorColor = [UIColor clearColor];
+            return cell;
+        }
     }
 }
 

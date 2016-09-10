@@ -1,14 +1,14 @@
 //
-//  SettingTableViewProfileCell.m
+//  SettingTableViewMessageCell.m
 //  EasyNowPlaying
 //
-//  Created by inaba masaya on 2015/12/02.
-//  Copyright © 2015年 inaba masaya. All rights reserved.
+//  Created by InabaMasaya on 2016/09/09.
+//  Copyright © 2016年 inaba masaya. All rights reserved.
 //
 
-#import "SettingTableViewProfileCell.h"
+#import "SettingTableViewMessageCell.h"
 
-@implementation SettingTableViewProfileCell
+@implementation SettingTableViewMessageCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
