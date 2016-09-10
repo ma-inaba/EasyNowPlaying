@@ -12,7 +12,6 @@
 @interface SettingTableViewFormatCell ()
 
 @property (weak, nonatomic) IBOutlet UICollectionView *formatCollectionView;
-@property (nonatomic) NSMutableArray *formatStrArray;
 
 @end
 
@@ -39,12 +38,21 @@
 }
 
 - (void)settingData {
-    
+   
     NSString *tagStr = [Utility loadUserDefaults:kPostTagKey];
     if (!tagStr) {
         tagStr = kPostDefaultTag;
     }
-    self.formatStrArray = [NSMutableArray arrayWithObjects:tagStr, kPostNPbotTag, @"Title", @"Artist", @"Album", nil];
+
+    NSArray *array = [Utility loadUserDefaults:kFormatStrArrayKey];
+    if (!array) {
+        NSArray *udArray = [NSArray arrayWithObjects:tagStr, kPostNPbotTag, @"Title", @"Artist", @"Album", nil];
+
+        [ModelLocator sharedInstance].settingViewModel.settingDataEntity.formatStrArray = [udArray mutableCopy];
+        [Utility saveUserDefaults:udArray key:kFormatStrArrayKey];
+    } else {
+        [ModelLocator sharedInstance].settingViewModel.settingDataEntity.formatStrArray = [array mutableCopy];
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -59,7 +67,7 @@
     if (!tagStr) {
         tagStr = kPostDefaultTag;
     }
-    NSString *str = [self.formatStrArray objectAtIndex:indexPath.row];
+    NSString *str = [[ModelLocator sharedInstance].settingViewModel.settingDataEntity.formatStrArray objectAtIndex:indexPath.row];
     if ([str isEqualToString:tagStr]) {
         return CGSizeMake(90, 44);
     } else if ([str isEqualToString:kPostNPbotTag]) {
@@ -83,16 +91,18 @@
     
     FormatCollectionViewCell *cell = (FormatCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kFormatCollectionViewCell forIndexPath:indexPath];
     
-    cell.label.text = [self.formatStrArray objectAtIndex:indexPath.row];
+    cell.label.text = [[ModelLocator sharedInstance].settingViewModel.settingDataEntity.formatStrArray objectAtIndex:indexPath.row];
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
     
-    NSString *str = [self.formatStrArray objectAtIndex:sourceIndexPath.item];
-    [self.formatStrArray removeObjectAtIndex:sourceIndexPath.item];
-    [self.formatStrArray insertObject:str atIndex:destinationIndexPath.item];
+    NSString *str = [[ModelLocator sharedInstance].settingViewModel.settingDataEntity.formatStrArray objectAtIndex:sourceIndexPath.item];
+    [[ModelLocator sharedInstance].settingViewModel.settingDataEntity.formatStrArray removeObjectAtIndex:sourceIndexPath.item];
+    [[ModelLocator sharedInstance].settingViewModel.settingDataEntity.formatStrArray insertObject:str atIndex:destinationIndexPath.item];
     
+    [Utility saveUserDefaults:[ModelLocator sharedInstance].settingViewModel.settingDataEntity.formatStrArray key:kFormatStrArrayKey];
+
     [self.formatCollectionView reloadData];
 }
 
@@ -119,4 +129,11 @@
             break;
     }
 }
+
+// #nowplayingタグを更新した際に呼ぶ
+- (void)reloadFormatTags {
+    
+    [self.formatCollectionView reloadData];
+}
+
 @end

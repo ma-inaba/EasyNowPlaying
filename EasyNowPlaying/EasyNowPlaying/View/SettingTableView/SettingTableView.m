@@ -84,7 +84,7 @@
         
     } else if (indexPath.section == 1) {
         SettingTableViewFormatCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewFormatCell];
-        
+        [cell reloadFormatTags];
         return cell;
         
     } else if (indexPath.section == 2) {
@@ -100,7 +100,6 @@
             return cell;
         } else {
             SettingTableViewMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewMessageCell];
-//        tableView.separatorColor = [UIColor clearColor];
             return cell;
         }
     }
@@ -116,5 +115,18 @@
     
     BOOL state = [sender isOn];
     [Utility saveUserDefaults:[NSNumber numberWithBool:state] key:kAddAppTag];
+        
+    // UserDefaultにタグを含めたarrayを保存する(上書きも含む)
+//    NSString *tagStr = [Utility loadUserDefaults:kPostTagKey];
+//    if (!tagStr) {
+//        tagStr = kPostDefaultTag;
+//    }
+//    if (state) {
+//        NSArray *formatStrArray = [NSArray arrayWithObjects:tagStr, kPostNPbotTag, @"Title", @"Artist", @"Album", nil];
+//    } else {
+//        NSArray *formatStrArray = [NSArray arrayWithObjects:tagStr, kPostNPbotTag, @"Title", @"Artist", @"Album", nil];
+//    }
+//    NSArray *formatStrArray = [NSArray arrayWithObjects:text, kPostNPbotTag, @"Title", @"Artist", @"Album", nil];
+//    [Utility saveUserDefaults:formatStrArray key:kFormatStrArrayKey];
 }
 @end

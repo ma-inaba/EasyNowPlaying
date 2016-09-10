@@ -14,4 +14,6 @@ UICollectionViewDelegate,
 UICollectionViewDataSource
 >
 
+- (void)reloadFormatTags;
+
 @end

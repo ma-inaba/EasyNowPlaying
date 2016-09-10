@@ -105,8 +105,31 @@ static const NSTimeInterval kDismissAnimationSpeed = 0.3f;      // 下に下げ�
             [alert addAction:[UIAlertAction actionWithTitle:kOK
                                                       style:UIAlertActionStyleDefault
                                                     handler:^(UIAlertAction *action) {
+                                                        // UserDefaultにタグを保存する
+                                                        NSString *beforeText = [Utility loadUserDefaults:kPostTagKey];
+                                                        if (!beforeText) {
+                                                            beforeText = kPostDefaultTag;
+                                                        }
+
                                                         NSString *text = ((UITextField *)[alert.textFields objectAtIndex:0]).text;
                                                         [Utility saveUserDefaults:text key:kPostTagKey];
+
+                                                        // UserDefaultにタグを含めたarrayを保存する
+                                                        NSMutableArray *array = [[NSMutableArray alloc] initWithArray:[Utility loadUserDefaults:kFormatStrArrayKey]];
+
+                                                        if (!array) {
+                                                            NSArray *formatStrArray = [NSArray arrayWithObjects:text, kPostNPbotTag, @"Title", @"Artist", @"Album", nil];
+                                                            [Utility saveUserDefaults:formatStrArray key:kFormatStrArrayKey];
+                                                        } else {
+                                                            NSUInteger row =[array indexOfObject:beforeText];
+                                                            if (row != NSNotFound) {
+                                                                [array replaceObjectAtIndex:row withObject:text];
+                                                            }
+                                                            
+                                                            [Utility saveUserDefaults:array key:kFormatStrArrayKey];
+                                                            [ModelLocator sharedInstance].settingViewModel.settingDataEntity.formatStrArray = array;
+                                                        }
+                                                        
                                                         [self.settingTableView reloadData];
                                                     }]];
             [alert addAction:[UIAlertAction actionWithTitle:kCancel

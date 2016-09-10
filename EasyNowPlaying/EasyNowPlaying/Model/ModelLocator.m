@@ -37,6 +37,7 @@ static ModelLocator *_instance;
     
     self = [super init];
     self.playbackViewModel = [[PlaybackViewModel alloc] init];
+    self.settingViewModel = [[SettingViewModel alloc] init];
     return self;
 }
 

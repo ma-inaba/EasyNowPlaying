@@ -29,6 +29,7 @@
 #define kPostTagKey @"PostTagKey"
 #define kPostImageKey @"PostImageKey"
 #define kAddAppTag @"AddAppTag"
+#define kFormatStrArrayKey @"FormatStrArrayKey"
 
 // 音楽表示ビュー
 #define kNotPlayMusicNow @"ミュージックを再生したらここに表示されます"

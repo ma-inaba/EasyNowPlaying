@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "PlaybackViewModel.h"
+#import "SettingViewModel.h"
 
 @interface ModelLocator : NSObject
 
@@ -15,5 +16,6 @@
 - (id)init UNAVAILABLE_ATTRIBUTE;
 
 @property PlaybackViewModel *playbackViewModel;
+@property SettingViewModel *settingViewModel;
 
 @end
