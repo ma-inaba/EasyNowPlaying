@@ -7,13 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A20139F31D83AC1E007C1D55 /* SettingTableViewAppNameTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A20139DD1D83AC1E007C1D55 /* SettingTableViewAppNameTagCell.m */; };
+		A20139F41D83AC1E007C1D55 /* SettingTableViewAppNameTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A20139DE1D83AC1E007C1D55 /* SettingTableViewAppNameTagCell.xib */; };
+		A20139F51D83AC1E007C1D55 /* SettingTableViewFormatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A20139E11D83AC1E007C1D55 /* SettingTableViewFormatCell.m */; };
+		A20139F61D83AC1E007C1D55 /* SettingTableViewFormatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A20139E21D83AC1E007C1D55 /* SettingTableViewFormatCell.xib */; };
+		A20139F71D83AC1E007C1D55 /* SettingTableViewImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A20139E51D83AC1E007C1D55 /* SettingTableViewImageCell.m */; };
+		A20139F81D83AC1E007C1D55 /* SettingTableViewImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A20139E61D83AC1E007C1D55 /* SettingTableViewImageCell.xib */; };
+		A20139F91D83AC1E007C1D55 /* SettingTableViewMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A20139E91D83AC1E007C1D55 /* SettingTableViewMessageCell.m */; };
+		A20139FA1D83AC1E007C1D55 /* SettingTableViewMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A20139EA1D83AC1E007C1D55 /* SettingTableViewMessageCell.xib */; };
+		A20139FB1D83AC1E007C1D55 /* SettingTableViewProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A20139ED1D83AC1E007C1D55 /* SettingTableViewProfileCell.m */; };
+		A20139FC1D83AC1E007C1D55 /* SettingTableViewProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A20139EE1D83AC1E007C1D55 /* SettingTableViewProfileCell.xib */; };
+		A20139FD1D83AC1E007C1D55 /* SettingTableViewTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A20139F11D83AC1E007C1D55 /* SettingTableViewTagCell.m */; };
+		A20139FE1D83AC1E007C1D55 /* SettingTableViewTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A20139F21D83AC1E007C1D55 /* SettingTableViewTagCell.xib */; };
+		A2013A031D83ACB1007C1D55 /* FormatCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2013A011D83ACB1007C1D55 /* FormatCollectionViewCell.m */; };
+		A2013A041D83ACB1007C1D55 /* FormatCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2013A021D83ACB1007C1D55 /* FormatCollectionViewCell.xib */; };
 		A22A9A0D1C1BBF43009553D2 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = A22A9A0C1C1BBF43009553D2 /* Utility.m */; };
 		A22C84EF1C11F28400229DC6 /* AllMusicDataTableViewAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A22C84ED1C11F28400229DC6 /* AllMusicDataTableViewAlbumCell.m */; };
 		A22C84F01C11F28400229DC6 /* AllMusicDataTableViewAlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A22C84EE1C11F28400229DC6 /* AllMusicDataTableViewAlbumCell.xib */; };
-		A235669F1D82D75000B78297 /* SettingTableViewFormatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A235669D1D82D75000B78297 /* SettingTableViewFormatCell.m */; };
-		A23566A01D82D75000B78297 /* SettingTableViewFormatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A235669E1D82D75000B78297 /* SettingTableViewFormatCell.xib */; };
-		A23566A41D82DDEE00B78297 /* SettingTableViewMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A23566A21D82DDEE00B78297 /* SettingTableViewMessageCell.m */; };
-		A23566A51D82DDEE00B78297 /* SettingTableViewMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A23566A31D82DDEE00B78297 /* SettingTableViewMessageCell.xib */; };
 		A254BBB61C0C61AD006AB8D9 /* MusicDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = A254BBB51C0C61AD006AB8D9 /* MusicDataView.m */; };
 		A254BBB91C0C6282006AB8D9 /* OperationButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A254BBB81C0C6282006AB8D9 /* OperationButtonsView.m */; };
 		A254BBBC1C0C7282006AB8D9 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A254BBBB1C0C7282006AB8D9 /* SettingViewController.m */; };
@@ -29,20 +39,12 @@
 		A29F58D81C08A2AA00233ADA /* PlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A29F58D71C08A2AA00233ADA /* PlaybackViewController.m */; };
 		A29F58DA1C08A59800233ADA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A29F58D91C08A59800233ADA /* Assets.xcassets */; };
 		A2AE983D1C0F00AB0064FFEB /* SettingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AE983C1C0F00AB0064FFEB /* SettingTableView.m */; };
-		A2AE98411C0F01190064FFEB /* SettingTableViewTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AE983F1C0F01190064FFEB /* SettingTableViewTagCell.m */; };
-		A2AE98421C0F01190064FFEB /* SettingTableViewTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2AE98401C0F01190064FFEB /* SettingTableViewTagCell.xib */; };
-		A2AE98461C0F01300064FFEB /* SettingTableViewImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AE98441C0F01300064FFEB /* SettingTableViewImageCell.m */; };
-		A2AE98471C0F01300064FFEB /* SettingTableViewImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2AE98451C0F01300064FFEB /* SettingTableViewImageCell.xib */; };
-		A2AE984B1C0F01560064FFEB /* SettingTableViewProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AE98491C0F01560064FFEB /* SettingTableViewProfileCell.m */; };
-		A2AE984C1C0F01560064FFEB /* SettingTableViewProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2AE984A1C0F01560064FFEB /* SettingTableViewProfileCell.xib */; };
 		A2B8C5E61C0980CD0094F14C /* ModelLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B8C5E51C0980CD0094F14C /* ModelLocator.m */; };
 		A2B8C5EB1C0981C00094F14C /* PlaybackViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B8C5EA1C0981C00094F14C /* PlaybackViewModel.m */; };
 		A2B8C5ED1C0982780094F14C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B8C5EC1C0982780094F14C /* MediaPlayer.framework */; };
 		A2B8C5F01C0984940094F14C /* MusicDataEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B8C5EF1C0984940094F14C /* MusicDataEntity.m */; };
 		C52395931CC2812B00A729EC /* AlbumDataTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C52395921CC2812B00A729EC /* AlbumDataTableView.m */; };
 		C52395961CC2818C00A729EC /* MusicDataTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C52395951CC2818C00A729EC /* MusicDataTableView.m */; };
-		C57516A21CCB34BF0022618A /* SettingTableViewAppNameTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C57516A01CCB34BF0022618A /* SettingTableViewAppNameTagCell.m */; };
-		C57516A31CCB34BF0022618A /* SettingTableViewAppNameTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C57516A11CCB34BF0022618A /* SettingTableViewAppNameTagCell.xib */; };
 		C5E609471CC279A000543655 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5E609431CC279A000543655 /* LaunchScreen.storyboard */; };
 		C5E609481CC279A000543655 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5E609451CC279A000543655 /* Main.storyboard */; };
 		C5E6094B1CC27AF100543655 /* AlbumDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E6094A1CC27AF100543655 /* AlbumDataViewController.m */; };
@@ -50,17 +52,32 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A20139DC1D83AC1E007C1D55 /* SettingTableViewAppNameTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewAppNameTagCell.h; sourceTree = "<group>"; };
+		A20139DD1D83AC1E007C1D55 /* SettingTableViewAppNameTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewAppNameTagCell.m; sourceTree = "<group>"; };
+		A20139DE1D83AC1E007C1D55 /* SettingTableViewAppNameTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewAppNameTagCell.xib; sourceTree = "<group>"; };
+		A20139E01D83AC1E007C1D55 /* SettingTableViewFormatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewFormatCell.h; sourceTree = "<group>"; };
+		A20139E11D83AC1E007C1D55 /* SettingTableViewFormatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewFormatCell.m; sourceTree = "<group>"; };
+		A20139E21D83AC1E007C1D55 /* SettingTableViewFormatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewFormatCell.xib; sourceTree = "<group>"; };
+		A20139E41D83AC1E007C1D55 /* SettingTableViewImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewImageCell.h; sourceTree = "<group>"; };
+		A20139E51D83AC1E007C1D55 /* SettingTableViewImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewImageCell.m; sourceTree = "<group>"; };
+		A20139E61D83AC1E007C1D55 /* SettingTableViewImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewImageCell.xib; sourceTree = "<group>"; };
+		A20139E81D83AC1E007C1D55 /* SettingTableViewMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewMessageCell.h; sourceTree = "<group>"; };
+		A20139E91D83AC1E007C1D55 /* SettingTableViewMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewMessageCell.m; sourceTree = "<group>"; };
+		A20139EA1D83AC1E007C1D55 /* SettingTableViewMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewMessageCell.xib; sourceTree = "<group>"; };
+		A20139EC1D83AC1E007C1D55 /* SettingTableViewProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewProfileCell.h; sourceTree = "<group>"; };
+		A20139ED1D83AC1E007C1D55 /* SettingTableViewProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewProfileCell.m; sourceTree = "<group>"; };
+		A20139EE1D83AC1E007C1D55 /* SettingTableViewProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewProfileCell.xib; sourceTree = "<group>"; };
+		A20139F01D83AC1E007C1D55 /* SettingTableViewTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewTagCell.h; sourceTree = "<group>"; };
+		A20139F11D83AC1E007C1D55 /* SettingTableViewTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewTagCell.m; sourceTree = "<group>"; };
+		A20139F21D83AC1E007C1D55 /* SettingTableViewTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewTagCell.xib; sourceTree = "<group>"; };
+		A2013A001D83ACB1007C1D55 /* FormatCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormatCollectionViewCell.h; sourceTree = "<group>"; };
+		A2013A011D83ACB1007C1D55 /* FormatCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormatCollectionViewCell.m; sourceTree = "<group>"; };
+		A2013A021D83ACB1007C1D55 /* FormatCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FormatCollectionViewCell.xib; sourceTree = "<group>"; };
 		A22A9A0B1C1BBF43009553D2 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		A22A9A0C1C1BBF43009553D2 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		A22C84EC1C11F28400229DC6 /* AllMusicDataTableViewAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllMusicDataTableViewAlbumCell.h; sourceTree = "<group>"; };
 		A22C84ED1C11F28400229DC6 /* AllMusicDataTableViewAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllMusicDataTableViewAlbumCell.m; sourceTree = "<group>"; };
 		A22C84EE1C11F28400229DC6 /* AllMusicDataTableViewAlbumCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllMusicDataTableViewAlbumCell.xib; sourceTree = "<group>"; };
-		A235669C1D82D75000B78297 /* SettingTableViewFormatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewFormatCell.h; sourceTree = "<group>"; };
-		A235669D1D82D75000B78297 /* SettingTableViewFormatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewFormatCell.m; sourceTree = "<group>"; };
-		A235669E1D82D75000B78297 /* SettingTableViewFormatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewFormatCell.xib; sourceTree = "<group>"; };
-		A23566A11D82DDEE00B78297 /* SettingTableViewMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewMessageCell.h; sourceTree = "<group>"; };
-		A23566A21D82DDEE00B78297 /* SettingTableViewMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewMessageCell.m; sourceTree = "<group>"; };
-		A23566A31D82DDEE00B78297 /* SettingTableViewMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewMessageCell.xib; sourceTree = "<group>"; };
 		A254BBB41C0C61AD006AB8D9 /* MusicDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicDataView.h; sourceTree = "<group>"; };
 		A254BBB51C0C61AD006AB8D9 /* MusicDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDataView.m; sourceTree = "<group>"; };
 		A254BBB71C0C6282006AB8D9 /* OperationButtonsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationButtonsView.h; sourceTree = "<group>"; };
@@ -89,15 +106,6 @@
 		A29F58D91C08A59800233ADA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2AE983B1C0F00AB0064FFEB /* SettingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableView.h; sourceTree = "<group>"; };
 		A2AE983C1C0F00AB0064FFEB /* SettingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableView.m; sourceTree = "<group>"; };
-		A2AE983E1C0F01190064FFEB /* SettingTableViewTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewTagCell.h; sourceTree = "<group>"; };
-		A2AE983F1C0F01190064FFEB /* SettingTableViewTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewTagCell.m; sourceTree = "<group>"; };
-		A2AE98401C0F01190064FFEB /* SettingTableViewTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewTagCell.xib; sourceTree = "<group>"; };
-		A2AE98431C0F01300064FFEB /* SettingTableViewImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewImageCell.h; sourceTree = "<group>"; };
-		A2AE98441C0F01300064FFEB /* SettingTableViewImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewImageCell.m; sourceTree = "<group>"; };
-		A2AE98451C0F01300064FFEB /* SettingTableViewImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewImageCell.xib; sourceTree = "<group>"; };
-		A2AE98481C0F01560064FFEB /* SettingTableViewProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewProfileCell.h; sourceTree = "<group>"; };
-		A2AE98491C0F01560064FFEB /* SettingTableViewProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewProfileCell.m; sourceTree = "<group>"; };
-		A2AE984A1C0F01560064FFEB /* SettingTableViewProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewProfileCell.xib; sourceTree = "<group>"; };
 		A2B8C5E41C0980CD0094F14C /* ModelLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelLocator.h; sourceTree = "<group>"; };
 		A2B8C5E51C0980CD0094F14C /* ModelLocator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelLocator.m; sourceTree = "<group>"; };
 		A2B8C5E91C0981C00094F14C /* PlaybackViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaybackViewModel.h; sourceTree = "<group>"; };
@@ -111,9 +119,6 @@
 		C52395921CC2812B00A729EC /* AlbumDataTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumDataTableView.m; sourceTree = "<group>"; };
 		C52395941CC2818C00A729EC /* MusicDataTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicDataTableView.h; sourceTree = "<group>"; };
 		C52395951CC2818C00A729EC /* MusicDataTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDataTableView.m; sourceTree = "<group>"; };
-		C575169F1CCB34BF0022618A /* SettingTableViewAppNameTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewAppNameTagCell.h; sourceTree = "<group>"; };
-		C57516A01CCB34BF0022618A /* SettingTableViewAppNameTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewAppNameTagCell.m; sourceTree = "<group>"; };
-		C57516A11CCB34BF0022618A /* SettingTableViewAppNameTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewAppNameTagCell.xib; sourceTree = "<group>"; };
 		C5E609441CC279A000543655 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = EasyNowPlaying/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		C5E609461CC279A000543655 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = EasyNowPlaying/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		C5E609491CC27AF100543655 /* AlbumDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumDataViewController.h; sourceTree = "<group>"; };
@@ -134,6 +139,84 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A20139DB1D83AC1E007C1D55 /* SettingTableViewAppNameTagCell */ = {
+			isa = PBXGroup;
+			children = (
+				A20139DC1D83AC1E007C1D55 /* SettingTableViewAppNameTagCell.h */,
+				A20139DD1D83AC1E007C1D55 /* SettingTableViewAppNameTagCell.m */,
+				A20139DE1D83AC1E007C1D55 /* SettingTableViewAppNameTagCell.xib */,
+			);
+			path = SettingTableViewAppNameTagCell;
+			sourceTree = "<group>";
+		};
+		A20139DF1D83AC1E007C1D55 /* SettingTableViewFormatCell */ = {
+			isa = PBXGroup;
+			children = (
+				A20139E01D83AC1E007C1D55 /* SettingTableViewFormatCell.h */,
+				A20139E11D83AC1E007C1D55 /* SettingTableViewFormatCell.m */,
+				A20139E21D83AC1E007C1D55 /* SettingTableViewFormatCell.xib */,
+				A20139FF1D83AC9A007C1D55 /* FormatCollectionViewCell */,
+			);
+			path = SettingTableViewFormatCell;
+			sourceTree = "<group>";
+		};
+		A20139E31D83AC1E007C1D55 /* SettingTableViewImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				A20139E41D83AC1E007C1D55 /* SettingTableViewImageCell.h */,
+				A20139E51D83AC1E007C1D55 /* SettingTableViewImageCell.m */,
+				A20139E61D83AC1E007C1D55 /* SettingTableViewImageCell.xib */,
+			);
+			path = SettingTableViewImageCell;
+			sourceTree = "<group>";
+		};
+		A20139E71D83AC1E007C1D55 /* SettingTableViewMessageCell */ = {
+			isa = PBXGroup;
+			children = (
+				A20139E81D83AC1E007C1D55 /* SettingTableViewMessageCell.h */,
+				A20139E91D83AC1E007C1D55 /* SettingTableViewMessageCell.m */,
+				A20139EA1D83AC1E007C1D55 /* SettingTableViewMessageCell.xib */,
+			);
+			path = SettingTableViewMessageCell;
+			sourceTree = "<group>";
+		};
+		A20139EB1D83AC1E007C1D55 /* SettingTableViewProfileCell */ = {
+			isa = PBXGroup;
+			children = (
+				A20139EC1D83AC1E007C1D55 /* SettingTableViewProfileCell.h */,
+				A20139ED1D83AC1E007C1D55 /* SettingTableViewProfileCell.m */,
+				A20139EE1D83AC1E007C1D55 /* SettingTableViewProfileCell.xib */,
+			);
+			path = SettingTableViewProfileCell;
+			sourceTree = "<group>";
+		};
+		A20139EF1D83AC1E007C1D55 /* SettingTableViewTagCell */ = {
+			isa = PBXGroup;
+			children = (
+				A20139F01D83AC1E007C1D55 /* SettingTableViewTagCell.h */,
+				A20139F11D83AC1E007C1D55 /* SettingTableViewTagCell.m */,
+				A20139F21D83AC1E007C1D55 /* SettingTableViewTagCell.xib */,
+			);
+			path = SettingTableViewTagCell;
+			sourceTree = "<group>";
+		};
+		A20139FF1D83AC9A007C1D55 /* FormatCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A2013A001D83ACB1007C1D55 /* FormatCollectionViewCell.h */,
+				A2013A011D83ACB1007C1D55 /* FormatCollectionViewCell.m */,
+				A2013A021D83ACB1007C1D55 /* FormatCollectionViewCell.xib */,
+			);
+			path = FormatCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		A2013A131D83B5F2007C1D55 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		A22C84EB1C11F27100229DC6 /* AllMusicDataTableViewAlbumCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,7 +294,7 @@
 				A29F58D21C08A20100233ADA /* View */,
 				A29F58CE1C08A20100233ADA /* Controller */,
 				A248A3C31C09C9C5007621DA /* API */,
-				A29F58CF1C08A20100233ADA /* Library */,
+				A2013A131D83B5F2007C1D55 /* Library */,
 				A29F58D11C08A20100233ADA /* Utility */,
 				A29F58DE1C08B7F100233ADA /* Category */,
 				A29F58D41C08A21B00233ADA /* Storyboard */,
@@ -256,13 +339,6 @@
 				C5E6094D1CC27CB600543655 /* MusicDataViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		A29F58CF1C08A20100233ADA /* Library */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Library;
 			sourceTree = "<group>";
 		};
 		A29F58D01C08A20100233ADA /* Model */ = {
@@ -337,24 +413,12 @@
 		A2AE983A1C0F00930064FFEB /* SettingTableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				A2AE983E1C0F01190064FFEB /* SettingTableViewTagCell.h */,
-				A2AE983F1C0F01190064FFEB /* SettingTableViewTagCell.m */,
-				A2AE98401C0F01190064FFEB /* SettingTableViewTagCell.xib */,
-				C575169F1CCB34BF0022618A /* SettingTableViewAppNameTagCell.h */,
-				C57516A01CCB34BF0022618A /* SettingTableViewAppNameTagCell.m */,
-				C57516A11CCB34BF0022618A /* SettingTableViewAppNameTagCell.xib */,
-				A235669C1D82D75000B78297 /* SettingTableViewFormatCell.h */,
-				A235669D1D82D75000B78297 /* SettingTableViewFormatCell.m */,
-				A235669E1D82D75000B78297 /* SettingTableViewFormatCell.xib */,
-				A2AE98431C0F01300064FFEB /* SettingTableViewImageCell.h */,
-				A2AE98441C0F01300064FFEB /* SettingTableViewImageCell.m */,
-				A2AE98451C0F01300064FFEB /* SettingTableViewImageCell.xib */,
-				A2AE98481C0F01560064FFEB /* SettingTableViewProfileCell.h */,
-				A2AE98491C0F01560064FFEB /* SettingTableViewProfileCell.m */,
-				A2AE984A1C0F01560064FFEB /* SettingTableViewProfileCell.xib */,
-				A23566A11D82DDEE00B78297 /* SettingTableViewMessageCell.h */,
-				A23566A21D82DDEE00B78297 /* SettingTableViewMessageCell.m */,
-				A23566A31D82DDEE00B78297 /* SettingTableViewMessageCell.xib */,
+				A20139EF1D83AC1E007C1D55 /* SettingTableViewTagCell */,
+				A20139DB1D83AC1E007C1D55 /* SettingTableViewAppNameTagCell */,
+				A20139DF1D83AC1E007C1D55 /* SettingTableViewFormatCell */,
+				A20139E31D83AC1E007C1D55 /* SettingTableViewImageCell */,
+				A20139EB1D83AC1E007C1D55 /* SettingTableViewProfileCell */,
+				A20139E71D83AC1E007C1D55 /* SettingTableViewMessageCell */,
 			);
 			path = SettingTableViewCells;
 			sourceTree = "<group>";
@@ -445,16 +509,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A29F58DA1C08A59800233ADA /* Assets.xcassets in Resources */,
+				A20139F81D83AC1E007C1D55 /* SettingTableViewImageCell.xib in Resources */,
+				A20139FA1D83AC1E007C1D55 /* SettingTableViewMessageCell.xib in Resources */,
+				A20139F61D83AC1E007C1D55 /* SettingTableViewFormatCell.xib in Resources */,
 				C5E609471CC279A000543655 /* LaunchScreen.storyboard in Resources */,
+				A2013A041D83ACB1007C1D55 /* FormatCollectionViewCell.xib in Resources */,
+				A20139FE1D83AC1E007C1D55 /* SettingTableViewTagCell.xib in Resources */,
 				A2788CAA1C11C2AA0033CD76 /* AllMusicDataTableViewArtistCell.xib in Resources */,
-				A23566A01D82D75000B78297 /* SettingTableViewFormatCell.xib in Resources */,
-				A2AE98421C0F01190064FFEB /* SettingTableViewTagCell.xib in Resources */,
-				A2AE98471C0F01300064FFEB /* SettingTableViewImageCell.xib in Resources */,
-				A23566A51D82DDEE00B78297 /* SettingTableViewMessageCell.xib in Resources */,
+				A20139FC1D83AC1E007C1D55 /* SettingTableViewProfileCell.xib in Resources */,
 				A22C84F01C11F28400229DC6 /* AllMusicDataTableViewAlbumCell.xib in Resources */,
-				C57516A31CCB34BF0022618A /* SettingTableViewAppNameTagCell.xib in Resources */,
 				C5E609481CC279A000543655 /* Main.storyboard in Resources */,
-				A2AE984C1C0F01560064FFEB /* SettingTableViewProfileCell.xib in Resources */,
+				A20139F41D83AC1E007C1D55 /* SettingTableViewAppNameTagCell.xib in Resources */,
 				A2788C9D1C11A3E50033CD76 /* AllMusicDataTableViewMusicCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,30 +533,31 @@
 			files = (
 				C52395931CC2812B00A729EC /* AlbumDataTableView.m in Sources */,
 				A2B8C5E61C0980CD0094F14C /* ModelLocator.m in Sources */,
+				A20139F71D83AC1E007C1D55 /* SettingTableViewImageCell.m in Sources */,
 				A29F58D31C08A20100233ADA /* AppDelegate.m in Sources */,
 				A2AE983D1C0F00AB0064FFEB /* SettingTableView.m in Sources */,
+				A20139F91D83AC1E007C1D55 /* SettingTableViewMessageCell.m in Sources */,
+				A20139FD1D83AC1E007C1D55 /* SettingTableViewTagCell.m in Sources */,
 				A2B8C5F01C0984940094F14C /* MusicDataEntity.m in Sources */,
 				C5E6094E1CC27CB600543655 /* MusicDataViewController.m in Sources */,
 				A2B8C5EB1C0981C00094F14C /* PlaybackViewModel.m in Sources */,
+				A20139F51D83AC1E007C1D55 /* SettingTableViewFormatCell.m in Sources */,
 				A254BBB91C0C6282006AB8D9 /* OperationButtonsView.m in Sources */,
-				C57516A21CCB34BF0022618A /* SettingTableViewAppNameTagCell.m in Sources */,
 				A2788C9C1C11A3E50033CD76 /* AllMusicDataTableViewMusicCell.m in Sources */,
 				A254BBB61C0C61AD006AB8D9 /* MusicDataView.m in Sources */,
 				A2788CA01C11A7D80033CD76 /* AllMusicDataTableBaseView.m in Sources */,
 				A29F58B61C08A18300233ADA /* main.m in Sources */,
-				A23566A41D82DDEE00B78297 /* SettingTableViewMessageCell.m in Sources */,
-				A235669F1D82D75000B78297 /* SettingTableViewFormatCell.m in Sources */,
 				A22C84EF1C11F28400229DC6 /* AllMusicDataTableViewAlbumCell.m in Sources */,
+				A2013A031D83ACB1007C1D55 /* FormatCollectionViewCell.m in Sources */,
 				C52395961CC2818C00A729EC /* MusicDataTableView.m in Sources */,
+				A20139F31D83AC1E007C1D55 /* SettingTableViewAppNameTagCell.m in Sources */,
 				A2788CA91C11C2AA0033CD76 /* AllMusicDataTableViewArtistCell.m in Sources */,
 				C5E6094B1CC27AF100543655 /* AlbumDataViewController.m in Sources */,
 				A22A9A0D1C1BBF43009553D2 /* Utility.m in Sources */,
 				A2788C971C11A3170033CD76 /* ArtistDataTableView.m in Sources */,
 				A2788CA31C11AA930033CD76 /* ArtistDataViewController.m in Sources */,
-				A2AE98411C0F01190064FFEB /* SettingTableViewTagCell.m in Sources */,
-				A2AE984B1C0F01560064FFEB /* SettingTableViewProfileCell.m in Sources */,
 				A29F58D81C08A2AA00233ADA /* PlaybackViewController.m in Sources */,
-				A2AE98461C0F01300064FFEB /* SettingTableViewImageCell.m in Sources */,
+				A20139FB1D83AC1E007C1D55 /* SettingTableViewProfileCell.m in Sources */,
 				A254BBBC1C0C7282006AB8D9 /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface SettingTableViewFormatCell : UITableViewCell
-//<
-//UICollectionViewDelegate,
-//UICollectionViewDataSource
-//>
+<
+UICollectionViewDelegate,
+UICollectionViewDataSource
+>
 
 @end

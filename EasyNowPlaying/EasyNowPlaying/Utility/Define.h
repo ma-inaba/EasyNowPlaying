@@ -57,6 +57,9 @@
 #define kSettingTableViewProfileCell @"SettingTableViewProfileCell"
 #define kSettingTableViewMessageCell @"SettingTableViewMessageCell"
 
+// 設定テーブル内のフォーマットコレクションビューのセル
+#define kFormatCollectionViewCell @"FormatCollectionViewCell"
+
 // 設定テーブルのアラート
 #define kSettingTableViewAlertTitle @"タグ"
 #define kSettingTableViewAlertMessage @"タグの定型文を登録できます"
