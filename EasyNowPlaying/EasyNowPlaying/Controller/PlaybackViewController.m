@@ -142,8 +142,7 @@
         
         NSString *musicTitle = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.musicTitle;
         NSString *artistName = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artistName;
-        NSString *tagString = [Utility loadUserDefaults:kPostTagKey];
-        NSString *tagNPBot = kPostNPbotTag;
+        NSString *albumTitle = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.albumTitle;
         
         MPMusicPlaybackState state = [[ModelLocator sharedInstance].playbackViewModel nowPlaybackState];
         if (state == MPMusicPlaybackStateStopped) {
@@ -151,19 +150,7 @@
             artistName = @"";
         }
         
-        if (!tagString) {
-            tagString = kPostDefaultTag;
-        }
-        
-        BOOL isAddAppTag = [[Utility loadUserDefaults:kAddAppTag] boolValue];
-
-        NSString *postString;
-        if (isAddAppTag) {
-            postString = [NSString stringWithFormat:@"%@ %@ %@ - %@",tagString, tagNPBot, musicTitle, artistName];
-        } else {
-            postString = [NSString stringWithFormat:@"%@ %@ - %@",tagString, musicTitle, artistName];
-        }
-        
+        NSString *postString = [self createTweetTextWithMusicTitle:musicTitle artistName:artistName albumTitle:albumTitle];
         UIImage *postImage = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.artworkImage;
         
         [controller setInitialText:postString];
@@ -177,6 +164,68 @@
                            animated:NO
                          completion:NULL];
     }
+}
+
+- (NSString *)createTweetTextWithMusicTitle:(NSString *)musicTitle artistName:(NSString *)artistName albumTitle:(NSString *)albumTitle {
+    
+    BOOL isAddAppTag = [[Utility loadUserDefaults:kAddAppTag] boolValue];
+    
+    NSString *postString;
+    NSMutableArray *array = [[NSMutableArray alloc] initWithArray:[Utility loadUserDefaults:kFormatStrArrayKey]];
+    
+    int forCount;
+    if (isAddAppTag) {
+        forCount = 5;
+    } else {
+        forCount = 4;
+    }
+    
+    NSMutableArray *addHyphenRowArray = [NSMutableArray array];
+    for (int i = 0; i < forCount; i++) {
+        NSString *str = [array objectAtIndex:i];
+        if ([str isEqualToString:@"Title"] || [str isEqualToString:@"Artist"] || [str isEqualToString:@"Album"]) {
+            if (i == forCount-1) {
+                // 最後は必要ないので抜ける
+                break;
+            }
+            NSString *nextStr = [array objectAtIndex:i+1];
+            if ([nextStr isEqualToString:@"Title"] || [nextStr isEqualToString:@"Artist"] || [nextStr isEqualToString:@"Album"]) {
+                // iのつぎに-をいれる
+                [addHyphenRowArray addObject:[NSNumber numberWithInt:i+1]];
+            }
+        }
+    }
+    
+    if ([addHyphenRowArray count] == 1) {
+        [array insertObject:@"-" atIndex:[[addHyphenRowArray objectAtIndex:0] intValue]];
+    } else if ([addHyphenRowArray count] == 2) {
+        NSUInteger addRow = [[addHyphenRowArray objectAtIndex:0] intValue];
+        [array insertObject:@"-" atIndex:addRow];
+        [array insertObject:@"-" atIndex:addRow+2];
+    } else {
+        
+    }
+    
+    
+    NSUInteger titleRow =[array indexOfObject:@"Title"];
+    NSUInteger artistRow =[array indexOfObject:@"Artist"];
+    NSUInteger albumRow =[array indexOfObject:@"Album"];
+    
+    [array replaceObjectAtIndex:titleRow withObject:musicTitle];
+    [array replaceObjectAtIndex:artistRow withObject:artistName];
+    [array replaceObjectAtIndex:albumRow withObject:albumTitle];
+    
+    if ((!isAddAppTag && [addHyphenRowArray count] == 2) || (isAddAppTag && [addHyphenRowArray count] == 1)) {
+        postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4], [array objectAtIndex:5]];
+    } else if (!isAddAppTag && [addHyphenRowArray count] == 1) {
+        postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4]];
+    } else if (isAddAppTag && [addHyphenRowArray count] == 2) {
+        postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4], [array objectAtIndex:5], [array objectAtIndex:6]];
+    } else {
+        postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4]];
+    }
+
+    return postString;
 }
 
 - (void)onBackButton {
