@@ -49,12 +49,7 @@
     }
     
     if (section == 3) {
-//        CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-//        if(screenSize.width == 320.0 && screenSize.height == 568.0) {
-//            return 1;
-//        } else {
-            return 2;
-//        }
+        return 2;
     }
     
     return 1;
@@ -103,7 +98,7 @@
             return cell;
         } else {
             SettingTableViewAlbumTagCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewAlbumTagCell];
-            cell.textLabel.text = kSettingTableViewOnAlbumTag;
+            cell.albumTagLabel.text = kSettingTableViewOnAlbumTag;
             
             BOOL isAddAlbumTag = [[Utility loadUserDefaults:kAddAlbumTag] boolValue];
             cell.addTagSwitch.on = isAddAlbumTag;

@@ -41,7 +41,7 @@
             <color key="backgroundColor" red="0.27193399289999998" green="0.30437097190000001" blue="0.38089013379999997" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="addTagSwitch" destination="FT4-bY-6xJ" id="3ZB-ng-SEe"/>
-                <outlet property="textLabel" destination="Ni5-e8-DjQ" id="q0r-aH-aWg"/>
+                <outlet property="albumTagLabel" destination="Ni5-e8-DjQ" id="58F-hb-DIg"/>
             </connections>
             <point key="canvasLocation" x="270" y="325"/>
         </tableViewCell>

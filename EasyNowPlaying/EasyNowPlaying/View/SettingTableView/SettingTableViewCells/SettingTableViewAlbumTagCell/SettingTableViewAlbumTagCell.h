@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SettingTableViewAlbumTagCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *textLabel;
+@property (weak, nonatomic) IBOutlet UILabel *albumTagLabel;
 @property (weak, nonatomic) IBOutlet UISwitch *addTagSwitch;
 
 @end
