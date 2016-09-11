@@ -49,18 +49,23 @@
     }
     
     if (section == 3) {
-        CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-        if(screenSize.width == 320.0 && screenSize.height == 568.0) {
-            return 1;
-        } else {
+//        CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+//        if(screenSize.width == 320.0 && screenSize.height == 568.0) {
+//            return 1;
+//        } else {
             return 2;
-        }
+//        }
     }
     
     return 1;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+ 
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    if(screenSize.width == 320.0 && screenSize.height == 568.0) {
+        return nil;
+    }
     
     if (section == 0) {
         return kSettingTableHeaderTag;
