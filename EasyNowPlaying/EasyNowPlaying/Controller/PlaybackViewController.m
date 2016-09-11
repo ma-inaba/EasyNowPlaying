@@ -68,6 +68,10 @@
     if (addAppTag == nil) {
         [Utility saveUserDefaults:[NSNumber numberWithBool:YES] key:kAddAppTag];
     }
+    id addAlbumTag = [Utility loadUserDefaults:kAddAlbumTag];
+    if (addAlbumTag == nil) {
+        [Utility saveUserDefaults:[NSNumber numberWithBool:YES] key:kAddAlbumTag];
+    }
     id postImage= [Utility loadUserDefaults:kPostImageKey];
     if (postImage == nil) {
         [Utility saveUserDefaults:[NSNumber numberWithBool:YES] key:kPostImageKey];
@@ -169,15 +173,24 @@
 - (NSString *)createTweetTextWithMusicTitle:(NSString *)musicTitle artistName:(NSString *)artistName albumTitle:(NSString *)albumTitle {
     
     BOOL isAddAppTag = [[Utility loadUserDefaults:kAddAppTag] boolValue];
+    BOOL isAddAlbumTag = [[Utility loadUserDefaults:kAddAlbumTag] boolValue];
     
     NSString *postString;
     NSMutableArray *array = [[NSMutableArray alloc] initWithArray:[Utility loadUserDefaults:kFormatStrArrayKey]];
     
     int forCount;
     if (isAddAppTag) {
-        forCount = 5;
+        if (isAddAlbumTag) {
+            forCount = 5;
+        } else {
+            forCount = 4;
+        }
     } else {
-        forCount = 4;
+        if (isAddAlbumTag) {
+            forCount = 4;
+        } else {
+            forCount = 3;
+        }
     }
     
     NSMutableArray *addHyphenRowArray = [NSMutableArray array];
@@ -209,20 +222,42 @@
     
     NSUInteger titleRow =[array indexOfObject:@"Title"];
     NSUInteger artistRow =[array indexOfObject:@"Artist"];
-    NSUInteger albumRow =[array indexOfObject:@"Album"];
     
     [array replaceObjectAtIndex:titleRow withObject:musicTitle];
     [array replaceObjectAtIndex:artistRow withObject:artistName];
-    [array replaceObjectAtIndex:albumRow withObject:albumTitle];
     
-    if ((!isAddAppTag && [addHyphenRowArray count] == 2) || (isAddAppTag && [addHyphenRowArray count] == 1)) {
-        postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4], [array objectAtIndex:5]];
-    } else if (!isAddAppTag && [addHyphenRowArray count] == 1) {
+    
+    if (isAddAlbumTag) {
+        NSUInteger albumRow =[array indexOfObject:@"Album"];
+        [array replaceObjectAtIndex:albumRow withObject:albumTitle];
+    }
+
+    
+    
+//    if ((!isAddAppTag && [addHyphenRowArray count] == 2) || (isAddAppTag && [addHyphenRowArray count] == 1)) {
+//        postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4], [array objectAtIndex:5]];
+//    } else if (!isAddAppTag && [addHyphenRowArray count] == 1) {
+//        postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4]];
+//    } else if (isAddAppTag && [addHyphenRowArray count] == 2) {
+//        postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4], [array objectAtIndex:5], [array objectAtIndex:6]];
+//    } else {
+//        postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4]];
+//    }
+    
+    
+    
+    if (!isAddAppTag && !isAddAlbumTag && [addHyphenRowArray count] == 0) {
+        postString = [NSString stringWithFormat:@"%@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2]];
+    } else if ((isAddAppTag && !isAddAlbumTag && [addHyphenRowArray count] == 0) || (!isAddAppTag && isAddAlbumTag && [addHyphenRowArray count] == 0) || (!isAddAppTag && !isAddAlbumTag && [addHyphenRowArray count] == 1)) {
+        postString = [NSString stringWithFormat:@"%@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3]];
+    } else if ((!isAddAppTag && isAddAlbumTag && [addHyphenRowArray count] == 1) || (isAddAppTag && !isAddAlbumTag && [addHyphenRowArray count] == 1) || (isAddAppTag && isAddAlbumTag && [addHyphenRowArray count] == 0)) {
         postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4]];
-    } else if (isAddAppTag && [addHyphenRowArray count] == 2) {
+    } else if ((!isAddAppTag && isAddAlbumTag && [addHyphenRowArray count] == 2) || (isAddAppTag && !isAddAlbumTag && [addHyphenRowArray count] == 2) || (isAddAppTag && isAddAlbumTag && [addHyphenRowArray count] == 1)) {
+        postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4], [array objectAtIndex:5]];
+    } else if (isAddAppTag && isAddAlbumTag && [addHyphenRowArray count] == 2) {
         postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4], [array objectAtIndex:5], [array objectAtIndex:6]];
     } else {
-        postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4]];
+        postString = @"もしこのメッセージが出た際には開発までお問い合わせください。";
     }
 
     return postString;

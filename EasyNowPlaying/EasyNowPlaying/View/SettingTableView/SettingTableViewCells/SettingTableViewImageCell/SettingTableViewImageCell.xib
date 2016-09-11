@@ -24,6 +24,7 @@
                         <rect key="frame" x="263" y="6" width="51" height="31"/>
                     </switch>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="j5m-ij-Iz4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="ERe-Gc-u1h"/>
                     <constraint firstItem="5tl-qd-dow" firstAttribute="leading" secondItem="j5m-ij-Iz4" secondAttribute="trailing" constant="8" id="F1S-50-FmB"/>

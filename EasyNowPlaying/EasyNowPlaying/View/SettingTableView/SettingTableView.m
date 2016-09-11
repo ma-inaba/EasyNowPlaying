@@ -9,6 +9,7 @@
 #import "SettingTableView.h"
 #import "SettingTableViewTagCell.h"
 #import "SettingTableViewAppNameTagCell.h"
+#import "SettingTableViewAlbumTagCell.h"
 #import "settingtableviewFormatCell.h"
 #import "SettingTableViewImageCell.h"
 #import "SettingTableViewProfileCell.h"
@@ -24,6 +25,8 @@
     [self registerNib:tagNib forCellReuseIdentifier:kSettingTableViewTagCell];
     UINib *appNameTagNib = [UINib nibWithNibName:kSettingTableViewAppNameTagCell bundle:nil];
     [self registerNib:appNameTagNib forCellReuseIdentifier:kSettingTableViewAppNameTagCell];
+    UINib *albumTagNib = [UINib nibWithNibName:kSettingTableViewAlbumTagCell bundle:nil];
+    [self registerNib:albumTagNib forCellReuseIdentifier:kSettingTableViewAlbumTagCell];
     UINib *formatNib = [UINib nibWithNibName:kSettingTableViewFormatCell bundle:nil];
     [self registerNib:formatNib forCellReuseIdentifier:kSettingTableViewFormatCell];
     UINib *imageNib = [UINib nibWithNibName:kSettingTableViewImageCell bundle:nil];
@@ -42,7 +45,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     if (section == 0) {
-        return 2;
+        return 3;
     }
     
     if (section == 3) {
@@ -77,8 +80,6 @@
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             SettingTableViewTagCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewTagCell];
-            cell.layoutMargins = UIEdgeInsetsZero;
-
             NSString *tagStr = [Utility loadUserDefaults:kPostTagKey];
             if (!tagStr) {
                 tagStr = kPostDefaultTag;
@@ -86,7 +87,7 @@
             cell.tagLabel.text =tagStr;
             
             return cell;
-        } else {
+        } else if (indexPath.row == 1) {
             SettingTableViewAppNameTagCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewAppNameTagCell];
             cell.tagLabel.text =kPostNPbotTag;
             cell.descriptionLabel.text = kSettingTableViewOnAppTag;
@@ -94,6 +95,14 @@
             BOOL isAddAppTag = [[Utility loadUserDefaults:kAddAppTag] boolValue];
             cell.addTagSwitch.on = isAddAppTag;
             [cell.addTagSwitch addTarget:self action:@selector(changeAddAppTagSwitchState:) forControlEvents:UIControlEventValueChanged];
+            return cell;
+        } else {
+            SettingTableViewAlbumTagCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewAlbumTagCell];
+            cell.textLabel.text = kSettingTableViewOnAlbumTag;
+            
+            BOOL isAddAlbumTag = [[Utility loadUserDefaults:kAddAlbumTag] boolValue];
+            cell.addTagSwitch.on = isAddAlbumTag;
+            [cell.addTagSwitch addTarget:self action:@selector(changeAddAlbumTagSwitchState:) forControlEvents:UIControlEventValueChanged];
             return cell;
         }
         
@@ -112,8 +121,6 @@
     } else {
         if (indexPath.row == 0) {
             SettingTableViewProfileCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewProfileCell];
-            cell.layoutMargins = UIEdgeInsetsZero;
-
             return cell;
         } else {
             SettingTableViewMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewMessageCell];
@@ -149,6 +156,31 @@
     [Utility saveUserDefaults:array key:kFormatStrArrayKey];
     [ModelLocator sharedInstance].settingViewModel.settingDataEntity.formatStrArray = array;
 
+    SettingTableViewFormatCell *cell = [self cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+    [cell reloadFormatTags];
+}
+
+- (void)changeAddAlbumTagSwitchState:(id)sender {
+
+    BOOL state = [sender isOn];
+    [Utility saveUserDefaults:[NSNumber numberWithBool:state] key:kAddAlbumTag];
+    
+    NSMutableArray *array = [[NSMutableArray alloc] initWithArray:[Utility loadUserDefaults:kFormatStrArrayKey]];
+    
+    if (state) {
+        // Albumを追加
+        [array addObject:@"Album"];
+    } else {
+        // Albumを削除
+        NSUInteger row =[array indexOfObject:@"Album"];
+        if (row != NSNotFound) {
+            [array removeObjectAtIndex:row];
+        }
+    }
+    
+    [Utility saveUserDefaults:array key:kFormatStrArrayKey];
+    [ModelLocator sharedInstance].settingViewModel.settingDataEntity.formatStrArray = array;
+    
     SettingTableViewFormatCell *cell = [self cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     [cell reloadFormatTags];
 }

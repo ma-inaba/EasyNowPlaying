@@ -30,6 +30,7 @@
 #define kPostTagKey @"PostTagKey"
 #define kPostImageKey @"PostImageKey"
 #define kAddAppTag @"AddAppTag"
+#define kAddAlbumTag @"AddAlbumTag"
 #define kFormatStrArrayKey @"FormatStrArrayKey"
 
 // 音楽表示ビュー
@@ -55,6 +56,7 @@
 // 設定テーブルのセル
 #define kSettingTableViewTagCell @"SettingTableViewTagCell"
 #define kSettingTableViewAppNameTagCell @"SettingTableViewAppNameTagCell"
+#define kSettingTableViewAlbumTagCell @"SettingTableViewAlbumTagCell"
 #define kSettingTableViewFormatCell @"SettingTableViewFormatCell"
 #define kSettingTableViewImageCell @"SettingTableViewImageCell"
 #define kSettingTableViewProfileCell @"SettingTableViewProfileCell"
@@ -62,6 +64,7 @@
 
 // 設定テーブルの文言
 #define kSettingTableViewOnAppTag @"アプリ名のタグを追加 (オンで開発者が喜びます)"
+#define kSettingTableViewOnAlbumTag @"アルバム名のタグを追加"
 #define kSettingTableViewPostImage @"ツイートに画像を添付"
 
 // 設定テーブル内のフォーマットコレクションビューのセル

@@ -23,6 +23,13 @@
                         <color key="textColor" red="0.98039215690000003" green="0.98823529409999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BVL-wD-sKh">
+                        <rect key="frame" x="263" y="35" width="51" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="31" id="Ny3-cr-lat"/>
+                            <constraint firstAttribute="width" constant="49" id="nLg-mk-Sk3"/>
+                        </constraints>
+                    </switch>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fya-ce-t4z">
                         <rect key="frame" x="8" y="35" width="247" height="31"/>
                         <constraints>
@@ -32,15 +39,8 @@
                         <color key="textColor" red="0.98039215690000003" green="0.98823529409999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BVL-wD-sKh">
-                        <rect key="frame" x="263" y="35" width="51" height="31"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="31" id="Ny3-cr-lat"/>
-                            <constraint firstAttribute="width" constant="49" id="nLg-mk-Sk3"/>
-                        </constraints>
-                    </switch>
                 </subviews>
-                <color key="backgroundColor" red="0.27193399289999998" green="0.30437097190000001" blue="0.38089013379999997" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="fya-ce-t4z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="7ph-wB-a0f"/>
                     <constraint firstItem="BVL-wD-sKh" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="85v-ky-UQH"/>
@@ -52,6 +52,7 @@
                     <constraint firstItem="KiF-qP-KNO" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="ziz-eE-Pbe"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.27193399289999998" green="0.30437097190000001" blue="0.38089013379999997" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="addTagSwitch" destination="BVL-wD-sKh" id="6yL-aS-vp1"/>
                 <outlet property="descriptionLabel" destination="fya-ce-t4z" id="Ehf-f2-BqU"/>

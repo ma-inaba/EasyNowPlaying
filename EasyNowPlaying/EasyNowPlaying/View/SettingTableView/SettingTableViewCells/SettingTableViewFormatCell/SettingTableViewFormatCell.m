@@ -97,10 +97,19 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
     BOOL isAddAppTag = [[Utility loadUserDefaults:kAddAppTag] boolValue];
+    BOOL isAddAlbumTag = [[Utility loadUserDefaults:kAddAlbumTag] boolValue];
     if (isAddAppTag) {
-        return 5;
+        if (isAddAlbumTag) {
+            return 5;
+        } else {
+            return 4;
+        }
     } else {
-        return 4;
+        if (isAddAlbumTag) {
+            return 4;
+        } else {
+            return 3;
+        }
     }
 }
 
