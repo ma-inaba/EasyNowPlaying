@@ -560,6 +560,43 @@
             </objects>
             <point key="canvasLocation" x="472.5" y="1094.5"/>
         </scene>
+        <!--Playlist Data View Controller-->
+        <scene sceneID="azm-mY-6bo">
+            <objects>
+                <viewController storyboardIdentifier="PlaylistDataViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3oE-Fc-kgB" customClass="PlaylistDataViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FJS-G9-kRf"/>
+                        <viewControllerLayoutGuide type="bottom" id="kPg-An-q7W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qhR-yK-pzg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="265"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="edA-7v-Wbf" customClass="PlaylistDataTableView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="265"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.1843137255" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="43" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="edA-7v-Wbf" secondAttribute="bottom" id="OFe-FG-Vmy"/>
+                            <constraint firstItem="edA-7v-Wbf" firstAttribute="leading" secondItem="qhR-yK-pzg" secondAttribute="leading" id="OM5-gl-WDa"/>
+                            <constraint firstItem="edA-7v-Wbf" firstAttribute="top" secondItem="qhR-yK-pzg" secondAttribute="top" id="WSV-1H-zZe"/>
+                            <constraint firstAttribute="trailing" secondItem="edA-7v-Wbf" secondAttribute="trailing" id="oBx-I0-Dpj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Rtd-g1-paX"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="265"/>
+                    <connections>
+                        <outlet property="playlistDataTableView" destination="edA-7v-Wbf" id="0Vq-DP-mG3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t2p-go-6JB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="467.5" y="1431.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Fast Forward" width="50" height="50"/>

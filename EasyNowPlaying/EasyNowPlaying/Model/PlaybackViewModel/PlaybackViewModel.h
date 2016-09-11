@@ -25,17 +25,26 @@ typedef enum {
 
 // アーティストデータの取得
 - (void)acquisitionArtistData;
+// プレイリストデータの取得
+- (void)acquisitionPlaylistData;
 // アルバムデータの取得
 - (void)acquisitionAlbumDataWithArtistName:(NSString *)artistName;
 // 曲データの取得
 - (void)acquisitionMusicDataWithAlbumName:(NSString *)albumName artistName:(NSString *)artistName;
-
+// プレイリストの曲データ取得
+- (void)acquisitionMusicDataWithPlaylistName:(NSString *)playlistName;
 // アーティスト一覧配列からアーティスト名を取り出す
 - (NSString *)loadArtistNameForArtistDataArraywithIndex:(NSInteger)row;
 // アーティスト一覧配列からアーティストアートワークを取り出す
 - (UIImage *)loadArtistArtworkForArtistDataArraywithIndex:(NSInteger)row;
 // アーティスト一覧配列からアルバムのトラック数を取り出す
 - (NSString *)loadAlbumTrackCountForArtistDataArraywithIndex:(NSInteger)row;
+// プレイリスト一覧配列からプレイリスト名を取り出す
+- (NSString *)loadPlaylistNameForPlaylistDataArraywithIndex:(NSInteger)row;
+// プレイリスト一覧配列からプレイリストアートワークを取り出す
+- (UIImage *)loadPlaylistArtworkForPlaylistDataArraywithIndex:(NSInteger)row;
+// プレイリスト一覧配列から曲数を取り出す
+- (NSString *)loadSongsTrackCountForPlaylistDataArraywithIndex:(NSInteger)row;
 // アルバム一覧配列からアルバム名を取り出す
 - (NSString *)loadAlbumNameForArtistDataArraywithIndex:(NSInteger)row;
 // アルバム一覧配列からアルバムアートワークを取り出す
@@ -53,6 +62,10 @@ typedef enum {
 - (void)saveSelectedArtistName:(NSString *)artistName;
 // 選択したアルバムの名前を保持しておく(画面遷移後に保持したアルバムの名前で曲を検索するため)
 - (void)saveSelectedAlbumName:(NSString *)albumName;
+// 選択したプレイリストの名前を保持しておく(画面遷移後に保持したプレイリストの名前で曲を検索するため)
+- (void)saveSelectedPlaylistName:(NSString *)playlistName;
+// 選択したモードを保持しておく(画面遷移後に保持したモードで表示を切り替えるため)
+- (void)saveSelectedMode:(SelectedMode)selectedMode;
 // 現在再生中かどうか
 - (MPMusicPlaybackState)nowPlaybackState;
 // 指定された曲を再生

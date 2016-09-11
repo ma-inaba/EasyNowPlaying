@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    SelectedModeArtist,
+    SelectedModePlaylist
+}SelectedMode;
+
 @interface MusicDataEntity : NSObject
 
 // アートワーク
@@ -16,6 +21,7 @@
 
 // 曲情報
 @property (nonatomic, retain) NSArray *artistDataArray;
+@property (nonatomic, retain) NSArray *playlistDataArray;
 @property (nonatomic, retain) NSArray *albumDataArray;
 @property (nonatomic, retain) NSArray *songsDataArray;
 @property (nonatomic, strong) NSString *musicTitle;
@@ -26,5 +32,8 @@
 @property float duration;   // 再生時間
 @property (nonatomic, strong) NSString *selectedArtistName;
 @property (nonatomic, strong) NSString *selectedAlbumName;
+@property (nonatomic, strong) NSString *selectedPlaylistName;
+
+@property SelectedMode selectedMode;
 
 @end

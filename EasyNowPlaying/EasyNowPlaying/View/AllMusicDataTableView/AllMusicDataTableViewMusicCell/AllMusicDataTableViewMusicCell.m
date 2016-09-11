@@ -11,6 +11,7 @@
 @implementation AllMusicDataTableViewMusicCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
 }
 

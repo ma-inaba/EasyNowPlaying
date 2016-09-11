@@ -16,6 +16,7 @@
 #define kOK @"OK"
 #define kCancel @"キャンセル"
 #define kArtist @"アーティスト"
+#define kPlaylist @"プレイリスト"
 #define kAlbum @"アルバム"
 #define kMusic @"ミュージック"
 #define kUnknownTitle @"不明なタイトル"
@@ -40,6 +41,7 @@
 
 // KVO監視しているプロパティ
 #define kArtistDataArray @"artistDataArray"
+#define kPlaylistDataArray @"playlistDataArray"
 #define kAlbumDataArray @"albumDataArray"
 #define kSongsDataArray @"songsDataArray"
 #define kCompleteLoadData @"completeLoadData"
@@ -72,5 +74,6 @@
 
 // 音楽データテーブルのセル
 #define kMusicDataTableArtistCell @"AllMusicDataTableViewArtistCell"
+#define kMusicDataTablePlaylistCell @"AllMusicDataTableViewPlaylistCell"
 #define kMusicDataTableAlbumCell @"AllMusicDataTableViewAlbumCell"
 #define kMusicDataTableMusicCell @"AllMusicDataTableViewMusicCell"

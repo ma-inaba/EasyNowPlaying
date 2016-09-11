@@ -116,6 +116,49 @@
     return [NSString stringWithFormat:@"%lu",[[albumsQuery collections] count]];
 }
 
+#pragma mark - プレイリストデータの取得
+- (void)acquisitionPlaylistData {
+    
+    MPMediaQuery *playlistsQuery = [MPMediaQuery playlistsQuery];
+    
+    self.musicDataEntity.playlistDataArray = [playlistsQuery collections];
+}
+
+#pragma mark プレイリストデータの操作
+// 名前の読み込み
+- (NSString *)loadPlaylistNameForPlaylistDataArraywithIndex:(NSInteger)row {
+    
+    NSString *playlistName;
+    if (self.musicDataEntity.playlistDataArray) {
+        MPMediaPlaylist *mediaPlaylist = [self.musicDataEntity.playlistDataArray objectAtIndex:row];
+        playlistName = [mediaPlaylist valueForProperty:MPMediaPlaylistPropertyName];
+    }
+    return playlistName;
+}
+
+// アートワークの読み込み
+- (UIImage *)loadPlaylistArtworkForPlaylistDataArraywithIndex:(NSInteger)row {
+    
+    UIImage *playlistArtwork = [UIImage alloc];
+    if (self.musicDataEntity.playlistDataArray) {
+        MPMediaItemCollection *albumCollection = [self.musicDataEntity.playlistDataArray objectAtIndex:row];
+        MPMediaItemArtwork *artwork = [[albumCollection representativeItem] valueForProperty:MPMediaItemPropertyArtwork];
+        playlistArtwork = [artwork imageWithSize:artwork.bounds.size];
+    }
+    return playlistArtwork;
+}
+
+// プレイリストの曲数の読み込み
+- (NSString *)loadSongsTrackCountForPlaylistDataArraywithIndex:(NSInteger)row {
+    
+    MPMediaQuery *playlistsSongsQuery = [MPMediaQuery songsQuery];
+    
+    NSString *playlistTitle = [self loadPlaylistNameForPlaylistDataArraywithIndex:row];
+    // アルバム名を指定
+    [playlistsSongsQuery addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:playlistTitle forProperty: MPMediaPlaylistPropertyName]];
+    return [NSString stringWithFormat:@"%lu",[[playlistsSongsQuery collections] count]];
+}
+
 #pragma mark - アルバムデータの取得
 - (void)acquisitionAlbumDataWithArtistName:(NSString *)artistName {
     
@@ -173,6 +216,14 @@
     self.musicDataEntity.songsDataArray = [songsQuery items];
 }
 
+- (void)acquisitionMusicDataWithPlaylistName:(NSString *)playlistName {
+    
+    MPMediaQuery *playlistSongsQuery = [MPMediaQuery songsQuery];
+    // プレイリスト名を指定
+    [playlistSongsQuery addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:playlistName forProperty:MPMediaPlaylistPropertyName]];
+    self.musicDataEntity.songsDataArray = [playlistSongsQuery items];
+}
+
 #pragma mark - 曲データの操作
 // 曲のタイトルの読み込み
 - (NSString *)loadMusicNameForsongsDataArraywithIndex:(NSInteger)row {
@@ -218,6 +269,16 @@
 - (void)saveSelectedAlbumName:(NSString *)albumName {
     
     self.musicDataEntity.selectedAlbumName = albumName;
+}
+
+- (void)saveSelectedPlaylistName:(NSString *)playlistName {
+    
+    self.musicDataEntity.selectedPlaylistName = playlistName;
+}
+
+- (void)saveSelectedMode:(SelectedMode)selectedMode {
+    
+    self.musicDataEntity.selectedMode = selectedMode;
 }
 
 - (MPMusicPlaybackState)nowPlaybackState {

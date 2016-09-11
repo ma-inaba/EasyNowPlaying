@@ -1,14 +1,14 @@
 //
-//  AllMusicDataTableViewAlbumCell.m
+//  AllMusicDataTableViewPlaylistCell.m
 //  EasyNowPlaying
 //
-//  Created by inaba masaya on 2015/12/05.
-//  Copyright © 2015年 inaba masaya. All rights reserved.
+//  Created by InabaMasaya on 2016/09/11.
+//  Copyright © 2016年 inaba masaya. All rights reserved.
 //
 
-#import "AllMusicDataTableViewAlbumCell.h"
+#import "AllMusicDataTableViewPlaylistCell.h"
 
-@implementation AllMusicDataTableViewAlbumCell
+@implementation AllMusicDataTableViewPlaylistCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

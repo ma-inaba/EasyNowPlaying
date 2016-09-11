@@ -42,7 +42,12 @@
     cell.artistNameLabel.textColor = kDefaultTextColor;
     cell.artistNameLabel.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
     
-    cell.artistImageView.image = [[ModelLocator sharedInstance].playbackViewModel loadArtistArtworkForArtistDataArraywithIndex:indexPath.row];
+    UIImage *artwork = [[ModelLocator sharedInstance].playbackViewModel loadArtistArtworkForArtistDataArraywithIndex:indexPath.row];
+    
+    if (artwork == nil) {
+        artwork = [UIImage imageNamed:@"NonArtwork"];
+    }
+    cell.artistImageView.image = artwork;
     
     NSString *albumTrack = [[ModelLocator sharedInstance].playbackViewModel loadAlbumTrackCountForArtistDataArraywithIndex:indexPath.row];
     cell.albumTrackLabel.text = [NSString stringWithFormat:@"%@枚のアルバム",albumTrack];

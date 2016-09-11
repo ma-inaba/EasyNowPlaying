@@ -29,12 +29,18 @@
     [super viewWillAppear:animated];
     
     [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity addObserver:self forKeyPath:kSongsDataArray options:0 context:nil];
-    NSString *albumName = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.selectedAlbumName;
-    NSString *artistName = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.selectedArtistName;
-    if ([albumName isEqualToString:kUnknownAlbum]) {
-        albumName = @"";
+    
+    if ([ModelLocator sharedInstance].playbackViewModel.musicDataEntity.selectedMode == SelectedModeArtist) {
+        NSString *albumName = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.selectedAlbumName;
+        NSString *artistName = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.selectedArtistName;
+        if ([albumName isEqualToString:kUnknownAlbum]) {
+            albumName = @"";
+        }
+        [[ModelLocator sharedInstance].playbackViewModel acquisitionMusicDataWithAlbumName:albumName artistName:artistName];
+    } else {
+        NSString *playlistName = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.selectedPlaylistName;
+        [[ModelLocator sharedInstance].playbackViewModel acquisitionMusicDataWithPlaylistName:playlistName];
     }
-    [[ModelLocator sharedInstance].playbackViewModel acquisitionMusicDataWithAlbumName:albumName artistName:artistName];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -64,6 +70,9 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
 
+    if ([keyPath isEqualToString:kSongsDataArray]) {
+        [self.musicDataTableView reloadData];
+    }
     if ([keyPath isEqualToString:kSongsDataArray]) {
         [self.musicDataTableView reloadData];
     }

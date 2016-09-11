@@ -1,46 +1,48 @@
 //
-//  ArtistDataViewController.m
+//  PlaylistDataViewController.m
 //  EasyNowPlaying
 //
-//  Created by inaba masaya on 2015/12/04.
-//  Copyright © 2015年 inaba masaya. All rights reserved.
+//  Created by InabaMasaya on 2016/09/11.
+//  Copyright © 2016年 inaba masaya. All rights reserved.
 //
 
-#import "ArtistDataViewController.h"
-#import "AlbumDataViewController.h"
 #import "PlaylistDataViewController.h"
-#import "ArtistDataTableView.h"
+#import "PlaylistDataTableView.h"
+#import "MusicDataViewController.h"
 
-@interface ArtistDataViewController ()
-@property (weak, nonatomic) IBOutlet ArtistDataTableView *artistDataTableView;
+@interface PlaylistDataViewController ()
+@property (weak, nonatomic) IBOutlet PlaylistDataTableView *playlistDataTableView;
 
 @end
 
-@implementation ArtistDataViewController
+@implementation PlaylistDataViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
     [self settingNavigationBar];
-    self.artistDataTableView.delegate = self;
+    self.playlistDataTableView.delegate = self;
+    
+    self.navigationItem.hidesBackButton = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
     
-    [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity addObserver:self forKeyPath:kArtistDataArray options:0 context:nil];
-    [[ModelLocator sharedInstance].playbackViewModel acquisitionArtistData];
+    [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity addObserver:self forKeyPath:kPlaylistDataArray options:0 context:nil];
+    [[ModelLocator sharedInstance].playbackViewModel acquisitionPlaylistData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-
+    
     [super viewWillDisappear:animated];
-
+    
     if (![self.navigationController.viewControllers containsObject:self]) {
-        [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:kArtistDataArray];
+        [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:kPlaylistDataArray];
     } else {
-        [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:kArtistDataArray];
-        [[ModelLocator sharedInstance].playbackViewModel setTableViewMode:TableViewModeAlbum];
+        [[ModelLocator sharedInstance].playbackViewModel.musicDataEntity removeObserver:self forKeyPath:kPlaylistDataArray];
+        [[ModelLocator sharedInstance].playbackViewModel setTableViewMode:TableViewModeArtist];
     }
 }
 
@@ -62,27 +64,25 @@
                                              nil]];
     [segmentedControl addTarget:self action:@selector(segmentChanged:) forControlEvents:UIControlEventValueChanged];
     segmentedControl.frame = CGRectMake(0, 0, 180, 25);
-    segmentedControl.selectedSegmentIndex = 0;
+    segmentedControl.selectedSegmentIndex = 1;
     
     [self.navigationItem setTitleView:segmentedControl];
 }
 
 - (void)segmentChanged:(UISegmentedControl *)sender {
+    
     if (sender.selectedSegmentIndex == 0) {
-        
+        [[ModelLocator sharedInstance].playbackViewModel saveSelectedMode:SelectedModeArtist];
+        [self.navigationController popViewControllerAnimated:NO];
     } else {
-        sender.selectedSegmentIndex = 0;
-        [[ModelLocator sharedInstance].playbackViewModel saveSelectedMode:SelectedModePlaylist];
 
-        PlaylistDataViewController *controller = [[self storyboard] instantiateViewControllerWithIdentifier:@"PlaylistDataViewController"];
-        [self.navigationController pushViewController:controller animated:NO];
     }
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     
     if ([keyPath isEqualToString:kArtistDataArray]) {
-        [self.artistDataTableView reloadData];
+        [self.playlistDataTableView reloadData];
     }
 }
 
@@ -95,10 +95,11 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    NSString *artistName = [[ModelLocator sharedInstance].playbackViewModel loadArtistNameForArtistDataArraywithIndex:indexPath.row];
-    [[ModelLocator sharedInstance].playbackViewModel saveSelectedArtistName:artistName];
-
-    AlbumDataViewController *controller = [[self storyboard] instantiateViewControllerWithIdentifier:@"AlbumDataViewController"];
+    NSString *playlistName = [[ModelLocator sharedInstance].playbackViewModel loadPlaylistNameForPlaylistDataArraywithIndex:indexPath.row];
+    [[ModelLocator sharedInstance].playbackViewModel saveSelectedPlaylistName:playlistName];
+    
+    MusicDataViewController *controller = [[self storyboard] instantiateViewControllerWithIdentifier:@"MusicDataViewController"];
     [self.navigationController pushViewController:controller animated:YES];
 }
+
 @end
