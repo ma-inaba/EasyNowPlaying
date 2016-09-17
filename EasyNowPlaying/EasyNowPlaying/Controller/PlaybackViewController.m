@@ -219,32 +219,36 @@
         
     }
     
+    //title name albumがnilか@""だった場合は不明な◯◯に変更
+    if (!musicTitle || [musicTitle isEqualToString:@""]) {
+        [self replaceUnknownData:array beforeStr:@"Title" afterStr:kUnknownTitle];
+    }
+    if (!artistName || [artistName isEqualToString:@""]) {
+        [self replaceUnknownData:array beforeStr:@"Artist" afterStr:kUnknownArtist];
+    }
+    if (!albumTitle || [albumTitle isEqualToString:@""]) {
+        [self replaceUnknownData:array beforeStr:@"Album" afterStr:kUnknownAlbum];
+    }
+    
     
     NSUInteger titleRow =[array indexOfObject:@"Title"];
     NSUInteger artistRow =[array indexOfObject:@"Artist"];
-    
-    [array replaceObjectAtIndex:titleRow withObject:musicTitle];
-    [array replaceObjectAtIndex:artistRow withObject:artistName];
+
+    if(titleRow != NSNotFound){
+        [array replaceObjectAtIndex:titleRow withObject:musicTitle];
+    }
+  
+    if(artistRow != NSNotFound){
+        [array replaceObjectAtIndex:artistRow withObject:artistName];
+    }
     
     
     if (isAddAlbumTag) {
         NSUInteger albumRow =[array indexOfObject:@"Album"];
-        [array replaceObjectAtIndex:albumRow withObject:albumTitle];
+        if(albumRow != NSNotFound){
+            [array replaceObjectAtIndex:albumRow withObject:albumTitle];
+        }
     }
-
-    
-    
-//    if ((!isAddAppTag && [addHyphenRowArray count] == 2) || (isAddAppTag && [addHyphenRowArray count] == 1)) {
-//        postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4], [array objectAtIndex:5]];
-//    } else if (!isAddAppTag && [addHyphenRowArray count] == 1) {
-//        postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4]];
-//    } else if (isAddAppTag && [addHyphenRowArray count] == 2) {
-//        postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4], [array objectAtIndex:5], [array objectAtIndex:6]];
-//    } else {
-//        postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4]];
-//    }
-    
-    
     
     if (!isAddAppTag && !isAddAlbumTag && [addHyphenRowArray count] == 0) {
         postString = [NSString stringWithFormat:@"%@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2]];
@@ -257,7 +261,7 @@
     } else if (isAddAppTag && isAddAlbumTag && [addHyphenRowArray count] == 2) {
         postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4], [array objectAtIndex:5], [array objectAtIndex:6]];
     } else {
-        postString = @"もしこのメッセージが出た際には開発までお問い合わせください。";
+        postString = @"もしこのメッセージが出た際には設定画面のスクリーンショットと共に開発までお問い合わせください。";
     }
 
     return postString;
@@ -287,4 +291,11 @@
     });
 }
 
+// 配列から引数のデータを検索して見つかった場合は「不明な◯◯」に変更する
+- (void)replaceUnknownData:(NSMutableArray *)array beforeStr:(NSString *)beforeStr afterStr:(NSString *)afterStr {
+    NSUInteger row =[array indexOfObject:beforeStr];
+    if(row != NSNotFound){
+        [array replaceObjectAtIndex:row withObject:afterStr];
+    }
+}
 @end
