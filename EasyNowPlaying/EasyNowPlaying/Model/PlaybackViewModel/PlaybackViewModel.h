@@ -70,6 +70,8 @@ typedef enum {
 - (MPMusicPlaybackState)nowPlaybackState;
 // 指定された曲を再生
 - (void)playSelectedMusicWithRow:(NSUInteger)row;
+// 指定された曲を再生（プレイリスト）
+- (void)playSelectedMusicWithRowForPlaylist:(NSUInteger)row;
 
 - (void)loadMusicPlayerData;
 - (void)switchPlayStatus;

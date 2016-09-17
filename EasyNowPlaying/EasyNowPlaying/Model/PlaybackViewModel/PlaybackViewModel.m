@@ -300,6 +300,20 @@
     [player play];
 }
 
+- (void)playSelectedMusicWithRowForPlaylist:(NSUInteger)row {
+    
+    MPMediaQuery *playlistSongsQuery = [MPMediaQuery songsQuery];
+    NSString *playlistName = [ModelLocator sharedInstance].playbackViewModel.musicDataEntity.selectedPlaylistName;
+    
+    // プレイリスト名を指定
+    [playlistSongsQuery addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:playlistName forProperty:MPMediaPlaylistPropertyName]];
+    
+    [player setQueueWithQuery:playlistSongsQuery];
+    player.nowPlayingItem = playlistSongsQuery.items[row];
+    [player play];
+    
+}
+
 #pragma mark 各操作ボタン押下時の処理
 - (void)switchPlayStatus {
     

@@ -73,9 +73,6 @@
     if ([keyPath isEqualToString:kSongsDataArray]) {
         [self.musicDataTableView reloadData];
     }
-    if ([keyPath isEqualToString:kSongsDataArray]) {
-        [self.musicDataTableView reloadData];
-    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -87,6 +84,10 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    [[ModelLocator sharedInstance].playbackViewModel playSelectedMusicWithRow:indexPath.row];
+    if ([ModelLocator sharedInstance].playbackViewModel.musicDataEntity.selectedMode == SelectedModeArtist) {
+        [[ModelLocator sharedInstance].playbackViewModel playSelectedMusicWithRow:indexPath.row];
+    } else {
+        [[ModelLocator sharedInstance].playbackViewModel playSelectedMusicWithRowForPlaylist:indexPath.row];        
+    }
 }
 @end
