@@ -171,97 +171,111 @@
 }
 
 - (NSString *)createTweetTextWithMusicTitle:(NSString *)musicTitle artistName:(NSString *)artistName albumTitle:(NSString *)albumTitle {
-    
-    BOOL isAddAppTag = [[Utility loadUserDefaults:kAddAppTag] boolValue];
-    BOOL isAddAlbumTag = [[Utility loadUserDefaults:kAddAlbumTag] boolValue];
-    
-    NSString *postString;
-    NSMutableArray *array = [[NSMutableArray alloc] initWithArray:[Utility loadUserDefaults:kFormatStrArrayKey]];
-    
-    int forCount;
-    if (isAddAppTag) {
-        if (isAddAlbumTag) {
-            forCount = 5;
+
+    NSString *postString = @"もしこのメッセージが表示された際には設定画面のスクリーンショットと共に開発までお問い合わせください。\n手っ取り早く治すなら再インストールしてFORMATを変更せずに試してみて下さい。\nそれでもダメなようなら曲情報がダメみたいです。";
+
+    /* 常に実行される */
+    @try {
+        BOOL isAddAppTag = [[Utility loadUserDefaults:kAddAppTag] boolValue];
+        BOOL isAddAlbumTag = [[Utility loadUserDefaults:kAddAlbumTag] boolValue];
+        
+        NSMutableArray *array = [[NSMutableArray alloc] initWithArray:[Utility loadUserDefaults:kFormatStrArrayKey]];
+        
+        int forCount;
+        if (isAddAppTag) {
+            if (isAddAlbumTag) {
+                forCount = 5;
+            } else {
+                forCount = 4;
+            }
         } else {
-            forCount = 4;
+            if (isAddAlbumTag) {
+                forCount = 4;
+            } else {
+                forCount = 3;
+            }
         }
-    } else {
-        if (isAddAlbumTag) {
-            forCount = 4;
+        
+        NSMutableArray *addHyphenRowArray = [NSMutableArray array];
+        for (int i = 0; i < forCount; i++) {
+            NSString *str = [array objectAtIndex:i];
+            if ([str isEqualToString:@"Title"] || [str isEqualToString:@"Artist"] || [str isEqualToString:@"Album"]) {
+                if (i == forCount-1) {
+                    // 最後は必要ないので抜ける
+                    break;
+                }
+                NSString *nextStr = [array objectAtIndex:i+1];
+                if ([nextStr isEqualToString:@"Title"] || [nextStr isEqualToString:@"Artist"] || [nextStr isEqualToString:@"Album"]) {
+                    // iのつぎに-をいれる
+                    [addHyphenRowArray addObject:[NSNumber numberWithInt:i+1]];
+                }
+            }
+        }
+        
+        if ([addHyphenRowArray count] == 1) {
+            [array insertObject:@"-" atIndex:[[addHyphenRowArray objectAtIndex:0] intValue]];
+        } else if ([addHyphenRowArray count] == 2) {
+            NSUInteger addRow = [[addHyphenRowArray objectAtIndex:0] intValue];
+            [array insertObject:@"-" atIndex:addRow];
+            [array insertObject:@"-" atIndex:addRow+2];
         } else {
-            forCount = 3;
+            
+        }
+        
+        //title name albumがnilか@""だった場合は不明な◯◯に変更
+        if (!musicTitle || [musicTitle isEqualToString:@""]) {
+            [self replaceUnknownData:array beforeStr:@"Title" afterStr:kUnknownTitle];
+        }
+        if (!artistName || [artistName isEqualToString:@""]) {
+            [self replaceUnknownData:array beforeStr:@"Artist" afterStr:kUnknownArtist];
+        }
+        if (!albumTitle || [albumTitle isEqualToString:@""]) {
+            [self replaceUnknownData:array beforeStr:@"Album" afterStr:kUnknownAlbum];
+        }
+        
+        
+        NSUInteger titleRow =[array indexOfObject:@"Title"];
+        NSUInteger artistRow =[array indexOfObject:@"Artist"];
+        
+        if(titleRow != NSNotFound){
+            [array replaceObjectAtIndex:titleRow withObject:musicTitle];
+        }
+        
+        if(artistRow != NSNotFound){
+            [array replaceObjectAtIndex:artistRow withObject:artistName];
+        }
+        
+        
+        if (isAddAlbumTag) {
+            NSUInteger albumRow =[array indexOfObject:@"Album"];
+            if(albumRow != NSNotFound){
+                [array replaceObjectAtIndex:albumRow withObject:albumTitle];
+            }
+        }
+        
+        if (!isAddAppTag && !isAddAlbumTag && [addHyphenRowArray count] == 0) {
+            postString = [NSString stringWithFormat:@"%@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2]];
+        } else if ((isAddAppTag && !isAddAlbumTag && [addHyphenRowArray count] == 0) || (!isAddAppTag && isAddAlbumTag && [addHyphenRowArray count] == 0) || (!isAddAppTag && !isAddAlbumTag && [addHyphenRowArray count] == 1)) {
+            postString = [NSString stringWithFormat:@"%@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3]];
+        } else if ((!isAddAppTag && isAddAlbumTag && [addHyphenRowArray count] == 1) || (isAddAppTag && !isAddAlbumTag && [addHyphenRowArray count] == 1) || (isAddAppTag && isAddAlbumTag && [addHyphenRowArray count] == 0)) {
+            postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4]];
+        } else if ((!isAddAppTag && isAddAlbumTag && [addHyphenRowArray count] == 2) || (isAddAppTag && !isAddAlbumTag && [addHyphenRowArray count] == 2) || (isAddAppTag && isAddAlbumTag && [addHyphenRowArray count] == 1)) {
+            postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4], [array objectAtIndex:5]];
+        } else if (isAddAppTag && isAddAlbumTag && [addHyphenRowArray count] == 2) {
+            postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4], [array objectAtIndex:5], [array objectAtIndex:6]];
+        } else {
+            postString = @"もしこのメッセージが表示された際には設定画面のスクリーンショットと共に開発までお問い合わせください。\n手っ取り早く治すなら再インストールしてFORMATを変更せずに試してみて下さい。\nそれでもダメなようなら曲情報がダメみたいです。";
         }
     }
     
-    NSMutableArray *addHyphenRowArray = [NSMutableArray array];
-    for (int i = 0; i < forCount; i++) {
-        NSString *str = [array objectAtIndex:i];
-        if ([str isEqualToString:@"Title"] || [str isEqualToString:@"Artist"] || [str isEqualToString:@"Album"]) {
-            if (i == forCount-1) {
-                // 最後は必要ないので抜ける
-                break;
-            }
-            NSString *nextStr = [array objectAtIndex:i+1];
-            if ([nextStr isEqualToString:@"Title"] || [nextStr isEqualToString:@"Artist"] || [nextStr isEqualToString:@"Album"]) {
-                // iのつぎに-をいれる
-                [addHyphenRowArray addObject:[NSNumber numberWithInt:i+1]];
-            }
-        }
-    }
-    
-    if ([addHyphenRowArray count] == 1) {
-        [array insertObject:@"-" atIndex:[[addHyphenRowArray objectAtIndex:0] intValue]];
-    } else if ([addHyphenRowArray count] == 2) {
-        NSUInteger addRow = [[addHyphenRowArray objectAtIndex:0] intValue];
-        [array insertObject:@"-" atIndex:addRow];
-        [array insertObject:@"-" atIndex:addRow+2];
-    } else {
+    /* 例外が起きると実行される */
+    @catch (NSException *exception) {
         
     }
     
-    //title name albumがnilか@""だった場合は不明な◯◯に変更
-    if (!musicTitle || [musicTitle isEqualToString:@""]) {
-        [self replaceUnknownData:array beforeStr:@"Title" afterStr:kUnknownTitle];
-    }
-    if (!artistName || [artistName isEqualToString:@""]) {
-        [self replaceUnknownData:array beforeStr:@"Artist" afterStr:kUnknownArtist];
-    }
-    if (!albumTitle || [albumTitle isEqualToString:@""]) {
-        [self replaceUnknownData:array beforeStr:@"Album" afterStr:kUnknownAlbum];
-    }
+    /* 常に実行される */
+    @finally {
     
-    
-    NSUInteger titleRow =[array indexOfObject:@"Title"];
-    NSUInteger artistRow =[array indexOfObject:@"Artist"];
-
-    if(titleRow != NSNotFound){
-        [array replaceObjectAtIndex:titleRow withObject:musicTitle];
-    }
-  
-    if(artistRow != NSNotFound){
-        [array replaceObjectAtIndex:artistRow withObject:artistName];
-    }
-    
-    
-    if (isAddAlbumTag) {
-        NSUInteger albumRow =[array indexOfObject:@"Album"];
-        if(albumRow != NSNotFound){
-            [array replaceObjectAtIndex:albumRow withObject:albumTitle];
-        }
-    }
-    
-    if (!isAddAppTag && !isAddAlbumTag && [addHyphenRowArray count] == 0) {
-        postString = [NSString stringWithFormat:@"%@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2]];
-    } else if ((isAddAppTag && !isAddAlbumTag && [addHyphenRowArray count] == 0) || (!isAddAppTag && isAddAlbumTag && [addHyphenRowArray count] == 0) || (!isAddAppTag && !isAddAlbumTag && [addHyphenRowArray count] == 1)) {
-        postString = [NSString stringWithFormat:@"%@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3]];
-    } else if ((!isAddAppTag && isAddAlbumTag && [addHyphenRowArray count] == 1) || (isAddAppTag && !isAddAlbumTag && [addHyphenRowArray count] == 1) || (isAddAppTag && isAddAlbumTag && [addHyphenRowArray count] == 0)) {
-        postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4]];
-    } else if ((!isAddAppTag && isAddAlbumTag && [addHyphenRowArray count] == 2) || (isAddAppTag && !isAddAlbumTag && [addHyphenRowArray count] == 2) || (isAddAppTag && isAddAlbumTag && [addHyphenRowArray count] == 1)) {
-        postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4], [array objectAtIndex:5]];
-    } else if (isAddAppTag && isAddAlbumTag && [addHyphenRowArray count] == 2) {
-        postString = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@ %@",[array objectAtIndex:0], [array objectAtIndex:1], [array objectAtIndex:2], [array objectAtIndex:3], [array objectAtIndex:4], [array objectAtIndex:5], [array objectAtIndex:6]];
-    } else {
-        postString = @"もしこのメッセージが出た際には設定画面のスクリーンショットと共に開発までお問い合わせください。";
     }
 
     return postString;

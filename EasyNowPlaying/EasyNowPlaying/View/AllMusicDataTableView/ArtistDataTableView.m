@@ -13,6 +13,8 @@
 
 - (void)awakeFromNib {
     
+    [super awakeFromNib];
+    
     self.dataSource = self;
     
     UINib *artistCellNib = [UINib nibWithNibName:kMusicDataTableArtistCell bundle:nil];

@@ -19,6 +19,8 @@
 
 - (void)awakeFromNib {
     
+    [super awakeFromNib];
+    
     self.dataSource = self;
     
     UINib *tagNib = [UINib nibWithNibName:kSettingTableViewTagCell bundle:nil];

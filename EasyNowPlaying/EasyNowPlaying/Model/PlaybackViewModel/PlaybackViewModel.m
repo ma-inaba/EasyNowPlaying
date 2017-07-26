@@ -242,7 +242,7 @@
 // 曲の再生時間の読み込み
 - (NSString *)loadMusicDurationForsongsDataArraywithIndex:(NSInteger)row {
     
-    float musicDuration;
+    float musicDuration = 0;
     if (self.musicDataEntity.songsDataArray) {
         MPMediaItemCollection *musicCollection = [self.musicDataEntity.songsDataArray objectAtIndex:row];
         musicDuration = [[[musicCollection representativeItem] valueForProperty:MPMediaItemPropertyPlaybackDuration] floatValue];
